@@ -22,6 +22,47 @@
     revealables.forEach(function (el) { io.observe(el); });
   }
 
+  /* ---------- hero line reveal ---------- */
+  window.requestAnimationFrame(function () {
+    window.requestAnimationFrame(function () { document.body.classList.add('loaded'); });
+  });
+
+  /* ---------- cursor spotlight (.spot) ---------- */
+  if (window.matchMedia('(hover: hover)').matches) {
+    document.querySelectorAll('.spot').forEach(function (el) {
+      el.addEventListener('pointermove', function (e) {
+        var r = el.getBoundingClientRect();
+        el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      });
+    });
+  }
+
+  /* ---------- count-up numbers ([data-count]) ---------- */
+  var counters = Array.prototype.slice.call(document.querySelectorAll('[data-count]'));
+  function runCount(el) {
+    var target = parseFloat(el.getAttribute('data-count')) || 0;
+    var dur = 1400, t0 = null;
+    function step(ts) {
+      if (!t0) t0 = ts;
+      var p = Math.min(1, (ts - t0) / dur);
+      var eased = 1 - Math.pow(1 - p, 4);
+      el.textContent = Math.round(target * eased);
+      if (p < 1) window.requestAnimationFrame(step);
+    }
+    window.requestAnimationFrame(step);
+  }
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    counters.forEach(function (el) { el.textContent = el.getAttribute('data-count'); });
+  } else {
+    var cio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { runCount(entry.target); cio.unobserve(entry.target); }
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(function (el) { cio.observe(el); });
+  }
+
   /* ---------- theme ----------
      초기값은 <head>의 인라인 스크립트가 이미 확정했다. */
   if (!root.getAttribute('data-theme')) root.setAttribute('data-theme', 'light');

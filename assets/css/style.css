@@ -40,7 +40,7 @@
   --line-strong:rgba(16,16,20,.18);
   --txt:#101014;
   --txt-2:#4a4c56;
-  --txt-3:#7f828e;
+  --txt-3:#6f7280;
   --accent:#2340ff;
   --accent-2:#0d9c8a;
   --accent-3:#7b46e0;
@@ -70,6 +70,8 @@ h1,h2,h3,h4{margin:0;line-height:1.2;letter-spacing:-.035em;font-weight:700}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
 .wrap{width:min(1240px,calc(100% - 56px));margin-inline:auto}
+.skip{position:fixed;top:-100px;left:16px;z-index:100;padding:10px 14px;border-radius:10px;background:var(--ink);color:var(--ink-txt);font-weight:600;font-size:14px;transition:top .2s}
+.skip:focus{top:16px}
 
 /* ---------- background: soft glow + grain + dot grid ---------- */
 .bg-mesh{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
@@ -233,12 +235,11 @@ body.loaded .line > span{transform:none}
 }
 .tile h2::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
 
-.t-photo{grid-column:span 3;padding:10px;display:flex;flex-direction:column}
-.t-photo .ph{position:relative;flex:1;overflow:hidden;border-radius:calc(var(--radius) - 8px)}
-.t-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.9);transition:filter .5s,transform .8s var(--ease)}
+.t-photo{grid-column:span 3;margin:0;padding:10px;display:flex;flex-direction:column;overflow:hidden}
+.t-photo img{flex:1;width:100%;min-height:0;object-fit:cover;border-radius:calc(var(--radius) - 8px);filter:saturate(.9);transition:filter .5s,transform .8s var(--ease)}
 .t-photo:hover img{filter:saturate(1.05);transform:scale(1.02)}
 .t-photo figcaption{
-  position:absolute;left:10px;bottom:10px;padding:7px 11px;border-radius:10px;
+  position:absolute;left:20px;bottom:20px;padding:7px 11px;border-radius:10px;
   font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.06em;color:#fff;
   background:rgba(10,10,12,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
 }
@@ -495,8 +496,7 @@ body.loaded .line > span{transform:none}
 }
 @media (max-width:480px){
   .t-photo{grid-column:span 12;padding:8px}
-  .t-photo .ph{aspect-ratio:4/3}
-  .t-photo img{object-position:top center}
+  .t-photo img{aspect-ratio:4/3;object-position:top center}
   .t-intro{grid-column:span 12}
   .skill-grid{grid-template-columns:1fr}
 }

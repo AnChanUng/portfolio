@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>안찬웅 · Backend Engineer</title>
-<meta name="description" content="서버 개발자 안찬웅의 포트폴리오. C/C++ · Java/Spring · Linux · RDBMS.">
+<meta name="description" content="서버 개발자 안찬웅의 포트폴리오. C/C++ · Java/Spring · Linux · RDBMS · Claude Code/AI.">
 <meta name="author" content="안찬웅">
 <meta property="og:title" content="안찬웅 · Backend Engineer">
 <meta property="og:description" content="서버 개발자 안찬웅의 포트폴리오">
@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="assets/css/style.css">
 <noscript><style>.reveal,.line>span{opacity:1!important;transform:none!important}.work-card[hidden]{display:none!important}</style></noscript>
 <script>
@@ -27,6 +27,7 @@
 </script>
 </head>
 <body>
+<a class="skip" href="#top">본문으로 건너뛰기</a>
 
 <div class="bg-mesh" aria-hidden="true">
   <span class="orb orb-1"></span>
@@ -78,10 +79,8 @@
 
       <div class="bento">
         <figure class="tile t-photo reveal">
-          <div class="ph">
-            <img src="assets/img/profile.png" alt="안찬웅 프로필 사진" width="290" height="397" loading="eager" decoding="async">
-            <figcaption>AN CHAN UNG</figcaption>
-          </div>
+          <img src="assets/img/profile.png" alt="안찬웅 프로필 사진" width="290" height="397" loading="eager" decoding="async">
+          <figcaption>AN CHAN UNG</figcaption>
         </figure>
 
         <article class="tile t-intro spot reveal" data-delay="1">
@@ -349,12 +348,12 @@
   </div>
 </footer>
 
-<div class="lightbox" id="lightbox" hidden>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="이미지 크게 보기" hidden>
   <button class="lb-close" id="lbClose" type="button" aria-label="닫기">
     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
   </button>
   <figure class="lb-figure">
-    <img id="lbImage" alt="">
+    <img id="lbImage" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="">
     <figcaption id="lbCaption"></figcaption>
   </figure>
 </div>

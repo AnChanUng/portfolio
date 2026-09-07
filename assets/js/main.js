@@ -133,7 +133,7 @@
   }
   function closeLightbox() {
     lb.hidden = true;
-    lbImage.src = '';
+    lbImage.src = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
     document.body.style.overflow = '';
     if (lastFocused) lastFocused.focus();
   }

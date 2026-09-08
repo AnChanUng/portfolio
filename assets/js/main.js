@@ -138,7 +138,7 @@
     if (lastFocused) lastFocused.focus();
   }
 
-  document.querySelectorAll('.gallery .shot').forEach(function (btn) {
+  document.querySelectorAll('.shot').forEach(function (btn) {
     btn.addEventListener('click', function () { openLightbox(btn); });
   });
   document.getElementById('lbClose').addEventListener('click', closeLightbox);

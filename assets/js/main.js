@@ -149,30 +149,6 @@
     if (e.key === 'Escape' && !lb.hidden) closeLightbox();
   });
 
-  /* ---------- work filter ---------- */
-  var filterBtns = Array.prototype.slice.call(document.querySelectorAll('.filter .chip-btn'));
-  var workCards = Array.prototype.slice.call(document.querySelectorAll('.work-card'));
-  var workEmpty = document.getElementById('workEmpty');
-
-  function applyFilter(key) {
-    var shown = 0;
-    workCards.forEach(function (card) {
-      var tags = (card.getAttribute('data-tags') || '').split(/\s+/);
-      var on = key === 'all' || tags.indexOf(key) !== -1;
-      card.hidden = !on;
-      if (on) { shown++; card.classList.add('in'); }
-    });
-    if (workEmpty) workEmpty.hidden = shown > 0;
-    filterBtns.forEach(function (b) {
-      var active = b.getAttribute('data-filter') === key;
-      b.classList.toggle('is-on', active);
-      b.setAttribute('aria-selected', String(active));
-    });
-  }
-  filterBtns.forEach(function (b) {
-    b.addEventListener('click', function () { applyFilter(b.getAttribute('data-filter')); });
-  });
-
   /* ---------- active section in nav ---------- */
   var sections = Array.prototype.slice.call(document.querySelectorAll('main section[id]'));
   var navAnchors = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));

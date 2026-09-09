@@ -1,6 +1,6 @@
 /* ============================================================
    안찬웅 Portfolio — style.css  (2026.09 redesign)
-   editorial type · bento grid · grain · spotlight
+   editorial type / bento grid / grain / spotlight
    ============================================================ */
 
 /* ---------- tokens ---------- */
@@ -321,14 +321,6 @@ body.loaded .line > span{transform:none}
 .sec-sub{margin:0 0 .5em;color:var(--txt-3);font-size:15px;font-family:var(--mono);letter-spacing:.04em}
 
 /* ---------- work ---------- */
-.filter{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
-.chip-btn{
-  font-family:var(--mono);font-size:12.5px;font-weight:600;cursor:pointer;
-  padding:9px 15px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--txt-2);
-  transition:color .2s,background .25s,border-color .2s,transform .3s var(--ease);
-}
-.chip-btn:hover{color:var(--txt);border-color:var(--line-strong);transform:translateY(-1px)}
-.chip-btn.is-on{color:var(--ink-txt);background:var(--ink);border-color:var(--ink)}
 
 .work-list{display:flex;flex-direction:column;gap:16px}
 .work-card{padding:34px 36px}
@@ -358,31 +350,42 @@ body.loaded .line > span{transform:none}
 .par p{margin:0;font-size:14px;line-height:1.72;color:var(--txt-2)}
 .par > div:nth-child(3) p{color:var(--txt);font-weight:500}
 .work-card .chips{margin-top:2px}
-.work-empty{margin:32px 0 0;color:var(--txt-3);text-align:center;font-size:14px}
 
 /* ---------- work hero figure (TeraStream ETL flow) ---------- */
 .work-hero{margin:0 0 28px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--surface);transition:border-color .25s,box-shadow .35s}
 .work-hero:hover{border-color:var(--line-strong);box-shadow:var(--shadow)}
 .work-hero .shot{display:block;width:100%;padding:0;border:0;background:#fff;cursor:zoom-in}
 .work-hero .shot:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
-.work-hero img{display:block;width:100%;height:auto;max-height:440px;object-fit:contain;padding:20px 28px;background:#fff}
+.work-hero img{display:block;width:100%;height:auto;max-height:460px;object-fit:contain;padding:26px 34px;background:#fff}
 .work-hero figcaption{display:flex;align-items:baseline;justify-content:space-between;gap:8px 20px;flex-wrap:wrap;padding:12px 18px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;line-height:1.4}
 .wh-org{color:var(--txt-3);letter-spacing:.04em}
 .wh-t{color:var(--txt-2)}
 
 /* ---------- project gallery ---------- */
-.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px}
-.gallery-wide{grid-template-columns:minmax(0,600px)}
+.gal-head{display:flex;align-items:baseline;gap:10px;margin:30px 0 12px}
+.gal-head h4{margin:0;font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--txt-3)}
+.gal-head span{flex:1;height:1px;background:var(--line)}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:0;padding:0;list-style:none}
+.gallery-wide{grid-template-columns:minmax(0,640px)}
 .gallery .shot{
-  display:block;width:100%;padding:0;cursor:zoom-in;overflow:hidden;
-  border-radius:14px;border:1px solid var(--line);background:var(--surface-2);
+  position:relative;display:block;width:100%;padding:0;cursor:zoom-in;overflow:hidden;
+  border-radius:16px;border:1px solid var(--line);background:var(--surface);
   transition:border-color .25s,transform .35s var(--ease),box-shadow .35s;
 }
-.gallery .shot:hover,.gallery .shot:focus-visible{border-color:var(--accent);transform:translateY(-3px);box-shadow:var(--shadow);outline:none}
-.gallery img{width:100%;height:200px;object-fit:cover;object-position:top center;background:#fff;transition:transform .8s var(--ease)}
-.gallery .shot:hover img{transform:scale(1.03)}
-.gallery-wide img{height:auto;object-fit:contain;padding:12px}
-.shot-cap{display:block;padding:9px 12px;font-size:11.5px;line-height:1.35;color:var(--txt-2);text-align:left;border-top:1px solid var(--line);font-family:var(--mono)}
+.gallery .shot:hover,.gallery .shot:focus-visible{border-color:var(--accent);transform:translateY(-4px);box-shadow:var(--shadow);outline:none}
+.gallery img{
+  display:block;width:100%;aspect-ratio:16/10;object-fit:contain;object-position:center;
+  padding:16px;background:#fff;transition:transform .6s var(--ease);
+}
+.gallery .shot:hover img{transform:scale(1.02)}
+.gallery-wide img{aspect-ratio:auto;height:auto}
+.shot-cap{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:11px 14px;font-size:11.5px;line-height:1.35;color:var(--txt-2);
+  text-align:left;border-top:1px solid var(--line);font-family:var(--mono);background:var(--surface);
+}
+.shot-cap::after{content:"확대";color:var(--txt-3);font-size:10.5px;letter-spacing:.08em;opacity:0;transition:opacity .25s}
+.gallery .shot:hover .shot-cap::after,.gallery .shot:focus-visible .shot-cap::after{opacity:1}
 
 /* ---------- lightbox ---------- */
 .lightbox{position:fixed;inset:0;z-index:80;display:grid;place-items:center;padding:28px;background:rgba(6,8,13,.86);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);animation:lbIn .2s ease}
@@ -403,7 +406,7 @@ body.loaded .line > span{transform:none}
 .skill-focus .chips li.hi{background:var(--accent);border-color:var(--accent);color:#fff}
 .skill-focus h3{margin:0}
 .skill-focus .k{color:var(--ink-sub)}
-.skill-focus .k::after{content:" · Now";color:var(--accent)}
+.skill-focus .k::after{content:" — Now";color:var(--accent)}
 .skill-card h3{font-size:13px;margin-bottom:16px}
 .skill-card .k{font-family:var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--txt-3);font-weight:600}
 
@@ -487,7 +490,6 @@ body.loaded .line > span{transform:none}
   .work-hero img{padding:12px 14px;max-height:300px}
   .work-hero figcaption{flex-direction:column;gap:4px}
   .gallery{grid-template-columns:1fr}
-  .gallery img{height:170px}
   .gallery-wide{grid-template-columns:1fr}
   .lightbox{padding:16px}
   .lb-figure img{max-height:calc(100vh - 160px)}

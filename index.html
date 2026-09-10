@@ -73,7 +73,7 @@
         </h1>
         <p class="hero-sub">
           <span class="line"><span>비즈니스 관점의 문제를 <em>기술</em>로 풀어내는 서버 개발자.</span></span>
-          <span class="line"><span><b>성능</b>과 <b>안정성</b> 그리고 <b>비용</b>을 저울질해 최선의 해결책을 고릅니다.</span></span>
+          <span class="line"><span><b>성능</b>과 <b>안정성</b> 그리고 <b>비용</b>을 비교해 최선의 해결책을 고릅니다.</span></span>
         </p>
       </div>
 
@@ -144,18 +144,29 @@
     <div class="wrap">
       <div class="sec-head reveal">
         <h2><span class="sec-num">01</span>Work</h2>
-        <p class="sec-sub">실무 프로젝트 5</p>
+        <p class="sec-sub">실무 프로젝트 6</p>
       </div>
 
-      <figure class="work-hero reveal">
-        <button type="button" class="shot" data-full="assets/img/project/terastream-etl-flow.png" data-caption="TeraStream ETL 처리 흐름 — DBMS와 XML/CSV 파일, Hadoop 등 소스 시스템의 데이터를 뽑아 정제하고 변환해 타깃 시스템으로 적재하는 구조">
+      <article class="card work-feature spot reveal" id="p-terastream">
+        <div class="wf-body">
+          <div class="wc-meta">
+            <span class="tag tag-dbg">Reliability</span>
+            <span class="wc-org">데이터스트림즈 — TeraStream — 2025.02 – 2025.11</span>
+          </div>
+          <h3>ETL 엔진 TeraStream 레거시 개선</h3>
+          <p class="wc-lead">인턴으로 입사해 수년간 쌓인 레거시 코드를 걷어내며 고객사 버그 70건을 모두 해결했고, 정규직으로 전환됐습니다. DBMS와 파일, Hadoop 소스를 뽑아 정제하고 변환해 적재하는 엔진의 C/C++ 코어를 다뤘습니다.</p>
+          <div class="wf-stats">
+            <div><b>70<small>건</small></b><span>고객사 버그 전량 해결</span></div>
+            <div><b>인턴 → 정규직</b><span>입사 9개월 만에 전환</span></div>
+            <div><b>4<small>건</small></b><span>아래 세부 프로젝트</span></div>
+          </div>
+          <ul class="chips"><li>C</li><li>C++</li><li>Oracle</li><li>MySQL</li><li>PostgreSQL</li><li>Tibero</li><li>Unix</li></ul>
+        </div>
+        <button type="button" class="shot wf-shot" data-full="assets/img/project/terastream-etl-flow.png" data-caption="TeraStream ETL 처리 흐름 — DBMS와 XML/CSV 파일, Hadoop 등 소스 시스템의 데이터를 뽑아 정제하고 변환해 타깃 시스템으로 적재하는 구조">
           <img src="assets/img/project/terastream-etl-flow.png" alt="TeraStream ETL 처리 흐름도" width="1600" height="826" loading="lazy" decoding="async">
+          <span class="shot-cap">TeraStream ETL 처리 흐름</span>
         </button>
-        <figcaption>
-          <span class="wh-org">데이터스트림즈 — TeraStream</span>
-          <span class="wh-t">ETL 엔진 처리 흐름 — 아래 프로젝트가 다룬 C/C++ 코어의 데이터 경로</span>
-        </figcaption>
-      </figure>
+      </article>
 
 
       <div class="work-list" id="workList">
@@ -285,11 +296,7 @@
       </div>
 
       <div class="skill-grid">
-        <article class="card skill-card skill-focus reveal">
-          <h3><span class="k">AI</span></h3>
-          <ul class="chips lg"><li class="hi">Claude Code</li><li class="hi">RAG</li><li class="hi">LLM</li></ul>
-        </article>
-        <article class="card skill-card spot reveal">
+        <article class="card skill-card spot reveal" data-delay="0">
           <h3><span class="k">Frontend</span></h3>
           <ul class="chips lg"><li>React</li><li>Next.js</li></ul>
         </article>
@@ -312,9 +319,6 @@
 </main>
 
 <footer class="footer">
-  <div class="wrap">
-    <span class="footer-mark" aria-hidden="true">AnChanUng</span>
-  </div>
   <div class="wrap footer-inner">
     <span>© 2026 안찬웅 (AnChanUng)</span>
     <div class="footer-links">

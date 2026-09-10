@@ -351,15 +351,28 @@ body.loaded .line > span{transform:none}
 .par > div:nth-child(3) p{color:var(--txt);font-weight:500}
 .work-card .chips{margin-top:2px}
 
-/* ---------- work hero figure (TeraStream ETL flow) ---------- */
-.work-hero{margin:0 0 28px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--surface);transition:border-color .25s,box-shadow .35s}
-.work-hero:hover{border-color:var(--line-strong);box-shadow:var(--shadow)}
-.work-hero .shot{display:block;width:100%;padding:0;border:0;background:#fff;cursor:zoom-in}
-.work-hero .shot:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
-.work-hero img{display:block;width:100%;height:auto;max-height:460px;object-fit:contain;padding:26px 34px;background:#fff}
-.work-hero figcaption{display:flex;align-items:baseline;justify-content:space-between;gap:8px 20px;flex-wrap:wrap;padding:12px 18px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;line-height:1.4}
-.wh-org{color:var(--txt-3);letter-spacing:.04em}
-.wh-t{color:var(--txt-2)}
+/* ---------- featured project (TeraStream, horizontal) ---------- */
+.card.work-feature{
+  display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:0;padding:0;overflow:hidden;margin-bottom:28px;
+}
+.work-feature:hover{border-color:var(--line-strong);transform:translateY(-4px);box-shadow:var(--shadow)}
+.wf-body{padding:34px 36px;display:flex;flex-direction:column;gap:0;min-width:0}
+.wf-body .wc-meta{margin-bottom:18px}
+.wf-body h3{font-size:clamp(24px,2.6vw,34px);letter-spacing:-.04em;margin-bottom:12px;line-height:1.15}
+.wf-body .wc-lead{margin-bottom:22px;font-size:15.5px}
+.wf-stats{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:0 28px;margin-bottom:22px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.wf-stats b{display:block;font-family:var(--mono);font-size:clamp(20px,2vw,26px);font-weight:700;letter-spacing:-.05em;line-height:1;color:var(--accent);white-space:nowrap}
+.wf-stats b small{font-size:.55em;margin-left:2px}
+.wf-stats span{display:block;margin-top:6px;font-size:11.5px;color:var(--txt-3);font-family:var(--mono);letter-spacing:.02em;word-break:keep-all}
+.wf-body .chips{margin-top:auto}
+.wf-shot{
+  display:flex;flex-direction:column;justify-content:center;padding:0;border:0;border-left:1px solid var(--line);
+  background:#fff;cursor:zoom-in;min-width:0;text-align:left;
+}
+.wf-shot img{display:block;width:100%;height:auto;max-height:100%;object-fit:contain;padding:28px 26px;flex:1;transition:transform .8s var(--ease)}
+.wf-shot:hover img{transform:scale(1.02)}
+.wf-shot .shot-cap{border-top:1px solid var(--line);background:var(--surface);color:var(--txt-3)}
+.wf-shot:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 
 /* ---------- project gallery ---------- */
 .gal-head{display:flex;align-items:baseline;gap:10px;margin:30px 0 12px}
@@ -386,6 +399,7 @@ body.loaded .line > span{transform:none}
 }
 .shot-cap::after{content:"확대";color:var(--txt-3);font-size:10.5px;letter-spacing:.08em;opacity:0;transition:opacity .25s}
 .gallery .shot:hover .shot-cap::after,.gallery .shot:focus-visible .shot-cap::after{opacity:1}
+.wf-shot:hover .shot-cap::after,.wf-shot:focus-visible .shot-cap::after{opacity:1}
 
 /* ---------- lightbox ---------- */
 .lightbox{position:fixed;inset:0;z-index:80;display:grid;place-items:center;padding:28px;background:rgba(6,8,13,.86);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);animation:lbIn .2s ease}
@@ -401,22 +415,11 @@ body.loaded .line > span{transform:none}
 .skill-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .skill-card{padding:26px}
 .skill-card:hover{border-color:var(--line-strong);transform:translateY(-3px);box-shadow:var(--shadow)}
-.skill-focus{grid-column:1 / -1;background:var(--ink);color:var(--ink-txt);border-color:transparent;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:30px 32px}
-.skill-focus .chips li{background:color-mix(in srgb,var(--ink-txt) 8%,transparent);border-color:color-mix(in srgb,var(--ink-txt) 14%,transparent);color:var(--ink-txt)}
-.skill-focus .chips li.hi{background:var(--accent);border-color:var(--accent);color:#fff}
-.skill-focus h3{margin:0}
-.skill-focus .k{color:var(--ink-sub)}
-.skill-focus .k::after{content:" — Now";color:var(--accent)}
 .skill-card h3{font-size:13px;margin-bottom:16px}
 .skill-card .k{font-family:var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--txt-3);font-weight:600}
 
 /* ---------- footer ---------- */
-.footer{position:relative;border-top:1px solid var(--line);padding:40px 0 34px;overflow:hidden}
-.footer-mark{
-  display:block;margin:0 0 18px;
-  font-size:clamp(56px,12vw,180px);font-weight:800;letter-spacing:-.06em;line-height:.9;
-  color:transparent;-webkit-text-stroke:1px var(--line-strong);user-select:none;
-}
+.footer{position:relative;border-top:1px solid var(--line);padding:34px 0}
 .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:13px;color:var(--txt-3);font-family:var(--mono)}
 .footer-links{display:flex;flex-wrap:wrap;align-items:center;gap:20px}
 .to-top{display:inline-flex;align-items:center;gap:6px;transition:color .2s}
@@ -487,14 +490,16 @@ body.loaded .line > span{transform:none}
   .wc-top{flex-direction:column-reverse;gap:12px}
   .wc-metric{text-align:left}
   .wc-org{margin-left:0;width:100%}
-  .work-hero img{padding:12px 14px;max-height:300px}
-  .work-hero figcaption{flex-direction:column;gap:4px}
+  .work-feature{grid-template-columns:1fr}
+  .wf-body{padding:24px 20px}
+  .wf-stats{grid-template-columns:repeat(3,1fr);gap:0 14px}
+  .wf-shot{border-left:0;border-top:1px solid var(--line)}
+  .wf-shot img{padding:14px}
   .gallery{grid-template-columns:1fr}
   .gallery-wide{grid-template-columns:1fr}
   .lightbox{padding:16px}
   .lb-figure img{max-height:calc(100vh - 160px)}
   .card{padding:20px}
-  .skill-focus{padding:22px 20px}
   .footer-inner{flex-direction:column;gap:10px;align-items:flex-start}
 }
 @media (max-width:480px){
@@ -509,5 +514,5 @@ body.loaded .line > span{transform:none}
   html{scroll-behavior:auto}
   .reveal,.line > span{opacity:1;transform:none}
   .grain{display:none}
-  .tile:hover,.work-card:hover,.card:hover{transform:none}
+  .tile:hover,.work-card:hover,.work-feature:hover,.card:hover{transform:none}
 }

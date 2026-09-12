@@ -224,7 +224,7 @@ body.loaded .line > span{transform:none}
 }
 .tile h2::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
 
-.t-photo{grid-column:span 4;margin:0;padding:10px;display:flex;flex-direction:column;overflow:hidden}
+.t-photo{grid-column:span 4;grid-row:span 2;margin:0;padding:10px;display:flex;flex-direction:column;overflow:hidden}
 .t-photo img{flex:1;width:100%;min-height:0;object-fit:cover;border-radius:calc(var(--radius) - 8px);filter:saturate(.9);transition:filter .5s,transform .8s var(--ease)}
 .t-photo:hover img{filter:saturate(1.05);transform:scale(1.02)}
 
@@ -240,8 +240,8 @@ body.loaded .line > span{transform:none}
 .t-intro li:nth-child(2)::before{background:var(--accent-2)}
 .t-intro li:nth-child(3)::before{background:var(--accent-3)}
 
-.t-career{grid-column:span 6}
-.t-edu{grid-column:span 6}
+.t-career{grid-column:span 4}
+.t-edu{grid-column:span 4}
 .t-cert{grid-column:span 8}
 .t-links{grid-column:span 4;padding:10px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
 
@@ -296,18 +296,6 @@ body.loaded .line > span{transform:none}
 .sl:hover .sl-ic{background:var(--b);color:#fff;transform:scale(1.06)}
 [data-theme="dark"] .sl-gh:hover .sl-ic{color:#0b0d12}
 .sl:hover .sl-t::after{transform:translate(2px,-2px);color:var(--txt)}
-
-/* ---------- ticker ---------- */
-.ticker{margin:28px 0 0;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;
-  mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.ticker-track{display:flex;width:max-content;gap:0;animation:ticker 38s linear infinite}
-.ticker:hover .ticker-track{animation-play-state:paused}
-.ticker-track span{
-  display:inline-flex;align-items:center;gap:22px;padding-right:22px;
-  font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--txt-2);white-space:nowrap;
-}
-.ticker-track span::after{content:"✦";color:var(--accent);font-size:11px}
-@keyframes ticker{to{transform:translateX(-50%)}}
 
 /* ============================================================
    sections
@@ -451,7 +439,7 @@ body.loaded .line > span{transform:none}
   .hero-sub{font-size:17px}
   .bento{gap:10px}
   .tile{padding:20px 20px;border-radius:18px}
-  .t-photo{grid-column:span 5;padding:8px}
+  .t-photo{grid-column:span 5;grid-row:auto;padding:8px}
   .t-intro{grid-column:span 7}
   .t-intro li{font-size:14px}
   .t-career,.t-edu,.t-cert,.t-links{grid-column:span 12}

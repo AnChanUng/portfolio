@@ -302,18 +302,36 @@ body.loaded .line > span{transform:none}
 
 /* ---------- work ---------- */
 
-/* project index: one row per project, metric right-aligned */
-.work-index{margin-bottom:28px;border:1px solid var(--line);border-radius:16px;background:var(--surface);overflow:hidden}
-.work-index ol{list-style:none;margin:0;padding:0}
-.work-index li{border-bottom:1px solid var(--line);min-width:0}
-.work-index li:last-child{border-bottom:0}
-.work-index a{display:flex;align-items:center;gap:14px;padding:11px 18px;transition:background .2s}
-.work-index a:hover{background:var(--surface-2)}
-.wi-n{flex:none;font-family:var(--mono);font-size:11.5px;font-weight:600;color:var(--txt-3)}
-.wi-t{flex:1;min-width:0;font-size:14px;font-weight:600;letter-spacing:-.02em;color:var(--txt);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.wi-m{flex:none;display:flex;align-items:baseline;gap:8px;font-family:var(--mono);font-size:11.5px;color:var(--txt-3);white-space:nowrap}
-.wi-m b{font-size:13px;font-weight:700;color:var(--accent)}
-.work-index a:hover .wi-t{color:var(--accent)}
+/* project tiles: cover image on top, summary below; click opens .pm */
+.proj-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.proj-tile{
+  display:flex;flex-direction:column;min-width:0;padding:0;text-align:left;cursor:pointer;overflow:hidden;
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);color:inherit;font:inherit;
+  transition:border-color .25s,transform .35s var(--ease),box-shadow .35s;
+}
+.proj-tile:hover,.proj-tile:focus-visible{border-color:var(--line-strong);transform:translateY(-4px);box-shadow:var(--shadow)}
+.pt-img{display:block;aspect-ratio:2/1;padding:12px 12px 0;overflow:hidden}
+.pt-img img{display:block;width:100%;height:100%;padding:14px;border-radius:calc(var(--radius) - 8px);background:#f1f2f6;object-fit:contain;object-position:center}
+.pt-body{flex:1;display:flex;flex-direction:column;gap:8px;padding:22px 24px 20px}
+.pt-org{font-family:var(--mono);font-size:12px;color:var(--txt-3)}
+.pt-title{font-size:clamp(19px,1.7vw,22px);font-weight:700;letter-spacing:-.035em;line-height:1.3;color:var(--txt)}
+.pt-sum{font-size:14.5px;line-height:1.65;color:var(--txt-2)}
+.pt-foot{margin-top:auto;padding-top:14px;display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+.pt-metrics{display:flex;flex-wrap:wrap;gap:6px 20px}
+.pt-metrics span{display:flex;flex-direction:column;gap:3px;font-family:var(--mono);font-size:11.5px;color:var(--txt-3)}
+.pt-metrics b{font-size:20px;font-weight:700;letter-spacing:-.04em;line-height:1;color:var(--accent)}
+.pt-more{flex:none;font-size:13px;font-weight:600;color:var(--txt-2);transition:color .2s}
+.proj-tile:hover .pt-more{color:var(--accent)}
+
+/* project detail modal */
+.pm{position:fixed;inset:0;z-index:75;display:flex;justify-content:center;align-items:flex-start;padding:40px 20px;overflow-y:auto;overscroll-behavior:contain;background:rgba(6,8,13,.66);animation:lbIn .2s ease}
+.pm[hidden]{display:none}
+.pm-panel{position:relative;width:min(1000px,100%);margin:auto 0;border-radius:calc(var(--radius) + 4px);background:var(--bg);border:1px solid var(--line);box-shadow:var(--shadow)}
+.pm-body{display:flex;flex-direction:column;gap:20px;padding:64px 24px 24px}
+.pm-body .work-feature{margin-bottom:0}
+.pm-body .card:hover{transform:none}
+.pm-close{position:absolute;top:16px;right:16px;z-index:2;width:40px;height:40px;display:grid;place-items:center;border-radius:999px;cursor:pointer;color:var(--txt);border:1px solid var(--line);background:var(--surface);transition:border-color .2s,background .2s}
+.pm-close:hover{border-color:var(--line-strong);background:var(--surface-2)}
 
 .work-list{display:flex;flex-direction:column;gap:24px}
 .work-card{padding:34px 36px}
@@ -467,7 +485,9 @@ body.loaded .line > span{transform:none}
   .wc-top{flex-direction:column-reverse;gap:12px}
   .wc-metric{text-align:left}
   .wc-org{margin-left:0;width:100%}
-  .wi-m{display:none}
+  .proj-grid{grid-template-columns:1fr;gap:16px}
+  .pm{padding:12px}
+  .pm-body{padding:60px 12px 12px}
   .work-feature{grid-template-columns:1fr}
   .wf-body{padding:24px 20px}
   .wf-shot{border-left:0;border-top:1px solid var(--line)}

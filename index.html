@@ -17,7 +17,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧑‍💻</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="assets/css/style.css">
 <noscript><style>.reveal,.line>span{opacity:1!important;transform:none!important}.work-card[hidden]{display:none!important}</style></noscript>
@@ -47,8 +47,8 @@
     </a>
     <nav class="nav-links" aria-label="섹션 이동">
       <a href="#about">About</a>
+      <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
     </nav>
     <div class="nav-actions">
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="테마 전환">
@@ -84,8 +84,9 @@
         <article class="tile t-intro spot reveal" data-delay="1">
           <h2>About</h2>
           <ul>
-            <li>스타트업에서 치열함과 주도성을 배웠습니다.</li>
-            <li>프로젝트의 반복 업무를 AI로 자동화하고, 시스템 전반의 성능을 최적화합니다.</li>
+            <li>금융권 고객사의 ETL 엔진을 개발하며 Linux와 Unix 환경에서 데이터 정합성과 안정성을 책임졌습니다.</li>
+            <li>CRON 예약 데이터의 사전 파싱과 공유 메모리 구조를 통해 스케줄 실행 성능을 평균 60% 개선했습니다.</li>
+            <li>DB 세션 한도와 커널 세마포어 조정을 통해 배치 처리 시간을 30% 단축하고 동시 처리량을 3배로 늘렸습니다.</li>
           </ul>
         </article>
 
@@ -124,42 +125,24 @@
 
   </section>
 
-  <!-- ─────────────── SKILLS ─────────────── -->
-  <section id="skills" class="section">
+  <!-- ─────────────── PROJECTS ─────────────── -->
+  <section id="projects" class="section">
     <div class="wrap">
       <div class="sec-head reveal">
-        <h2><span class="sec-num">01</span>Skills</h2>
-        <p class="sec-sub">도구와 무기</p>
+        <h2><span class="sec-num">01</span>Projects</h2>
       </div>
 
-      <div class="skill-grid">
-        <article class="card skill-card spot reveal" data-delay="0">
-          <h3><span class="k">Frontend</span></h3>
-          <ul class="chips lg"><li>React</li><li>Next.js</li></ul>
-        </article>
-        <article class="card skill-card spot reveal" data-delay="1">
-          <h3><span class="k">Backend</span></h3>
-          <ul class="chips lg"><li class="hi">Java</li><li class="hi">Spring Boot</li><li>JPA</li><li>C</li><li>C++</li></ul>
-        </article>
-        <article class="card skill-card spot reveal" data-delay="2">
-          <h3><span class="k">DevOps</span></h3>
-          <ul class="chips lg"><li class="hi">Linux</li><li class="hi">Unix</li><li class="hi">AWS</li><li>Docker</li><li>Jenkins</li></ul>
-        </article>
-        <article class="card skill-card spot reveal" data-delay="3">
-          <h3><span class="k">Database</span></h3>
-          <ul class="chips lg"><li class="hi">Oracle</li><li class="hi">PostgreSQL</li><li>MySQL</li><li>MariaDB</li><li class="hi">Tibero</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─────────────── EXPERIENCE ─────────────── -->
-  <section id="experience" class="section">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <h2><span class="sec-num">02</span>Experience</h2>
-        <p class="sec-sub">프로젝트 8</p>
-      </div>
+      <nav class="work-index reveal" aria-label="프로젝트 목차">
+        <ol>
+          <li><a href="#p-terastream"><span class="wi-n">01</span><span class="wi-t">ETL 엔진 TeraStream 레거시 개선</span><span class="wi-m"><b>9개월</b>데이터스트림즈</span></a></li>
+          <li><a href="#p-encrypt"><span class="wi-n">02</span><span class="wi-t">Tibero 접속 정보 자동 암호화 프로세스</span><span class="wi-m"><b>−30%</b>배치 처리 시간</span></a></li>
+          <li><a href="#p-cron"><span class="wi-n">03</span><span class="wi-t">예약 실행 엔진 CRON 파싱 구조 개선</span><span class="wi-m"><b>+60%</b>스케줄 실행 성능</span></a></li>
+          <li><a href="#p-timestamp"><span class="wi-n">04</span><span class="wi-t">Tibero TIMESTAMP 구조체 크기 불일치</span><span class="wi-m"><b>AIX 32bit</b>이식성 결함 해결</span></a></li>
+          <li><a href="#p-autonomous"><span class="wi-n">05</span><span class="wi-t">자율주행 관제 플랫폼 실시간 전송 모듈과 모니터링</span><span class="wi-m"><b>83</b>솔루션 운영</span></a></li>
+          <li><a href="#p-rag"><span class="wi-n">06</span><span class="wi-t">실수령액 계산과 RAG 챗봇으로 만든 예적금 추천 서비스</span><span class="wi-m"><b>0.82 → 0.91</b>검색 근거 유사도</span></a></li>
+          <li><a href="#p-wekids"><span class="wi-n">07</span><span class="wi-t">BaaS 기반 어린이 경제 습관 플랫폼 WeKids</span><span class="wi-m"><b>3 API</b>설계부터 테스트까지</span></a></li>
+        </ol>
+      </nav>
 
       <article class="card work-feature spot reveal" id="p-terastream">
         <div class="wf-body">
@@ -169,10 +152,6 @@
           </div>
           <h3>ETL 엔진 TeraStream 레거시 개선</h3>
           <p class="wc-lead">금융권 고객사의 ETL 솔루션을 개발하며 <em>MySQL과 Oracle을 비롯한 다양한 DB로 대규모 데이터를 추출하고 적재</em>했습니다. 고객사마다 Linux와 Unix 환경이 달라 같은 문제도 매번 다르게 풀어야 했고, 그 안에서 <em>데이터 정합성과 안정성</em>을 책임졌습니다. DB 접속 비밀번호가 그대로 노출되던 구조는 <em>DB 버전과 계정별 자동 암호화 배치</em>로 바꿨습니다. 수년간 쌓인 레거시 코드를 걷어내며 엔진의 C/C++ 코어에서 고객사 버그 70건을 모두 해결했습니다.</p>
-          <div class="wf-stats">
-            <div><b>70<small>건</small></b><span>고객사 버그 전량 해결</span></div>
-            <div><b>4<small>종</small></b><span>Oracle · MySQL · PostgreSQL · Tibero</span></div>
-          </div>
           <ul class="chips"><li>C</li><li>C++</li><li>Oracle</li><li>MySQL</li><li>PostgreSQL</li><li>Tibero</li><li>Linux</li><li>Unix</li></ul>
         </div>
         <button type="button" class="shot wf-shot" data-full="assets/img/project/terastream-etl-flow.png" data-caption="TeraStream ETL 처리 흐름 — DBMS와 XML/CSV 파일, Hadoop 등 소스 시스템의 데이터를 뽑아 정제하고 변환해 타깃 시스템으로 적재하는 구조">
@@ -198,8 +177,9 @@
           <p class="wc-lead">금감원 점검에서 지적된 DB 접속 비밀번호 평문 노출을 자동 암호화 배치로 해결했습니다. 접수부터 반영까지 단독으로 담당했고, 부하 테스트에서 드러난 세션 대기 병목을 <em>DB 세션 한도와 커널 세마포어를 함께 조정</em>해 풀어 처리 시간을 30% 줄였습니다.</p>
           <div class="par">
             <div><h4>Problem</h4><p>DB 접속 비밀번호가 평문으로 노출돼 금감원 점검에서 지적. 계정마다 암호화 파일을 수동 생성하던 구조. 자동화 후 부하 테스트에서 수백 개 프로세스를 동시에 실행하자 상당수가 에러 로그 없이 멈춤.</p></div>
-            <div><h4>Approach</h4><p>계정과 DB 버전을 자동 판별해 암호화 모듈을 생성하도록 설계. 멈춤 원인은 DB 세션 현황에서 최대 세션 수 기본값 50에 막힌 대기열로 확인. 2GB 비정형 데이터를 추출, 변환, 적재하는 실제 업무 조건에서 동시 실행 수를 단계적으로 늘리며 처리 시간과 세션 수를 기록했고, 더 늘려도 시간이 줄지 않는 지점 직전인 150을 적정값으로 결정. 그래도 남은 대기는 커널 세마포어 집합 한도 128이 원인이어서 늘어날 배치까지 감안해 1024로 상향.</p></div>
-            <div><h4>Result</h4><p>동시 처리량 3배, 배치 처리 시간 30% 단축. 금감원 보안 점검 통과. 증상이 남으면 인접 계층까지 확인한다는 원칙을 얻음.</p></div>
+            <div><h4>Cause</h4><p>에러 로그가 없어 DB 세션 현황부터 확인했고, 최대 세션 수 기본값 50에 막혀 대기열이 쌓이는 것을 확인. 세션 한도를 올린 뒤에도 남은 대기는 커널 세마포어 집합 한도 128이 원인.</p></div>
+            <div><h4>Decision</h4><p>세션 한도는 감으로 크게 잡지 않고 실측으로 결정. 2GB 비정형 데이터를 추출, 변환, 적재하는 실제 업무 조건에서 동시 실행 수를 단계적으로 늘리며 처리 시간과 세션 수를 기록했고, 더 늘려도 시간이 줄지 않는 지점 직전인 150을 선택. 세마포어는 늘어날 배치까지 감안해 1024로 상향.</p></div>
+            <div><h4>Result</h4><p>계정과 DB 버전을 자동 판별해 암호화 모듈을 생성하는 배치로 전환. 동시 처리량 3배, 배치 처리 시간 30% 단축. 금감원 보안 점검 통과. 증상이 남으면 인접 계층까지 확인한다는 원칙을 얻음.</p></div>
           </div>
           <ul class="chips"><li>C</li><li>Tibero</li><li>Linux Kernel</li><li>Batch</li></ul>
         </article>
@@ -216,33 +196,15 @@
           <h3>예약 실행 엔진 CRON 파싱 구조 개선</h3>
           <p class="wc-lead">매 실행마다 문자열을 파싱하던 스케줄러를 사전 파싱 + 공유 메모리 구조로 바꿔 스케줄 실행 성능을 평균 60% 끌어올리고, 다중 실행 환경의 스케줄 정확성을 확보했습니다.</p>
           <div class="par">
-            <div><h4>Problem</h4><p>CRON 타입 예약 데이터를 실행 시점마다 문자열로 파싱해 불필요한 메모리 연산이 반복. 병렬 처리 중 로그 불일치도 발생.</p></div>
-            <div><h4>Approach</h4><p>예약 데이터를 사전 파싱해 숫자 형식으로 공유 메모리에 저장. 공유 메모리 초기화 로직을 수정해 다중 실행 환경에서도 스케줄이 정확히 동작하도록 개선.</p></div>
-            <div><h4>Result</h4><p>스케줄 실행 기준 성능 평균 60% 향상. 병렬 처리 로그 불일치 수정으로 안정성 확보.</p></div>
+            <div><h4>Problem</h4><p>예약 실행 때마다 불필요한 메모리 연산이 반복되고, 병렬 처리 중 로그 불일치가 발생.</p></div>
+            <div><h4>Cause</h4><p>CRON 타입 예약 데이터를 실행 시점마다 문자열로 다시 파싱하는 구조. 로그 불일치는 다중 실행 환경에서 공유 메모리 초기화 로직이 어긋난 것이 원인.</p></div>
+            <div><h4>Decision</h4><p>예약 데이터를 사전 파싱해 숫자 형식으로 공유 메모리에 저장하는 구조를 선택. 공유 메모리 초기화 로직도 함께 수정.</p></div>
+            <div><h4>Result</h4><p>스케줄 실행 기준 성능 평균 60% 향상. 다중 실행 환경에서도 스케줄이 정확히 동작하고 로그 불일치 해소.</p></div>
           </div>
           <ul class="chips"><li>C</li><li>Shared Memory</li><li>Linux</li><li>Unix</li></ul>
         </article>
 
-        <!-- 3. ODBC -->
-        <article class="card work-card spot reveal" id="p-odbc">
-          <div class="wc-top">
-            <div class="wc-meta">
-              <span class="tag tag-dbg">Debugging</span>
-              <span class="wc-org">데이터스트림즈 — TeraStream</span>
-            </div>
-            <div class="wc-metric"><b>5y → 4h</b><span>근본 원인 규명</span></div>
-          </div>
-          <h3>PostgreSQL ODBC 5년 미해결 접속 오류</h3>
-          <p class="wc-lead">5년 넘게 원인을 못 찾던 간헐적 접속 실패를 재현 환경부터 다시 만들어 4시간 만에 DSN 캐싱 문제로 특정하고, 클라이언트 단에서 재발을 막았습니다.</p>
-          <div class="par">
-            <div><h4>Problem</h4><p>웹 클라이언트에서 특정 계정으로 접속할 때 간헐적으로 연결 실패. 5년 이상 원인 미규명 상태로 남아 있던 이슈.</p></div>
-            <div><h4>Approach</h4><p>동일 환경을 재현해 ODBC DSN 값이 캐싱되며 잘못된 자격증명이 적용되는 구조를 확인. 32/64bit 및 User/System DSN이 중복돼 같은 이름의 DSN이 서로 다른 계정 정보를 갖는 것이 원인.</p></div>
-            <div><h4>Result</h4><p>5년간 미규명이던 원인을 특정. 클라이언트 단에 에러 처리 로직을 추가해 대응했고, 이후 재발 없음.</p></div>
-          </div>
-          <ul class="chips"><li>C++</li><li>ODBC</li><li>PostgreSQL</li><li>Windows DSN</li></ul>
-        </article>
-
-        <!-- 4. TIMESTAMP -->
+        <!-- 3. TIMESTAMP -->
         <article class="card work-card spot reveal" id="p-timestamp">
           <div class="wc-top">
             <div class="wc-meta">
@@ -254,14 +216,15 @@
           <h3>Tibero TIMESTAMP 구조체 크기 불일치</h3>
           <p class="wc-lead">Linux에서는 멀쩡하던 TIMESTAMP 정합성이 AIX에서만 깨지는 문제를 ODBC 타입 크기와 32bit 빌드의 long 크기 차이로 좁혀 호환 레이어로 해결했습니다.</p>
           <div class="par">
-            <div><h4>Problem</h4><p>Tibero ODBC 기본 타입과 CLI 타입의 크기 불일치로 TIMESTAMP 데이터 정합성이 깨짐. Linux 정상, AIX에서만 재현.</p></div>
-            <div><h4>Approach</h4><p>구조체를 직접 분석해 드라이버 타입 크기 불일치를 확인. AIX 환경에서 애플리케이션이 32비트 모드로 빌드되어 long이 4바이트로 처리되는 것을 특정.</p></div>
-            <div><h4>Result</h4><p>타입 호환 레이어를 구현해 플랫폼 간 정합성 확보.</p></div>
+            <div><h4>Problem</h4><p>TIMESTAMP 데이터 정합성이 깨짐. Linux에서는 정상이고 AIX에서만 재현.</p></div>
+            <div><h4>Cause</h4><p>구조체를 직접 분석해 Tibero ODBC 기본 타입과 CLI 타입의 크기 불일치를 확인. AIX에서 애플리케이션이 32비트 모드로 빌드되어 long이 4바이트로 처리되는 것을 특정.</p></div>
+            <div><h4>Decision</h4><p>플랫폼별 타입 크기 차이를 한곳에서 흡수하는 타입 호환 레이어를 구현.</p></div>
+            <div><h4>Result</h4><p>Linux와 AIX 모두에서 TIMESTAMP 정합성 확보.</p></div>
           </div>
           <ul class="chips"><li>C</li><li>ODBC</li><li>Tibero</li><li>AIX</li></ul>
         </article>
 
-        <!-- 5. 자율주행 -->
+        <!-- 4. 자율주행 -->
         <article class="card work-card spot reveal" id="p-autonomous">
           <div class="wc-top">
             <div class="wc-meta">
@@ -275,8 +238,9 @@
           <p class="wc-lead">83개 솔루션을 월별 점검하며 장애를 처리하고, 이벤트 데이터를 미들웨어로 실시간 전송하는 TCP 모듈과 로그 자동 수집과 SMS 알림 시스템을 직접 만들었습니다.</p>
           <div class="par">
             <div><h4>Problem</h4><p>다수 업체가 납품한 83개 솔루션이 한 플랫폼에 얽혀 있어 장애 원인 범위를 좁히기 어렵고, 이벤트 데이터의 실시간 전달 경로가 필요.</p></div>
-            <div><h4>Approach</h4><p>소켓 프로그래밍 기반 바이너리 프로토콜을 설계해 이벤트를 미들웨어 서버에 TCP로 실시간 전송. 서버 로그 자동 수집과 SMS 알림 모니터링을 구축. 장애 시 로그 분석으로 범위를 좁힌 뒤 담당 업체와 협의.</p></div>
-            <div><h4>Result</h4><p>월별 정기점검 체계 확립. 장애 감지가 사람 눈에서 알림으로 이동.</p></div>
+            <div><h4>Cause</h4><p>장애 감지가 사람 눈에 의존했고, 솔루션마다 로그가 흩어져 있어 어느 업체 범위인지 판단하는 데 시간이 걸림.</p></div>
+            <div><h4>Decision</h4><p>소켓 프로그래밍 기반 바이너리 프로토콜을 설계해 이벤트를 미들웨어 서버에 TCP로 실시간 전송. 서버 로그 자동 수집과 SMS 알림 모니터링을 구축.</p></div>
+            <div><h4>Result</h4><p>월별 정기점검 체계 확립. 장애 감지가 사람 눈에서 알림으로 이동. 장애 시 로그 분석으로 범위를 좁힌 뒤 담당 업체와 협의.</p></div>
           </div>
           <ul class="chips"><li>C</li><li>TCP Socket</li><li>Binary Protocol</li><li>Linux</li><li>MariaDB</li><li>PostgreSQL</li><li>JSP</li></ul>
           <div class="gal-head"><h4>Diagrams</h4><span></span></div>
@@ -296,7 +260,7 @@
           </ul>
         </article>
 
-        <!-- 6. RAG 챗봇 -->
+        <!-- 5. RAG 챗봇 -->
         <article class="card work-card spot reveal" id="p-rag">
           <div class="wc-top">
             <div class="wc-meta">
@@ -310,14 +274,15 @@
           <p class="wc-lead">우대 조건과 월 수입, 저축 목표를 함께 계산해 만기 수령액을 산출하는 알고리즘을 구현하고, 상담 챗봇은 잘 답하는 챗봇이 아니라 <em>모르면 모른다고 말하는 챗봇</em>을 목표로 RAG 구조로 다시 만들었습니다. 팀 프로젝트에서는 <em>예적금 추천과 실수령액 계산</em>을 맡았고, 챗봇은 대회 이후 <em>직접 설계하고 구현</em>했습니다.</p>
           <div class="par">
             <div><h4>Problem</h4><p>상품마다 우대 조건이 달라 실제 수령 이율이 사람마다 달라지는 것이 청년 적금 중도 해지율의 원인. 이후 붙인 상담 챗봇은 등록되지 않은 정책의 지원 금액과 신청 기간을 그럴듯하게 지어냄. 금리는 숫자 하나가 틀리면 사용자가 손해를 보는 영역.</p></div>
-            <div><h4>Approach</h4><p>정책과 상품 데이터를 미리 적재하고 질문과 유사한 근거를 찾아 답하는 RAG 구조를 Spring AI로 적용. 유사도가 기준(0.83)에 못 미치면 LLM을 호출하지 않고 답변을 거부. 기준값은 관련 질문(0.872~0.911)과 무관한 질문(0.778~0.797)의 유사도를 테스트로 실측해 결정. 답변의 인용 번호를 DB 레코드와 대조하고, 금리와 기간은 DB 원본값을 출처 카드에 그대로 노출. 막기만 하자 답하지 못하는 질문이 늘어, 정책과 상품 한 건을 어떤 필드로 묶어 임베딩할지 색인 단위를 다시 설계.</p></div>
-            <div><h4>Result</h4><p>찾아온 근거의 유사도 0.82 → 0.91. 근거 없는 답변 차단. 금융에서 AI는 잘 답하는 것보다 틀린 답을 하지 않는 것이 먼저라는 기준을 세움.</p></div>
+            <div><h4>Cause</h4><p>근거 데이터가 없어도 LLM이 그대로 답을 생성하는 구조. 관련 질문(0.872~0.911)과 무관한 질문(0.778~0.797)의 유사도를 테스트로 실측해 근거 유무를 가르는 경계를 확인.</p></div>
+            <div><h4>Decision</h4><p>정책과 상품 데이터를 미리 적재하고 유사한 근거를 찾아 답하는 RAG 구조를 Spring AI로 적용. 유사도가 기준(0.83)에 못 미치면 LLM을 호출하지 않고 답변을 거부. 막기만 하자 답하지 못하는 질문이 늘어, 기준을 낮추지 않고 정책과 상품 한 건을 어떤 필드로 묶어 임베딩할지 색인 단위를 다시 설계.</p></div>
+            <div><h4>Result</h4><p>찾아온 근거의 유사도 0.82 → 0.91. 근거 없는 답변 차단. 답변의 인용 번호를 DB 레코드와 대조하고 금리와 기간은 DB 원본값을 출처 카드에 그대로 노출. 금융에서 AI는 잘 답하는 것보다 틀린 답을 하지 않는 것이 먼저라는 기준을 세움.</p></div>
           </div>
           <ul class="chips"><li>Java</li><li>Spring Boot</li><li>JPA</li><li>Oracle</li><li>Spring AI</li><li>RAG</li></ul>
           <a class="wc-repo" href="https://github.com/AnChanUng/StarRoad" target="_blank" rel="noopener">github.com/AnChanUng/StarRoad ↗</a>
         </article>
 
-        <!-- 7. WeKids -->
+        <!-- 6. WeKids -->
         <article class="card work-card spot reveal" id="p-wekids">
           <div class="wc-top">
             <div class="wc-meta">
@@ -330,14 +295,47 @@
           <h3>BaaS 기반 어린이 경제 습관 플랫폼 WeKids</h3>
           <p class="wc-lead">팀이 직접 만든 BaaS(Banking as a Service) 위에서 계좌와 카드를 개설하는 임베디드 금융 서비스입니다. 5인 팀에서 <em>카드 디자인, 자녀 정보 조회, 카드 발급 API</em>를 맡아 테스트 코드와 함께 개발했습니다.</p>
           <div class="par">
-            <div><h4>Problem</h4><p>카드 발급은 서비스 DB만으로 끝나지 않고, 외부 BaaS 서버에서 계좌와 카드를 만든 뒤 그 결과를 서비스로 가져와야 하는 흐름. 자녀와 부모, 계좌, 카드 디자인이 한 응답에 묶여야 함.</p></div>
-            <div><h4>Approach</h4><p>간편비밀번호를 받아 BaaS에 계좌와 카드 생성을 요청하고 결과를 WeKids에 반영하는 발급 API를 RestTemplate으로 구현. 자녀로 부모를 찾는 조회는 JPQL로 작성. 엔티티는 setter를 없애고 정적 팩토리 메서드로 생성하도록 리팩터링, 실패 케이스는 에러코드로 분리.</p></div>
+            <div><h4>Problem</h4><p>카드 발급이 서비스 DB만으로 끝나지 않음. 자녀와 부모, 계좌, 카드 디자인이 한 응답에 묶여야 함.</p></div>
+            <div><h4>Cause</h4><p>계좌와 카드의 원본은 외부 BaaS 서버에 있어, BaaS에서 먼저 만든 뒤 그 결과를 서비스로 가져와야 하는 흐름.</p></div>
+            <div><h4>Decision</h4><p>간편비밀번호를 받아 BaaS에 계좌와 카드 생성을 요청하고 결과를 WeKids에 반영하는 발급 API를 RestTemplate으로 구현. 자녀로 부모를 찾는 조회는 JPQL로 작성. 엔티티는 setter를 없애고 정적 팩토리 메서드로 생성하도록 리팩터링, 실패 케이스는 에러코드로 분리.</p></div>
             <div><h4>Result</h4><p>API 3종을 조회 성공과 실패 케이스 테스트 코드와 함께 완성. 이슈 단위 브랜치와 커밋 규칙으로 협업.</p></div>
           </div>
           <ul class="chips"><li>Java 17</li><li>Spring Boot</li><li>JPA</li><li>QueryDSL</li><li>MySQL</li><li>JUnit</li></ul>
           <a class="wc-repo" href="https://github.com/woorifisa-projects-3rd/WeKids-BE" target="_blank" rel="noopener">github.com/woorifisa-projects-3rd/WeKids-BE ↗</a>
         </article>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── SKILLS ─────────────── -->
+  <section id="skills" class="section">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2><span class="sec-num">02</span>Skills</h2>
+      </div>
+
+      <div class="skill-grid">
+        <article class="card skill-card spot reveal" data-delay="0">
+          <h3><span class="k">Languages</span></h3>
+          <ul class="chips lg"><li class="hi">Java</li><li>C</li><li>C++</li></ul>
+        </article>
+        <article class="card skill-card spot reveal" data-delay="1">
+          <h3><span class="k">Backend</span></h3>
+          <ul class="chips lg"><li class="hi">Spring Boot</li><li>JPA</li></ul>
+        </article>
+        <article class="card skill-card spot reveal" data-delay="2">
+          <h3><span class="k">Database</span></h3>
+          <ul class="chips lg"><li class="hi">Oracle</li><li class="hi">PostgreSQL</li><li>MySQL</li><li>MariaDB</li><li class="hi">Tibero</li></ul>
+        </article>
+        <article class="card skill-card spot reveal" data-delay="3">
+          <h3><span class="k">Infra</span></h3>
+          <ul class="chips lg"><li class="hi">Linux</li><li class="hi">Unix</li><li class="hi">AWS</li><li>Docker</li><li>Jenkins</li></ul>
+        </article>
+        <article class="card skill-card spot reveal" data-delay="4">
+          <h3><span class="k">Frontend</span></h3>
+          <ul class="chips lg"><li>React</li><li>Next.js</li></ul>
+        </article>
       </div>
     </div>
   </section>

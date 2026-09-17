@@ -181,7 +181,11 @@ h1,h2,h3,h4{margin:0;line-height:1.2;letter-spacing:-.035em;font-weight:700}
    ============================================================ */
 .hero{padding:calc(var(--nav-h) + 56px) 0 24px}
 .hero-head{margin-bottom:28px;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:10px 40px}
-.hero-head .eyebrow{flex-basis:100%;margin-bottom:4px}
+.hero-id{display:flex;align-items:center;gap:20px;min-width:0}
+.hero-id .eyebrow{margin-bottom:8px}
+.hero-photo{flex:none;margin:0;width:92px;height:112px;padding:5px;border-radius:20px;border:1px solid var(--line);background:var(--surface);overflow:hidden}
+[data-theme="light"] .hero-photo{box-shadow:0 1px 2px rgba(16,16,20,.04)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:15px}
 
 /* line-mask reveal (body.loaded triggers) */
 .line{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
@@ -219,11 +223,7 @@ body.loaded .line > span{transform:none}
 }
 .tile h2::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
 
-.t-photo{grid-column:span 2;grid-row:span 2;margin:0;padding:8px;display:flex;flex-direction:column;overflow:hidden}
-.t-photo img{flex:1;width:100%;min-height:0;object-fit:cover;object-position:top center;border-radius:calc(var(--radius) - 8px);filter:saturate(.9);transition:filter .5s,transform .8s var(--ease)}
-.t-photo:hover img{filter:saturate(1.05);transform:scale(1.02)}
-
-.t-intro{grid-column:span 6;display:flex;flex-direction:column}
+.t-intro{grid-column:span 8;display:flex;flex-direction:column}
 .t-intro ul{flex:1;display:flex;flex-direction:column;justify-content:center;gap:8px;padding:2px 0}
 .t-intro li{
   position:relative;padding-left:22px;font-size:clamp(14px,1.05vw,15.5px);line-height:1.55;color:var(--txt);letter-spacing:-.02em;font-weight:500;
@@ -236,8 +236,8 @@ body.loaded .line > span{transform:none}
 .t-career{grid-column:span 4}
 .t-edu{grid-column:span 4}
 .t-cert{grid-column:span 4;order:-1}
-.t-photo,.t-intro{order:-2}
-.t-links{grid-column:span 2;padding:8px;display:grid;grid-template-columns:1fr;gap:8px}
+.t-intro{order:-2}
+.t-links{grid-column:span 4;padding:8px;display:grid;grid-template-columns:1fr;gap:8px}
 
 /* timeline list: accent rail + dot per entry */
 .cv{display:flex;flex-direction:column}
@@ -420,10 +420,12 @@ body.loaded .line > span{transform:none}
 .lb-close:hover{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.35)}
 
 /* ---------- skills ---------- */
-.skill-grid{display:grid;grid-template-columns:1.1fr 1fr 1.5fr 1.3fr .9fr;gap:12px}
-.skill-card{padding:16px 18px}
-.skill-card:hover{border-color:var(--line-strong);transform:translateY(-3px);box-shadow:var(--shadow)}
-.skill-card h3{font-size:13px;margin-bottom:10px}
+.skill-grid{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);overflow:hidden}
+[data-theme="light"] .skill-grid{box-shadow:0 1px 2px rgba(16,16,20,.04)}
+.card.skill-card{display:grid;grid-template-columns:132px minmax(0,1fr);align-items:center;gap:0 16px;padding:15px 24px;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent;box-shadow:none}
+.card.skill-card:last-child{border-bottom:0}
+.card.skill-card:hover{transform:none;background:var(--surface-2)}
+.skill-card h3{font-size:13px;margin:0}
 .skill-card .chips.lg li{font-size:12px;padding:6px 10px;border-radius:8px}
 .skill-card .k{font-family:var(--mono);letter-spacing:.02em;color:var(--txt-3);font-weight:600}
 
@@ -445,9 +447,6 @@ body.loaded .line > span{transform:none}
 .reveal[data-delay="6"]{transition-delay:.48s}
 
 /* ---------- responsive ---------- */
-@media (max-width:1100px){
-  .skill-grid{grid-template-columns:repeat(3,1fr)}
-}
 @media (max-width:720px){
   .par > div{grid-template-columns:1fr;gap:6px}
 }
@@ -457,11 +456,13 @@ body.loaded .line > span{transform:none}
   .hero{padding:calc(var(--nav-h) + 36px) 0 16px}
   .hero-title{font-size:clamp(44px,13vw,64px)}
   .hero-sub{font-size:15.5px}
-  .skill-grid{grid-template-columns:repeat(2,1fr)}
+  .card.skill-card{grid-template-columns:1fr;gap:10px;padding:16px 18px}
   .bento{gap:10px}
   .tile{padding:18px 18px;border-radius:18px}
-  .t-photo{grid-column:span 5;grid-row:auto;padding:8px}
-  .t-intro{grid-column:span 7}
+  .t-intro{grid-column:span 12}
+  .hero-id{gap:14px}
+  .hero-photo{width:76px;height:92px;border-radius:16px}
+  .hero-photo img{border-radius:12px}
   .t-intro li{font-size:14px}
   .t-career,.t-edu,.t-cert,.t-links{grid-column:span 12}
   .t-cert{order:0}
@@ -499,13 +500,6 @@ body.loaded .line > span{transform:none}
   .card{padding:20px}
   .footer-inner{flex-direction:column;gap:10px;align-items:flex-start}
 }
-@media (max-width:480px){
-  .t-photo{grid-column:span 12;padding:8px}
-  .t-photo img{aspect-ratio:4/3;object-position:top center}
-  .t-intro{grid-column:span 12}
-  .skill-grid{grid-template-columns:1fr}
-}
-
 @media (prefers-reduced-motion:reduce){
   *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
   html{scroll-behavior:auto}

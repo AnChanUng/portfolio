@@ -139,11 +139,11 @@
         </article>
         <article class="card skill-card spot reveal" data-delay="1">
           <h3><span class="k">Backend</span></h3>
-          <ul class="chips lg"><li class="hi">Java</li><li class="hi">Spring Boot</li></ul>
+          <ul class="chips lg"><li class="hi">C</li><li class="hi">C++</li><li class="hi">Java</li><li class="hi">Spring Boot</li><li>JPA</li><li>Spring AI</li></ul>
         </article>
         <article class="card skill-card spot reveal" data-delay="2">
           <h3><span class="k">DevOps</span></h3>
-          <ul class="chips lg"><li class="hi">Linux</li><li class="hi">Unix</li><li class="hi">AWS</li><li>Docker</li><li>Jenkins</li></ul>
+          <ul class="chips lg"><li class="hi">Linux</li><li class="hi">Unix</li><li>AWS</li><li>Docker</li><li>Jenkins</li></ul>
         </article>
         <article class="card skill-card spot reveal" data-delay="3">
           <h3><span class="k">Database</span></h3>
@@ -158,7 +158,7 @@
     <div class="wrap">
       <div class="sec-head reveal">
         <h2><span class="sec-num">02</span>Experience</h2>
-        <p class="sec-sub">프로젝트 7</p>
+        <p class="sec-sub">프로젝트 8</p>
       </div>
 
       <article class="card work-feature spot reveal" id="p-terastream">
@@ -171,7 +171,7 @@
           <p class="wc-lead">금융권 고객사의 ETL 솔루션을 개발하며 <em>MySQL과 Oracle을 비롯한 다양한 DB로 대규모 데이터를 추출하고 적재</em>했습니다. 고객사마다 Linux와 Unix 환경이 달라 같은 문제도 매번 다르게 풀어야 했고, 그 안에서 <em>데이터 정합성과 안정성</em>을 책임졌습니다. DB 접속 비밀번호가 그대로 노출되던 구조는 <em>DB 버전과 계정별 자동 암호화 배치</em>로 바꿨습니다. 수년간 쌓인 레거시 코드를 걷어내며 엔진의 C/C++ 코어에서 고객사 버그 70건을 모두 해결했습니다.</p>
           <div class="wf-stats">
             <div><b>70<small>건</small></b><span>고객사 버그 전량 해결</span></div>
-            <div><b>4<small>건</small></b><span>아래 세부 프로젝트</span></div>
+            <div><b>4<small>종</small></b><span>Oracle · MySQL · PostgreSQL · Tibero</span></div>
           </div>
           <ul class="chips"><li>C</li><li>C++</li><li>Oracle</li><li>MySQL</li><li>PostgreSQL</li><li>Tibero</li><li>Linux</li><li>Unix</li></ul>
         </div>
@@ -307,13 +307,35 @@
             <div class="wc-metric"><b>0.82 → 0.91</b><span>검색 근거 유사도</span></div>
           </div>
           <h3>실수령액 계산과 RAG 챗봇으로 만든 예적금 추천 서비스</h3>
-          <p class="wc-lead">우대 조건과 월 수입, 저축 목표를 함께 계산해 만기 수령액을 산출하는 알고리즘을 구현하고, 상담 챗봇은 잘 답하는 챗봇이 아니라 <em>모르면 모른다고 말하는 챗봇</em>을 목표로 RAG 구조로 다시 만들었습니다.</p>
+          <p class="wc-lead">우대 조건과 월 수입, 저축 목표를 함께 계산해 만기 수령액을 산출하는 알고리즘을 구현하고, 상담 챗봇은 잘 답하는 챗봇이 아니라 <em>모르면 모른다고 말하는 챗봇</em>을 목표로 RAG 구조로 다시 만들었습니다. 팀 프로젝트에서는 <em>예적금 추천과 실수령액 계산</em>을 맡았고, 챗봇은 대회 이후 <em>직접 설계하고 구현</em>했습니다.</p>
           <div class="par">
             <div><h4>Problem</h4><p>상품마다 우대 조건이 달라 실제 수령 이율이 사람마다 달라지는 것이 청년 적금 중도 해지율의 원인. 이후 붙인 상담 챗봇은 등록되지 않은 정책의 지원 금액과 신청 기간을 그럴듯하게 지어냄. 금리는 숫자 하나가 틀리면 사용자가 손해를 보는 영역.</p></div>
-            <div><h4>Approach</h4><p>정책과 상품 데이터를 미리 적재하고 질문과 유사한 근거를 찾아 답하는 RAG 구조를 Spring AI로 적용. 유사도가 기준(0.83)에 못 미치면 LLM을 호출하지 않고 답변을 거부. 기준값은 관련 질문(0.872~0.911)과 무관한 질문(0.778~0.797)의 유사도를 테스트로 실측해 결정. 답변의 인용 번호를 DB 레코드와 대조하고, 금리와 기간은 DB 원본값을 출처 카드에 그대로 노출. 막기만 하자 답하지 못하는 질문이 늘어 문서를 자르는 단위를 다시 설계.</p></div>
+            <div><h4>Approach</h4><p>정책과 상품 데이터를 미리 적재하고 질문과 유사한 근거를 찾아 답하는 RAG 구조를 Spring AI로 적용. 유사도가 기준(0.83)에 못 미치면 LLM을 호출하지 않고 답변을 거부. 기준값은 관련 질문(0.872~0.911)과 무관한 질문(0.778~0.797)의 유사도를 테스트로 실측해 결정. 답변의 인용 번호를 DB 레코드와 대조하고, 금리와 기간은 DB 원본값을 출처 카드에 그대로 노출. 막기만 하자 답하지 못하는 질문이 늘어, 정책과 상품 한 건을 어떤 필드로 묶어 임베딩할지 색인 단위를 다시 설계.</p></div>
             <div><h4>Result</h4><p>찾아온 근거의 유사도 0.82 → 0.91. 근거 없는 답변 차단. 금융에서 AI는 잘 답하는 것보다 틀린 답을 하지 않는 것이 먼저라는 기준을 세움.</p></div>
           </div>
           <ul class="chips"><li>Java</li><li>Spring Boot</li><li>JPA</li><li>Oracle</li><li>Spring AI</li><li>RAG</li></ul>
+          <a class="wc-repo" href="https://github.com/AnChanUng/StarRoad" target="_blank" rel="noopener">github.com/AnChanUng/StarRoad ↗</a>
+        </article>
+
+        <!-- 7. WeKids -->
+        <article class="card work-card spot reveal" id="p-wekids">
+          <div class="wc-top">
+            <div class="wc-meta">
+              <span class="tag tag-perf">Backend</span>
+              <span class="tag tag-ops">Fintech</span>
+              <span class="wc-org">우리FISA 3기 — WeKids — 2024.11 – 2024.12 — 5인 팀</span>
+            </div>
+            <div class="wc-metric"><b>3 API</b><span>설계부터 테스트까지</span></div>
+          </div>
+          <h3>BaaS 기반 어린이 경제 습관 플랫폼 WeKids</h3>
+          <p class="wc-lead">팀이 직접 만든 BaaS(Banking as a Service) 위에서 계좌와 카드를 개설하는 임베디드 금융 서비스입니다. 5인 팀에서 <em>카드 디자인, 자녀 정보 조회, 카드 발급 API</em>를 맡아 테스트 코드와 함께 개발했습니다.</p>
+          <div class="par">
+            <div><h4>Problem</h4><p>카드 발급은 서비스 DB만으로 끝나지 않고, 외부 BaaS 서버에서 계좌와 카드를 만든 뒤 그 결과를 서비스로 가져와야 하는 흐름. 자녀와 부모, 계좌, 카드 디자인이 한 응답에 묶여야 함.</p></div>
+            <div><h4>Approach</h4><p>간편비밀번호를 받아 BaaS에 계좌와 카드 생성을 요청하고 결과를 WeKids에 반영하는 발급 API를 RestTemplate으로 구현. 자녀로 부모를 찾는 조회는 JPQL로 작성. 엔티티는 setter를 없애고 정적 팩토리 메서드로 생성하도록 리팩터링, 실패 케이스는 에러코드로 분리.</p></div>
+            <div><h4>Result</h4><p>API 3종을 조회 성공과 실패 케이스 테스트 코드와 함께 완성. 이슈 단위 브랜치와 커밋 규칙으로 협업.</p></div>
+          </div>
+          <ul class="chips"><li>Java 17</li><li>Spring Boot</li><li>JPA</li><li>QueryDSL</li><li>MySQL</li><li>JUnit</li></ul>
+          <a class="wc-repo" href="https://github.com/woorifisa-projects-3rd/WeKids-BE" target="_blank" rel="noopener">github.com/woorifisa-projects-3rd/WeKids-BE ↗</a>
         </article>
 
       </div>

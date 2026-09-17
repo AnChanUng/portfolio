@@ -139,11 +139,11 @@
         </article>
         <article class="card skill-card spot reveal" data-delay="1">
           <h3><span class="k">Backend</span></h3>
-          <ul class="chips lg"><li class="hi">C</li><li class="hi">C++</li><li class="hi">Java</li><li class="hi">Spring Boot</li><li>JPA</li><li>Spring AI</li></ul>
+          <ul class="chips lg"><li class="hi">Java</li><li class="hi">Spring Boot</li><li>JPA</li><li>C</li><li>C++</li></ul>
         </article>
         <article class="card skill-card spot reveal" data-delay="2">
           <h3><span class="k">DevOps</span></h3>
-          <ul class="chips lg"><li class="hi">Linux</li><li class="hi">Unix</li><li>AWS</li><li>Docker</li><li>Jenkins</li></ul>
+          <ul class="chips lg"><li class="hi">Linux</li><li class="hi">Unix</li><li class="hi">AWS</li><li>Docker</li><li>Jenkins</li></ul>
         </article>
         <article class="card skill-card spot reveal" data-delay="3">
           <h3><span class="k">Database</span></h3>
@@ -195,11 +195,11 @@
             <div class="wc-metric"><b>−30%</b><span>배치 처리 시간</span></div>
           </div>
           <h3>Tibero 접속 정보 자동 암호화 프로세스</h3>
-          <p class="wc-lead">금감원 보안 점검 대응. 계정별로 수동 생성하던 암호화 파일을 자동 생성 구조로 바꾸고, 그 과정에서 커널과 DB 기본값 병목까지 잡아 배치 시간을 30% 줄였습니다.</p>
+          <p class="wc-lead">금감원 점검에서 지적된 DB 접속 비밀번호 평문 노출을 자동 암호화 배치로 해결했습니다. 접수부터 반영까지 단독으로 담당했고, 부하 테스트에서 드러난 세션 대기 병목을 <em>DB 세션 한도와 커널 세마포어를 함께 조정</em>해 풀어 처리 시간을 30% 줄였습니다.</p>
           <div class="par">
-            <div><h4>Problem</h4><p>DB 접속 비밀번호가 평문으로 노출. 기존에는 계정마다 암호화 파일을 수동 생성해야 했고 금감원 보안 점검 대상.</p></div>
-            <div><h4>Approach</h4><p>계정과 DB 버전을 자동 판별해 암호화 모듈을 생성하는 구조 설계. 환경 변수가 삭제돼도 런타임에 자동 생성되도록 보강. 대규모 배치에서 Linux 커널 세마포어(128)와 Tibero 세션 수(50) 기본값이 병목임을 확인해 각각 3배 확대.</p></div>
-            <div><h4>Result</h4><p>정합성 검증 로직을 포함한 배치로 완성, 금감원 보안 점검 통과. 배치 처리 시간 약 30% 단축.</p></div>
+            <div><h4>Problem</h4><p>DB 접속 비밀번호가 평문으로 노출돼 금감원 점검에서 지적. 계정마다 암호화 파일을 수동 생성하던 구조. 자동화 후 부하 테스트에서 수백 개 프로세스를 동시에 실행하자 상당수가 에러 로그 없이 멈춤.</p></div>
+            <div><h4>Approach</h4><p>계정과 DB 버전을 자동 판별해 암호화 모듈을 생성하도록 설계. 멈춤 원인은 DB 세션 현황에서 최대 세션 수 기본값 50에 막힌 대기열로 확인. 2GB 비정형 데이터를 추출, 변환, 적재하는 실제 업무 조건에서 동시 실행 수를 단계적으로 늘리며 처리 시간과 세션 수를 기록했고, 더 늘려도 시간이 줄지 않는 지점 직전인 150을 적정값으로 결정. 그래도 남은 대기는 커널 세마포어 집합 한도 128이 원인이어서 늘어날 배치까지 감안해 1024로 상향.</p></div>
+            <div><h4>Result</h4><p>동시 처리량 3배, 배치 처리 시간 30% 단축. 금감원 보안 점검 통과. 증상이 남으면 인접 계층까지 확인한다는 원칙을 얻음.</p></div>
           </div>
           <ul class="chips"><li>C</li><li>Tibero</li><li>Linux Kernel</li><li>Batch</li></ul>
         </article>
@@ -211,14 +211,14 @@
               <span class="tag tag-perf">Performance</span>
               <span class="wc-org">데이터스트림즈 — TeraStream</span>
             </div>
-            <div class="wc-metric"><b>+60%</b><span>평균 성능</span></div>
+            <div class="wc-metric"><b>+60%</b><span>스케줄 실행 성능</span></div>
           </div>
           <h3>예약 실행 엔진 CRON 파싱 구조 개선</h3>
-          <p class="wc-lead">매 실행마다 문자열을 파싱하던 스케줄러를 사전 파싱 + 공유 메모리 구조로 바꿔 성능을 평균 60% 끌어올리고, 다중 실행 환경의 스케줄 정확성을 확보했습니다.</p>
+          <p class="wc-lead">매 실행마다 문자열을 파싱하던 스케줄러를 사전 파싱 + 공유 메모리 구조로 바꿔 스케줄 실행 성능을 평균 60% 끌어올리고, 다중 실행 환경의 스케줄 정확성을 확보했습니다.</p>
           <div class="par">
             <div><h4>Problem</h4><p>CRON 타입 예약 데이터를 실행 시점마다 문자열로 파싱해 불필요한 메모리 연산이 반복. 병렬 처리 중 로그 불일치도 발생.</p></div>
             <div><h4>Approach</h4><p>예약 데이터를 사전 파싱해 숫자 형식으로 공유 메모리에 저장. 공유 메모리 초기화 로직을 수정해 다중 실행 환경에서도 스케줄이 정확히 동작하도록 개선.</p></div>
-            <div><h4>Result</h4><p>성능 평균 60% 향상. 병렬 처리 로그 불일치 수정으로 안정성 확보.</p></div>
+            <div><h4>Result</h4><p>스케줄 실행 기준 성능 평균 60% 향상. 병렬 처리 로그 불일치 수정으로 안정성 확보.</p></div>
           </div>
           <ul class="chips"><li>C</li><li>Shared Memory</li><li>Linux</li><li>Unix</li></ul>
         </article>
@@ -233,11 +233,11 @@
             <div class="wc-metric"><b>5y → 4h</b><span>근본 원인 규명</span></div>
           </div>
           <h3>PostgreSQL ODBC 5년 미해결 접속 오류</h3>
-          <p class="wc-lead">5년 넘게 원인을 못 찾던 간헐적 접속 실패를 재현 환경부터 다시 만들어 4시간 만에 DSN 캐싱 문제로 특정하고 근본 해결했습니다.</p>
+          <p class="wc-lead">5년 넘게 원인을 못 찾던 간헐적 접속 실패를 재현 환경부터 다시 만들어 4시간 만에 DSN 캐싱 문제로 특정하고, 클라이언트 단에서 재발을 막았습니다.</p>
           <div class="par">
             <div><h4>Problem</h4><p>웹 클라이언트에서 특정 계정으로 접속할 때 간헐적으로 연결 실패. 5년 이상 원인 미규명 상태로 남아 있던 이슈.</p></div>
             <div><h4>Approach</h4><p>동일 환경을 재현해 ODBC DSN 값이 캐싱되며 잘못된 자격증명이 적용되는 구조를 확인. 32/64bit 및 User/System DSN이 중복돼 같은 이름의 DSN이 서로 다른 계정 정보를 갖는 것이 원인.</p></div>
-            <div><h4>Result</h4><p>클라이언트 단 에러 처리 로직을 추가해 근본 해결. 재발 없음.</p></div>
+            <div><h4>Result</h4><p>5년간 미규명이던 원인을 특정. 클라이언트 단에 에러 처리 로직을 추가해 대응했고, 이후 재발 없음.</p></div>
           </div>
           <ul class="chips"><li>C++</li><li>ODBC</li><li>PostgreSQL</li><li>Windows DSN</li></ul>
         </article>

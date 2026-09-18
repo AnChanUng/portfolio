@@ -248,7 +248,7 @@ body.loaded .line > span{transform:none}
 /* ---------- work ---------- */
 
 /* project tiles: cover image on top, summary below; click opens .pm */
-.proj-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.proj-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
 .proj-tile{
   display:flex;flex-direction:column;min-width:0;padding:0;text-align:left;cursor:pointer;overflow:hidden;
   border:0;border-radius:var(--radius);background:var(--surface);color:inherit;font:inherit;
@@ -259,10 +259,10 @@ body.loaded .line > span{transform:none}
 .pt-img img{display:block;width:100%;height:100%;padding:18px;object-fit:contain;object-position:center;transition:transform .6s var(--ease)}
 .pt-cover img{padding:0;object-fit:cover;object-position:top center}
 .proj-tile:hover .pt-img img{transform:scale(1.03)}
-.pt-body{flex:1;display:flex;flex-direction:column;gap:8px;padding:24px 26px 24px}
+.pt-body{flex:1;display:flex;flex-direction:column;gap:10px;padding:28px 32px 28px}
 .pt-org{font-size:13.5px;font-weight:500;color:var(--txt-3)}
-.pt-title{font-size:clamp(19px,1.7vw,22px);font-weight:700;letter-spacing:-.035em;line-height:1.3;color:var(--txt)}
-.pt-sum{font-size:14.5px;line-height:1.65;color:var(--txt-2)}
+.pt-title{font-size:clamp(20px,1.6vw,26px);font-weight:700;letter-spacing:-.035em;line-height:1.3;color:var(--txt)}
+.pt-sum{font-size:16px;line-height:1.65;color:var(--txt-2)}
 .pt-foot{margin-top:auto;padding-top:14px;display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
 .pt-metrics{display:flex;flex-wrap:wrap;gap:6px 20px}
 .pt-metrics span{display:flex;flex-direction:column;gap:4px;font-size:12.5px;font-weight:500;color:var(--txt-3)}
@@ -393,9 +393,6 @@ body.loaded .line > span{transform:none}
 .reveal[data-delay="6"]{transition-delay:.48s}
 
 /* ---------- responsive ---------- */
-@media (max-width:1280px){
-  .proj-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
-}
 @media (max-width:720px){
   .par > div{grid-template-columns:1fr;gap:6px}
 }

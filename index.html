@@ -396,7 +396,7 @@
           <div><h4>Problem</h4><p>카드 발급이 서비스 DB만으로 끝나지 않음. 자녀와 부모, 계좌, 카드 디자인이 한 응답에 묶여야 함.</p></div>
           <div><h4>Cause</h4><p>계좌와 카드의 원본은 외부 BaaS 서버에 있어, BaaS에서 먼저 만든 뒤 그 결과를 서비스로 가져와야 하는 흐름.</p></div>
           <div><h4>Decision</h4><p>간편비밀번호를 받아 BaaS에 계좌와 카드 생성을 요청하고 결과를 WeKids에 반영하는 발급 API를 RestTemplate으로 구현. 자녀로 부모를 찾는 조회는 JPQL로 작성. 엔티티는 setter를 없애고 정적 팩토리 메서드로 생성하도록 리팩터링, 실패 케이스는 에러코드로 분리.</p></div>
-          <div><h4>Result</h4><p>API 3종을 조회 성공과 실패 케이스 테스트 코드와 함께 완성. 이슈 단위 브랜치와 커밋 규칙으로 협업.</p></div>
+          <div><h4>Result</h4><p>간편비밀번호 입력 한 번으로 BaaS 계좌와 카드 생성부터 WeKids 반영까지 이어지는 발급 흐름 완성. 자녀와 부모, 계좌, 카드 디자인을 한 응답으로 제공.</p></div>
         </div>
         <ul class="chips"><li>Java 17</li><li>Spring Boot</li><li>JPA</li><li>QueryDSL</li><li>MySQL</li><li>JUnit</li></ul>
         <a class="wc-repo" href="https://github.com/woorifisa-projects-3rd/WeKids-BE" target="_blank" rel="noopener">github.com/woorifisa-projects-3rd/WeKids-BE ↗</a>

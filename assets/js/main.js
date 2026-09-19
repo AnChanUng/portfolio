@@ -22,6 +22,22 @@
     revealables.forEach(function (el) { io.observe(el); });
   }
 
+  /* ---------- hero line reveal ---------- */
+  window.requestAnimationFrame(function () {
+    window.requestAnimationFrame(function () { document.body.classList.add('loaded'); });
+  });
+
+  /* ---------- cursor spotlight (.spot) ---------- */
+  if (window.matchMedia('(hover: hover)').matches) {
+    document.querySelectorAll('.spot').forEach(function (el) {
+      el.addEventListener('pointermove', function (e) {
+        var r = el.getBoundingClientRect();
+        el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      });
+    });
+  }
+
   /* ---------- theme ----------
      초기값은 <head>의 인라인 스크립트가 이미 확정했다. */
   if (!root.getAttribute('data-theme')) root.setAttribute('data-theme', 'light');
@@ -80,6 +96,7 @@
   var lbImage = document.getElementById('lbImage');
   var lbCaption = document.getElementById('lbCaption');
   var lastFocused = null;
+  var openPm = null;
 
   function openLightbox(btn) {
     lastFocused = btn;
@@ -93,7 +110,7 @@
   function closeLightbox() {
     lb.hidden = true;
     lbImage.src = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
-    document.body.style.overflow = '';
+    document.body.style.overflow = openPm ? 'hidden' : '';
     if (lastFocused) lastFocused.focus();
   }
 
@@ -106,6 +123,37 @@
   });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && !lb.hidden) { e.stopImmediatePropagation(); closeLightbox(); }
+  });
+
+  /* ---------- project detail modal ---------- */
+  var pmOpener = null;
+
+  function closePm() {
+    if (!openPm) return;
+    openPm.hidden = true;
+    openPm = null;
+    document.body.style.overflow = '';
+    if (pmOpener) pmOpener.focus();
+  }
+  document.querySelectorAll('[data-open]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var pm = document.getElementById(btn.getAttribute('data-open'));
+      if (!pm) return;
+      pmOpener = btn;
+      openPm = pm;
+      pm.hidden = false;
+      pm.scrollTop = 0;
+      document.body.style.overflow = 'hidden';
+      pm.querySelector('.pm-close').focus();
+    });
+  });
+  document.querySelectorAll('.pm').forEach(function (pm) {
+    pm.addEventListener('click', function (e) {
+      if (e.target === pm || e.target.closest('.pm-close')) closePm();
+    });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && openPm && lb.hidden) closePm();
   });
 
   /* ---------- active section in nav ---------- */

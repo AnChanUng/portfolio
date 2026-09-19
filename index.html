@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>안찬웅 — Backend Engineer</title>
-<meta name="description" content="백엔드 개발자 안찬웅의 포트폴리오. Java/Spring과 C/C++ 서버 개발, Linux와 RDBMS 성능 튜닝, AI 코딩 에이전트 활용.">
+<meta name="description" content="서버 개발자 안찬웅의 포트폴리오. C/C++와 Java/Spring 기반 서버 개발, Linux와 RDBMS, Claude Code/AI 활용.">
 <meta name="author" content="안찬웅">
 <meta property="og:title" content="안찬웅 — Backend Engineer">
-<meta property="og:description" content="백엔드 개발자 안찬웅의 포트폴리오">
+<meta property="og:description" content="서버 개발자 안찬웅의 포트폴리오">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://anchanung.github.io/portfolio/">
 <meta property="og:image" content="https://anchanung.github.io/portfolio/assets/img/profile.png">
@@ -16,8 +16,8 @@
 <link rel="canonical" href="https://anchanung.github.io/portfolio/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧑‍💻</text></svg>">
 <link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="assets/css/style.css?v=20260919a">
-<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+<link rel="stylesheet" href="assets/css/style.css?v=20260918e">
+<noscript><style>.reveal,.line>span{opacity:1!important;transform:none!important}.work-card[hidden]{display:none!important}</style></noscript>
 <script>
 /* 첫 페인트 전에 테마를 확정해 깜빡임을 막는다 */
 (function(){try{var t=localStorage.getItem('theme');if(!t)t='light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
@@ -26,15 +26,25 @@
 <body>
 <a class="skip" href="#top">본문으로 건너뛰기</a>
 
+<div class="bg-mesh" aria-hidden="true">
+  <span class="orb orb-1"></span>
+  <span class="orb orb-2"></span>
+  <span class="orb orb-3"></span>
+  <span class="grid"></span>
+</div>
+<div class="grain" aria-hidden="true"></div>
+
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
 <header class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#top" class="brand"><span class="brand-name">AnChanUng</span></a>
+    <a href="#top" class="brand">
+      <span class="brand-dot"></span>
+      <span class="brand-name">AnChanUng</span>
+    </a>
     <nav class="nav-links" aria-label="섹션 이동">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
-      <a href="#ai">AI</a>
       <a href="#skills">Skills</a>
     </nav>
     <div class="nav-actions">
@@ -53,49 +63,50 @@
   <section id="about" class="hero">
     <div class="wrap">
       <div class="hero-head">
-        <img class="avatar" src="assets/img/profile.png" alt="안찬웅 프로필 사진" width="290" height="397" decoding="async">
-        <div class="hero-name">
-          <p class="eyebrow">Backend Engineer</p>
-          <h1 class="hero-title">안찬웅</h1>
-        </div>
-        <div class="hero-actions">
-          <a class="sl" href="https://github.com/AnChanUng" target="_blank" rel="noopener"><span class="sl-t">GitHub</span></a>
-          <a class="sl" href="https://cookie.tistory.com/" target="_blank" rel="noopener"><span class="sl-t">Blog</span></a>
-          <a class="sl sl-pdf" href="assets/portfolio.pdf" download="안찬웅_포트폴리오.pdf"><span>PDF 저장</span></a>
-        </div>
+        <p class="eyebrow">Backend Engineer</p>
+        <h1 class="hero-title">
+          <span class="line"><span>안찬웅</span></span>
+        </h1>
       </div>
 
-      <p class="hero-lead">운영 중인 서버의 장애와 병목을 <em>코드와 DB 그리고 OS까지</em> 추적해 해결하는 백엔드 개발자입니다.</p>
-      <ul class="hero-points">
-        <li><b>성능</b>과 <b>안정성</b> 그리고 <b>비용</b>을 비교해 최선의 해결책을 고릅니다.</li>
-        <li>필요한 것을 발견하면 직접 제안하고, <b>AI 코딩 에이전트</b>를 검증 가능한 개발 프로세스에 연결해 혼자서도 끝까지 만듭니다.</li>
-      </ul>
-
-      <ul class="kpi">
-        <li><a href="#p-homepage"><b>−20%</b><span>연간 운영비</span><small>사내 홈페이지 제안과 단독 개발</small></a></li>
-        <li><a href="#p-encrypt"><b>−30%</b><span>배치 처리 시간</span><small>DB 세션과 Linux 커널 튜닝</small></a></li>
-        <li><a href="#p-cron"><b>+60%</b><span>예약 실행 성능</span><small>스케줄러 구조 개선</small></a></li>
-        <li><a href="#p-starroad"><b>1위</b><span>KB국민은행 프로젝트 대회</span><small>Spring Boot 예적금 추천 서비스</small></a></li>
-      </ul>
-
       <div class="bento">
-        <article class="tile">
+        <figure class="tile t-photo reveal">
+          <img src="assets/img/profile.png" alt="안찬웅 프로필 사진" width="290" height="397" loading="eager" decoding="async">
+        </figure>
+
+        <article class="tile t-intro reveal" data-delay="1">
+          <h2>About</h2>
+          <ul>
+            <li><em>대용량 데이터 통합 파이프라인</em> 개발 경험을 토대로 어떤 환경에도 적응하는 서버 개발자.</li>
+            <li><b>성능</b>과 <b>안정성</b> 그리고 <b>비용</b>을 비교해 최선의 해결책을 고릅니다.</li>
+            <li>프로젝트의 반복 업무를 AI로 자동화하고, 시스템 전반의 성능을 최적화합니다.</li>
+          </ul>
+          <div class="t-links">
+            <a class="sl sl-gh" href="https://github.com/AnChanUng" target="_blank" rel="noopener" aria-label="GitHub"><span class="sl-ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.05-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.38.97.1-.75.4-1.27.73-1.56-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.5 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg></span><span class="sl-t">GitHub</span></a>
+            <a class="sl sl-blog" href="https://cookie.tistory.com/" target="_blank" rel="noopener" aria-label="기술 블로그"><span class="sl-ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4.5h6a3 3 0 0 1 3 3v12a2.25 2.25 0 0 0-2.25-2.25H4Z"/><path d="M20 4.5h-6a3 3 0 0 0-3 3v12a2.25 2.25 0 0 1 2.25-2.25H20Z"/></svg></span><span class="sl-t">Blog</span></a>
+          </div>
+        </article>
+
+        <article class="tile t-career reveal" data-delay="1">
           <h2>경력</h2>
           <ul class="cv">
             <li><span class="cv-d">2026.01 – 2026.06</span><span class="cv-t">(주)에스앤디 <em>계약직</em></span></li>
             <li><span class="cv-d">2025.02 – 2025.11</span><span class="cv-t">데이터스트림즈 <em>인턴 → 정규직</em></span></li>
           </ul>
         </article>
-        <article class="tile">
+
+        <article class="tile t-edu reveal" data-delay="2">
           <h2>학력과 교육</h2>
           <ul class="cv">
             <li class="is-now"><span class="cv-d">2026.07 – 현재</span><span class="cv-t">SSAFY 16기 <em>진행중</em></span></li>
             <li><span class="cv-d">2024.02 졸업</span><span class="cv-t">단국대학교 소프트웨어학과</span></li>
           </ul>
         </article>
-        <article class="tile">
+
+        <article class="tile t-cert reveal" data-delay="3">
           <h2>자격증</h2>
           <ul class="cv-chips">
+            <li>정보처리기사</li>
             <li>SQLD</li>
             <li>ADsP</li>
             <li>AWS Certified Solutions Architect - Associate</li>
@@ -103,262 +114,53 @@
         </article>
       </div>
     </div>
+
   </section>
 
   <!-- ─────────────── PROJECTS ─────────────── -->
   <section id="projects" class="section">
     <div class="wrap">
-      <div class="sec-head">
-        <h2>Projects</h2>
+      <div class="sec-head reveal">
+        <h2><span class="sec-num">01</span>Projects</h2>
       </div>
 
-      <ol class="toc">
-        <li><a href="#p-autonomous"><span class="toc-n">01</span><span class="toc-t">자율주행 관제 플랫폼 실시간 전송 모듈과 장애 모니터링</span><span class="toc-o">에스앤디 — C와 TCP 소켓</span></a></li>
-        <li><a href="#p-homepage"><span class="toc-n">02</span><span class="toc-t">사내 홈페이지 자체 구축</span><span class="toc-o">에스앤디 — Spring 단독 개발</span></a></li>
-        <li><a href="#p-terastream"><span class="toc-n">03</span><span class="toc-t">금융권 데이터 처리 엔진 TeraStream 개선</span><span class="toc-o">데이터스트림즈 — C/C++</span></a></li>
-        <li><a href="#p-starroad"><span class="toc-n">04</span><span class="toc-t">청년 예적금 추천 서비스 StarRoad</span><span class="toc-o">KB국민은행 대회 1위 — Spring Boot</span></a></li>
-        <li><a href="#p-wekids"><span class="toc-n">05</span><span class="toc-t">어린이 경제 습관 플랫폼 WeKids</span><span class="toc-o">우리FISA 5인 팀 — Spring Boot</span></a></li>
-      </ol>
-
-      <div class="proj-list">
-
-        <!-- 01 -->
-        <article class="proj reveal" id="p-autonomous">
-          <header class="pj-head">
-            <div>
-              <p class="pj-org"><span class="pj-no">01</span>에스앤디 — 경기도 자율주행 플랫폼 — 2026.01 – 2026.06</p>
-              <h3>자율주행 관제 플랫폼 실시간 전송 모듈과 장애 모니터링</h3>
-            </div>
-            <div class="pj-metrics"><div><b>83개</b><span>협력사 솔루션 운영</span></div></div>
-          </header>
-          <div class="rows">
-            <div><h4>소개</h4><p>경기도 자율주행 관제 플랫폼은 자율주행차와 셔틀 그리고 도로 위 영상분석 장비의 데이터를 모아 관제 운영자와 연구기업에 제공하는 통합 플랫폼입니다. 여러 업체가 납품한 솔루션 83개가 한 플랫폼 위에서 함께 동작합니다.</p></div>
-            <div><h4>역할</h4><p>플랫폼 서버 운영과 유지보수 담당. 영상분석 SW가 검지한 이벤트를 DB에서 조회해 V2X 미들웨어로 보내는 <em>TCP 실시간 전송 모듈</em>을 설계부터 개발까지 맡았고, 서버 로그 자동 수집과 SMS 알림 모니터링을 직접 만들었습니다. 장애가 나면 로그로 범위를 좁혀 담당 협력사와 조율했습니다.</p></div>
-          </div>
-          <div class="case">
-            <div class="case-head"><h4>문제 해결 — 사람 눈에 의존하던 장애 감지를 알림 체계로 전환</h4></div>
-            <div class="rows is-case">
-              <div><h4>Problem</h4><p>다수 업체가 납품한 솔루션 83개가 한 플랫폼에 얽혀 있어 장애 원인 범위를 좁히기 어렵고, 검지한 이벤트를 차량 쪽으로 끊김 없이 전달할 경로가 필요.</p></div>
-              <div><h4>Cause</h4><p>장애 감지가 사람 눈에 의존했고, 솔루션마다 로그가 흩어져 있어 어느 업체 범위인지 판단하는 데 시간이 걸림.</p></div>
-              <div><h4>Decision</h4><p>소켓 프로그래밍 기반 바이너리 프로토콜을 직접 설계해 이벤트를 미들웨어 서버에 TCP로 실시간 전송. 서버 로그 자동 수집과 SMS 알림 모니터링을 구축. 협력사에 전달할 때는 개발자에게 로그와 에러 코드로, 비개발 담당자에게는 영향받는 기능과 복구 시점 위주로 설명.</p></div>
-              <div><h4>Result</h4><p>월별 정기점검 체계 확립. 장애 감지가 사람 눈에서 알림으로 이동. 장애 시 로그 분석으로 범위를 먼저 좁힌 뒤 담당 업체와 협의하는 절차 정착.</p></div>
-            </div>
-          </div>
-          <ul class="chips"><li>C</li><li>TCP Socket</li><li>Binary Protocol</li><li>Linux</li><li>MariaDB</li><li>PostgreSQL</li><li>JSP</li></ul>
-          <ul class="gallery">
-            <li>
-              <button type="button" class="shot" data-full="assets/img/project/autonomous-platform-overview.png" data-caption="자율주행 관제 플랫폼 개념도 — 관제 플랫폼을 중심으로 GIS와 빅데이터 시스템, 관제 운영자, 연구기업, 자율주행차와 셔틀이 주고받는 정보 흐름">
-                <img src="assets/img/project/autonomous-platform-overview-thumb.jpg" alt="자율주행 관제 플랫폼 개념도" decoding="async">
-                <span class="shot-cap">관제 플랫폼 개념도</span>
-              </button>
-            </li>
-            <li>
-              <button type="button" class="shot" data-full="assets/img/project/autonomous-system-architecture.png" data-caption="시스템 구성도 — 내외부 포털 WEB, 관제 APP, OpenAPI, 데이터 수집분석, Device 연계 서버의 이중화 구성과 DB와 스토리지 연결">
-                <img src="assets/img/project/autonomous-system-architecture-thumb.jpg" alt="자율주행 플랫폼 시스템 구성도" decoding="async">
-                <span class="shot-cap">시스템 구성도</span>
-              </button>
-            </li>
-          </ul>
-        </article>
-
-        <!-- 02 -->
-        <article class="proj reveal" id="p-homepage">
-          <header class="pj-head">
-            <div>
-              <p class="pj-org"><span class="pj-no">02</span>에스앤디 — 1인 개발 — 기획부터 배포까지</p>
-              <h3>사내 홈페이지 자체 구축</h3>
-            </div>
-            <div class="pj-metrics"><div><b>−20%</b><span>연간 운영비</span></div></div>
-          </header>
-          <div class="rows">
-            <div><h4>소개</h4><p>외부 플랫폼(imweb)에서 서버를 빌려 블로그 형태로 운영하던 회사 홈페이지를 Spring 기반 자체 서비스로 옮긴 프로젝트입니다.</p></div>
-            <div><h4>역할</h4><p>사업을 확장하려면 기능을 자유롭게 붙일 수 있는 홈페이지가 필요하다고 판단해 <em>대표에게 직접 제안하고 승인</em>을 받았습니다. 기획부터 프론트엔드와 백엔드 그리고 배포 파이프라인까지 혼자 담당했습니다.</p></div>
-          </div>
-          <div class="case">
-            <div class="case-head"><h4>문제 해결 — 혼자 만드는 서비스의 품질을 프로세스로 확보</h4></div>
-            <div class="rows is-case">
-              <div><h4>Problem</h4><p>임대형 플랫폼은 매년 비용이 나가는데도 커스텀 기능을 붙일 수 없는 구조. 직접 만들기로 했지만 리뷰해 줄 동료가 없는 1인 개발이라 코드 품질을 검증할 방법이 필요.</p></div>
-              <div><h4>Cause</h4><p>모든 기능을 한 번에 완성하려다 일정이 빠듯해짐. 더 좋은 구조에 집착하느라 무엇을 먼저 배포할지 판단이 늦어진 것이 원인.</p></div>
-              <div><h4>Decision</h4><p>MVP를 먼저 정의해 핵심 기능부터 배포하고 나머지는 점진적으로 추가. Claude로 설계와 코드를 작성하고 <em>같은 기능을 Codex로 교차 생성해 두 결과를 비교 검증</em>. PR마다 CodeRabbit 자동 리뷰를 걸고 Jenkins로 빌드부터 배포까지 자동화.</p></div>
-              <div><h4>Result</h4><p>일정 안에 오픈. 기존 외부 플랫폼 대비 연간 운영비 약 20% 절감. 커스텀 기능을 자유롭게 추가할 수 있는 구조 확보. AI가 만든 결과를 그대로 쓰지 않고 검증 가능한 프로세스에 연결한다는 원칙을 얻음.</p></div>
-            </div>
-          </div>
-          <ul class="chips"><li>Java</li><li>Spring</li><li>Jenkins</li><li>Claude</li><li>Codex</li><li>CodeRabbit</li></ul>
-        </article>
-
-        <!-- 03 -->
-        <article class="proj reveal" id="p-terastream">
-          <header class="pj-head">
-            <div>
-              <p class="pj-org"><span class="pj-no">03</span>데이터스트림즈 — 2025.02 – 2025.11 — 인턴에서 정규직 전환</p>
-              <h3>금융권 데이터 처리 엔진 TeraStream 개선</h3>
-            </div>
-            <div class="pj-metrics"><div><b>−30%</b><span>배치 처리 시간</span></div><div><b>+60%</b><span>예약 실행 성능</span></div></div>
-          </header>
-          <div class="rows">
-            <div><h4>소개</h4><p>TeraStream은 은행과 카드사 같은 금융권 고객사가 서로 다른 DB 사이에서 대량의 데이터를 옮기고 가공할 때 쓰는 서버 엔진(ETL)입니다. Oracle과 Tibero, PostgreSQL을 비롯한 20여 종 DB와 연동하고, 30곳이 넘는 고객사의 Linux와 Unix 서버에서 배치로 실행됩니다.</p></div>
-            <div><h4>역할</h4><p>서버 개발자로서 고객사 신규 요청 기능을 개발하고, 데이터 정합성이 깨지거나 배치가 지연되는 장애의 원인을 분석해 고쳤습니다. 엔진의 C/C++ 코어에서 <em>고객사 버그 70건을 모두 해결</em>했습니다.</p></div>
-          </div>
-
-          <div class="case" id="p-encrypt">
-            <div class="case-head"><h4>문제 해결 1 — DB 접속 정보 자동 암호화와 세션 병목 해소</h4><b>−30%</b></div>
-            <div class="rows is-case">
-              <div><h4>Problem</h4><p>DB 접속 비밀번호가 평문으로 노출돼 금감원 점검에서 지적. 계정마다 암호화 파일을 수동 생성하던 구조. 자동화 후 부하 테스트에서 수백 개 프로세스를 동시에 실행하자 상당수가 에러 로그 없이 멈춤.</p></div>
-              <div><h4>Cause</h4><p>에러 로그가 없어 DB 세션 현황부터 확인했고, 최대 세션 수 기본값 50에 막혀 대기열이 쌓이는 것을 확인. 세션 한도를 올린 뒤에도 남은 대기는 커널 세마포어 집합 한도 128이 원인.</p></div>
-              <div><h4>Decision</h4><p>세션 한도는 감으로 크게 잡지 않고 실측으로 결정. 2GB 비정형 데이터를 실제 업무 조건으로 처리하며 동시 실행 수를 단계적으로 늘려 처리 시간과 세션 수를 기록했고, 더 늘려도 시간이 줄지 않는 지점 직전인 150을 선택. 세마포어는 늘어날 배치까지 감안해 1024로 상향.</p></div>
-              <div><h4>Result</h4><p>계정과 DB 버전을 자동 판별해 암호화 모듈을 생성하는 배치로 전환. 접수부터 반영까지 단독 수행. 동시 처리량 3배, 배치 처리 시간 30% 단축. 금감원 보안 점검 통과.</p></div>
-            </div>
-          </div>
-
-          <div class="case" id="p-cron">
-            <div class="case-head"><h4>문제 해결 2 — 예약 실행 스케줄러 구조 개선</h4><b>+60%</b></div>
-            <div class="rows is-case">
-              <div><h4>Problem</h4><p>예약 실행 때마다 불필요한 메모리 연산이 반복되고, 병렬 처리 중 로그 불일치가 발생. 배치 작업이 늘수록 성능이 떨어질 구조.</p></div>
-              <div><h4>Cause</h4><p>CRON 타입 예약 데이터를 실행 시점마다 문자열로 다시 파싱하는 구조. 로그 불일치는 다중 실행 환경에서 공유 메모리 초기화 로직이 어긋난 것이 원인.</p></div>
-              <div><h4>Decision</h4><p>수십 개 고객사가 함께 쓰는 기능이라 전체를 손대지 않고 병목 구간만 변경. 예약 데이터를 최초 1회 사전 파싱해 숫자 형식으로 공유 메모리에 저장하고, 초기화 로직도 함께 수정.</p></div>
-              <div><h4>Result</h4><p>스케줄 실행 기준 성능 평균 60% 향상. 다중 실행 환경에서도 스케줄이 정확히 동작하고 로그 불일치 해소.</p></div>
-            </div>
-          </div>
-
-          <div class="case">
-            <div class="case-head"><h4>그 밖의 개선</h4></div>
-            <ul class="more">
-              <li><b>장애 재현 환경 10분 → 5초</b><span>고객사마다 다른 DB 환경을 재현하려고 23개 DB를 초기 데이터까지 담은 Docker 이미지로 패키징. 명령어 한 번으로 필요한 DB가 떠 장애 접수 직후 바로 분석에 착수.</span></li>
-              <li><b>Tibero TIMESTAMP 정합성 결함</b><span>Linux에서는 정상이고 AIX에서만 깨지던 문제를 ODBC 타입과 CLI 타입의 크기 불일치, 32bit 빌드의 long 4바이트 처리로 특정. 타입 호환 레이어로 해결하고 제조사에 개선을 요청해 공식 반영.</span></li>
-              <li><b>5년 넘게 남아 있던 PostgreSQL ODBC 연결 실패</b><span>특정 계정에서만 간헐적으로 나던 오류를 Windows ODBC 데이터 원본 관리자가 계정 정보를 자동 저장하며 잘못된 DSN 값을 적용하는 문제로 밝혀 해결.</span></li>
-            </ul>
-          </div>
-          <ul class="chips"><li>C</li><li>C++</li><li>Oracle</li><li>Tibero</li><li>PostgreSQL</li><li>MySQL</li><li>Linux</li><li>Unix</li><li>Docker</li></ul>
-          <ul class="gallery">
-            <li>
-              <button type="button" class="shot" data-full="assets/img/project/terastream-etl-flow.png" data-caption="TeraStream 처리 흐름 — DBMS와 XML/CSV 파일 같은 소스 시스템의 데이터를 뽑아 정제하고 변환해 타깃 시스템으로 적재하는 구조">
-                <img src="assets/img/project/terastream-etl-flow-thumb.jpg" alt="TeraStream 처리 흐름도" decoding="async">
-                <span class="shot-cap">TeraStream 처리 흐름</span>
-              </button>
-            </li>
-          </ul>
-        </article>
-
-        <!-- 04 -->
-        <article class="proj reveal" id="p-starroad">
-          <header class="pj-head">
-            <div>
-              <p class="pj-org"><span class="pj-no">04</span>KB국민은행 주최 금융 프로젝트 대회 — 본사 발표 1위</p>
-              <h3>청년 예적금 추천 서비스 StarRoad</h3>
-            </div>
-            <div class="pj-metrics"><div><b>1위</b><span>KB국민은행 대회</span></div></div>
-          </header>
-          <div class="rows">
-            <div><h4>소개</h4><p>청년 적금의 중도 해지율이 높다는 문제에서 출발한 서비스입니다. 상품마다 우대 조건이 달라 실제 받는 이율이 사람마다 다르다는 점에 주목해, 우대 조건과 월 수입 그리고 저축 목표를 함께 계산해 만기 실수령액을 보여 주고 맞는 예적금을 추천합니다.</p></div>
-            <div><h4>역할</h4><p>팀 프로젝트에서 <em>예적금 추천과 만기 실수령액 계산 알고리즘</em>을 Spring Boot와 JPA로 구현했습니다. 대회가 끝난 뒤에는 상담 챗봇을 혼자 다시 설계해 붙였습니다.</p></div>
-          </div>
-          <div class="case">
-            <div class="case-head"><h4>문제 해결 — 금융 상담 챗봇이 모르는 것을 지어내지 않게 만들기</h4><b>0.82 → 0.91</b></div>
-            <div class="rows is-case">
-              <div><h4>Problem</h4><p>상담 챗봇이 등록되지 않은 정책의 지원 금액과 신청 기간을 그럴듯하게 지어냄. 금리는 숫자 하나가 틀리면 사용자가 손해를 보는 영역.</p></div>
-              <div><h4>Cause</h4><p>근거 데이터가 없어도 LLM이 그대로 답을 생성하는 구조. 관련 질문(0.872~0.911)과 무관한 질문(0.778~0.797)의 유사도를 테스트로 실측해 근거 유무를 가르는 경계를 확인.</p></div>
-              <div><h4>Decision</h4><p>정책과 상품 데이터를 미리 적재하고 유사한 근거를 찾아 답하는 구조를 Spring AI로 적용. 유사도가 기준(0.83)에 못 미치면 LLM을 호출하지 않고 답변을 거부. 막기만 하자 답하지 못하는 질문이 늘어, 기준을 낮추지 않고 색인 단위를 다시 설계.</p></div>
-              <div><h4>Result</h4><p>찾아온 근거의 유사도 0.82 → 0.91. 근거 없는 답변 차단. 답변의 인용 번호를 DB 레코드와 대조하고 금리와 기간은 DB 원본값을 출처 카드에 그대로 노출.</p></div>
-            </div>
-          </div>
-          <ul class="chips"><li>Java</li><li>Spring Boot</li><li>JPA</li><li>Oracle</li><li>Spring AI</li></ul>
-          <a class="wc-repo" href="https://github.com/AnChanUng/StarRoad" target="_blank" rel="noopener">github.com/AnChanUng/StarRoad ↗</a>
-          <ul class="gallery">
-            <li>
-              <button type="button" class="shot" data-full="assets/img/project/starroad-main.jpg" data-caption="StarRoad 메인 화면 — 금융상품과 청년정책, 커뮤니티로 구성된 서비스 첫 화면">
-                <img src="assets/img/project/starroad-main.jpg" alt="StarRoad 메인 화면" decoding="async">
-                <span class="shot-cap">메인 화면</span>
-              </button>
-            </li>
-            <li>
-              <button type="button" class="shot" data-full="assets/img/project/starroad-policy.jpg" data-caption="청년 금융 정책 목록 — 지역과 태그, 키워드로 정책을 찾는 화면">
-                <img src="assets/img/project/starroad-policy.jpg" alt="StarRoad 청년 금융 정책 화면" decoding="async">
-                <span class="shot-cap">청년 금융 정책</span>
-              </button>
-            </li>
-          </ul>
-        </article>
-
-        <!-- 05 -->
-        <article class="proj reveal" id="p-wekids">
-          <header class="pj-head">
-            <div>
-              <p class="pj-org"><span class="pj-no">05</span>우리FISA 3기 — 5인 팀 — 2024.11 – 2024.12</p>
-              <h3>어린이 경제 습관 플랫폼 WeKids</h3>
-            </div>
-          </header>
-          <div class="rows">
-            <div><h4>소개</h4><p>부모와 자녀가 거래 내역과 미션을 함께 보며 용돈을 관리하는 서비스입니다. 은행 기능을 API로 빌려 쓰는 BaaS(Banking as a Service) 서버를 팀이 직접 만들고, 그 위에서 자녀 계좌와 캐릭터 카드를 개설합니다.</p></div>
-            <div><h4>역할</h4><p>백엔드에서 <em>카드 디자인, 자녀 정보 조회, 카드 발급 API</em>를 설계부터 테스트 코드까지 맡았습니다.</p></div>
-          </div>
-          <div class="case">
-            <div class="case-head"><h4>문제 해결 — 외부 BaaS 서버와 맞물린 카드 발급 흐름</h4></div>
-            <div class="rows is-case">
-              <div><h4>Problem</h4><p>카드 발급이 서비스 DB만으로 끝나지 않음. 자녀와 부모, 계좌, 카드 디자인이 한 응답에 묶여야 함.</p></div>
-              <div><h4>Cause</h4><p>계좌와 카드의 원본은 외부 BaaS 서버에 있어, BaaS에서 먼저 만든 뒤 그 결과를 서비스로 가져와야 하는 흐름.</p></div>
-              <div><h4>Decision</h4><p>간편비밀번호를 받아 BaaS에 계좌와 카드 생성을 요청하고 결과를 WeKids에 반영하는 발급 API를 RestTemplate으로 구현. 자녀로 부모를 찾는 조회는 JPQL로 작성. 엔티티는 setter를 없애고 정적 팩토리 메서드로 생성하도록 리팩터링, 실패 케이스는 에러코드로 분리.</p></div>
-              <div><h4>Result</h4><p>발급 흐름을 성공과 실패 케이스 테스트 코드와 함께 완성. 이슈 단위 브랜치와 커밋 규칙으로 협업.</p></div>
-            </div>
-          </div>
-          <ul class="chips"><li>Java 17</li><li>Spring Boot</li><li>JPA</li><li>QueryDSL</li><li>MySQL</li><li>JUnit</li><li>AWS</li></ul>
-          <a class="wc-repo" href="https://github.com/woorifisa-projects-3rd/WeKids-BE" target="_blank" rel="noopener">github.com/woorifisa-projects-3rd/WeKids-BE ↗</a>
-          <ul class="gallery">
-            <li>
-              <button type="button" class="shot" data-full="assets/img/project/wekids-features.jpg" data-caption="주요 기능 — 거래 내역 공유, 미션, 카드 커스텀, 금융 아티클">
-                <img src="assets/img/project/wekids-features.jpg" alt="WeKids 주요 기능" decoding="async">
-                <span class="shot-cap">주요 기능</span>
-              </button>
-            </li>
-            <li>
-              <button type="button" class="shot" data-full="assets/img/project/wekids-card-custom.jpg" data-caption="카드 디자인 선택 화면 — 캐릭터와 색상을 골라 카드를 꾸미는 흐름">
-                <img src="assets/img/project/wekids-card-custom.jpg" alt="WeKids 카드 디자인 선택 화면" decoding="async">
-                <span class="shot-cap">카드 디자인 선택</span>
-              </button>
-            </li>
-            <li>
-              <button type="button" class="shot" data-full="assets/img/project/wekids-infra.jpg" data-caption="운영 인프라 — AWS 위 블루 그린 배포 구성">
-                <img src="assets/img/project/wekids-infra.jpg" alt="WeKids 운영 인프라 구성도" decoding="async">
-                <span class="shot-cap">운영 인프라</span>
-              </button>
-            </li>
-          </ul>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ─────────────── AI ─────────────── -->
-  <section id="ai" class="section">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>AI와 일하는 방식</h2>
-        <p class="sec-sub">AI가 만든 결과를 그대로 쓰지 않고, 검증 가능한 프로세스에 연결합니다.</p>
-      </div>
-
-      <div class="ai-grid">
-        <article class="proj reveal">
-          <p class="pj-org">에스앤디 — 사내 홈페이지 개발 프로세스</p>
-          <h3>두 에이전트 교차 검증과 자동 리뷰 파이프라인</h3>
-          <ul class="more">
-            <li><b>교차 생성</b><span>Claude로 설계하고 작성한 기능을 Codex로 한 번 더 생성해 두 결과의 차이를 비교. 리뷰어가 없는 1인 개발의 검증 수단으로 사용.</span></li>
-            <li><b>자동 리뷰</b><span>PR마다 CodeRabbit이 리뷰를 달도록 연동.</span></li>
-            <li><b>자동 배포</b><span>Jenkins 파이프라인으로 빌드부터 배포까지 자동화.</span></li>
-          </ul>
-          <a class="wc-repo" href="#p-homepage">프로젝트 02에서 자세히 ↑</a>
-        </article>
-
-        <article class="proj reveal">
-          <p class="pj-org">SSAFY 16기 알고리즘 스터디 — 5인</p>
-          <h3>Claude Code 기반 코드 리뷰 하네스</h3>
-          <ul class="more">
-            <li><b>슬래시 커맨드</b><span>팀원 누구나 <code>/review 풀이경로</code> 한 줄로 같은 품질의 리뷰를 받도록 프롬프트와 허용 도구를 커맨드로 고정.</span></li>
-            <li><b>에이전트가 추측하지 않게</b><span>경로 해석 스크립트가 문제와 작성자, 저장 위치, 컴파일 성공 여부를 JSON으로 먼저 넘겨 주고 실패하면 거기서 멈추도록 설계.</span></li>
-            <li><b>집계 가능한 출력</b><span>리뷰는 고정 스키마와 고정 태그 24개로만 작성하게 해 사람별 반복 지적 패턴 Top 5를 집계.</span></li>
-            <li><b>결과</b><span>풀이 192개 가운데 170개에 리뷰 작성. 같은 문제의 풀이를 나란히 비교하는 정적 사이트와 GitHub Actions 컴파일 검사를 함께 운영.</span></li>
-          </ul>
-          <a class="wc-repo" href="https://github.com/ssafy16thD4/algorithm" target="_blank" rel="noopener">github.com/ssafy16thD4/algorithm ↗</a>
-        </article>
+      <div class="proj-grid">
+        <button type="button" class="proj-tile reveal" data-open="pm-terastream" data-delay="0" aria-haspopup="dialog">
+          <span class="pt-img pt-contain"><img src="assets/img/project/terastream-etl-flow.png" alt="TeraStream ETL 처리 흐름도" loading="lazy" decoding="async"></span>
+          <span class="pt-body">
+            <span class="pt-org">데이터스트림즈 — 2025.02 – 2025.11</span>
+            <span class="pt-title">ETL 엔진 TeraStream 레거시 개선</span>
+            <span class="pt-sum">금융권 ETL 엔진 C/C++ 코어의 보안과 성능 그리고 이식성 개선</span>
+            <span class="pt-foot"><span class="pt-metrics"><span><b>−30%</b>배치 처리 시간</span><span><b>+60%</b>스케줄 실행 성능</span></span><span class="pt-more">자세히 보기 →</span></span>
+          </span>
+        </button>
+        <button type="button" class="proj-tile reveal" data-open="pm-autonomous" data-delay="1" aria-haspopup="dialog">
+          <span class="pt-img pt-contain"><img src="assets/img/project/autonomous-platform-overview.png" alt="자율주행 관제 플랫폼 개념도" loading="lazy" decoding="async"></span>
+          <span class="pt-body">
+            <span class="pt-org">에스앤디 — 경기도 자율주행 플랫폼</span>
+            <span class="pt-title">자율주행 관제 플랫폼 실시간 전송 모듈과 모니터링</span>
+            <span class="pt-sum">미들웨어 연동 TCP 전송 모듈과 로그 자동 수집 및 SMS 알림 개발</span>
+            <span class="pt-foot"><span class="pt-metrics"><span><b>83</b>솔루션 운영</span></span><span class="pt-more">자세히 보기 →</span></span>
+          </span>
+        </button>
+        <button type="button" class="proj-tile reveal" data-open="pm-rag" data-delay="0" aria-haspopup="dialog">
+          <span class="pt-img pt-cover"><img src="assets/img/project/starroad-main.jpg" alt="StarRoad 메인 화면" loading="lazy" decoding="async"></span>
+          <span class="pt-body">
+            <span class="pt-org">KB국민은행 프로젝트 대회 1위 — StarRoad</span>
+            <span class="pt-title">실수령액 계산과 RAG 챗봇으로 만든 예적금 추천 서비스</span>
+            <span class="pt-sum">RAG 기반 예적금 상담 챗봇과 실수령액 계산 서비스</span>
+            <span class="pt-foot"><span class="pt-metrics"><span><b>0.82 → 0.91</b>검색 근거 유사도</span></span><span class="pt-more">자세히 보기 →</span></span>
+          </span>
+        </button>
+        <button type="button" class="proj-tile reveal" data-open="pm-wekids" data-delay="1" aria-haspopup="dialog">
+          <span class="pt-img pt-cover"><img src="assets/img/project/wekids-main.jpg" alt="WeKids 서비스 소개 이미지" loading="lazy" decoding="async"></span>
+          <span class="pt-body">
+            <span class="pt-org">우리FISA 3기 — 5인 팀 — 2024.11 – 2024.12</span>
+            <span class="pt-title">BaaS 기반 어린이 경제 습관 플랫폼 WeKids</span>
+            <span class="pt-sum">자체 BaaS 기반 카드 디자인과 자녀 정보 조회 및 카드 발급 API 개발</span>
+            <span class="pt-foot"><span class="pt-metrics"><span><b>3 API</b>설계부터 테스트까지</span></span><span class="pt-more">자세히 보기 →</span></span>
+          </span>
+        </button>
       </div>
     </div>
   </section>
@@ -366,30 +168,30 @@
   <!-- ─────────────── SKILLS ─────────────── -->
   <section id="skills" class="section">
     <div class="wrap">
-      <div class="sec-head">
-        <h2>Skills</h2>
+      <div class="sec-head reveal">
+        <h2><span class="sec-num">02</span>Skills</h2>
       </div>
 
       <div class="skill-grid">
-        <article class="skill-card">
-          <h3>Languages</h3>
-          <ul class="chips lg"><li class="hi">Java</li><li class="hi">C</li><li>C++</li><li>Python</li></ul>
+        <article class="card skill-card spot reveal" data-delay="0">
+          <h3><span class="k">Languages</span></h3>
+          <ul class="chips lg"><li class="hi">Java</li><li>C</li><li>C++</li><li>Python</li></ul>
         </article>
-        <article class="skill-card">
-          <h3>Backend</h3>
-          <ul class="chips lg"><li class="hi">Spring Boot</li><li class="hi">JPA</li><li>QueryDSL</li><li>JUnit</li><li>TCP Socket</li></ul>
+        <article class="card skill-card spot reveal" data-delay="1">
+          <h3><span class="k">Backend</span></h3>
+          <ul class="chips lg"><li class="hi">Spring Boot</li><li>JPA</li></ul>
         </article>
-        <article class="skill-card">
-          <h3>Database</h3>
-          <ul class="chips lg"><li class="hi">Oracle</li><li class="hi">PostgreSQL</li><li>MySQL</li><li>MariaDB</li><li>Tibero</li></ul>
+        <article class="card skill-card spot reveal" data-delay="2">
+          <h3><span class="k">Database</span></h3>
+          <ul class="chips lg"><li class="hi">Oracle</li><li class="hi">PostgreSQL</li><li>MySQL</li><li>MariaDB</li><li class="hi">Tibero</li></ul>
         </article>
-        <article class="skill-card">
-          <h3>Infra</h3>
-          <ul class="chips lg"><li class="hi">Linux</li><li>Unix</li><li class="hi">AWS</li><li>Docker</li><li>Jenkins</li></ul>
+        <article class="card skill-card spot reveal" data-delay="3">
+          <h3><span class="k">Infra</span></h3>
+          <ul class="chips lg"><li class="hi">Linux</li><li class="hi">Unix</li><li class="hi">AWS</li><li>Docker</li><li>Jenkins</li></ul>
         </article>
-        <article class="skill-card">
-          <h3>AI</h3>
-          <ul class="chips lg"><li class="hi">Claude Code</li><li>Codex</li><li>CodeRabbit</li><li>Spring AI</li></ul>
+        <article class="card skill-card spot reveal" data-delay="4">
+          <h3><span class="k">AI</span></h3>
+          <ul class="chips lg"><li>Claude Code</li><li>RAG</li></ul>
         </article>
       </div>
     </div>
@@ -399,7 +201,7 @@
 
 <footer class="footer">
   <div class="wrap footer-inner">
-    <span>© 2026 안찬웅 (AnChanUng) — v2.0</span>
+    <span>© 2026 안찬웅 (AnChanUng)</span>
     <div class="footer-links">
       <a href="https://github.com/AnChanUng" target="_blank" rel="noopener" class="to-top">GitHub</a>
       <a href="https://cookie.tistory.com/" target="_blank" rel="noopener" class="to-top">Blog</a>
@@ -411,6 +213,225 @@
   </div>
 </footer>
 
+<!-- project detail modals -->
+<div class="pm" id="pm-terastream" role="dialog" aria-modal="true" aria-label="TeraStream 프로젝트 상세" hidden>
+  <div class="pm-panel">
+    <button class="pm-close" type="button" aria-label="닫기"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="pm-body">
+      <article class="card work-feature spot" id="p-terastream">
+        <div class="wf-body">
+          <div class="wc-meta">
+            <span class="tag tag-dbg">Reliability</span>
+            <span class="wc-org">데이터스트림즈 — TeraStream — 2025.02 – 2025.11</span>
+          </div>
+          <h3>ETL 엔진 TeraStream 레거시 개선</h3>
+          <p class="wc-lead">금융권 고객사의 ETL 솔루션을 개발하며 <em>MySQL과 Oracle을 비롯한 다양한 DB로 대규모 데이터를 추출하고 적재</em>했습니다. 고객사마다 Linux와 Unix 환경이 달라 같은 문제도 매번 다르게 풀어야 했고, 그 안에서 <em>데이터 정합성과 안정성</em>을 책임졌습니다. DB 접속 비밀번호가 그대로 노출되던 구조는 <em>DB 버전과 계정별 자동 암호화 배치</em>로 바꿨습니다. 수년간 쌓인 레거시 코드를 걷어내며 엔진의 C/C++ 코어에서 고객사 버그 70건을 모두 해결했습니다.</p>
+          <ul class="chips"><li>C</li><li>C++</li><li>Oracle</li><li>MySQL</li><li>PostgreSQL</li><li>Tibero</li><li>Linux</li><li>Unix</li></ul>
+        </div>
+        <button type="button" class="shot wf-shot" data-full="assets/img/project/terastream-etl-flow.png" data-caption="TeraStream ETL 처리 흐름 — DBMS와 XML/CSV 파일, Hadoop 등 소스 시스템의 데이터를 뽑아 정제하고 변환해 타깃 시스템으로 적재하는 구조">
+          <img src="assets/img/project/terastream-etl-flow.png" alt="TeraStream ETL 처리 흐름도" width="1600" height="826" loading="lazy" decoding="async">
+          <span class="shot-cap">TeraStream ETL 처리 흐름</span>
+        </button>
+      </article>
+      <article class="card work-card spot" id="p-encrypt">
+        <div class="wc-top">
+          <div class="wc-meta">
+            <span class="tag tag-sec">Security</span>
+            <span class="tag tag-perf">Performance</span>
+            <span class="wc-org">데이터스트림즈 — TeraStream</span>
+          </div>
+          <div class="wc-metric"><b>−30%</b><span>배치 처리 시간</span></div>
+        </div>
+        <h3>Tibero 접속 정보 자동 암호화 프로세스</h3>
+        <p class="wc-lead">금감원 점검에서 지적된 DB 접속 비밀번호 평문 노출을 자동 암호화 배치로 해결했습니다. 접수부터 반영까지 단독으로 담당했고, 부하 테스트에서 드러난 세션 대기 병목을 <em>DB 세션 한도와 커널 세마포어를 함께 조정</em>해 풀어 처리 시간을 30% 줄였습니다.</p>
+        <div class="par">
+          <div><h4>Problem</h4><p>DB 접속 비밀번호가 평문으로 노출돼 금감원 점검에서 지적. 계정마다 암호화 파일을 수동 생성하던 구조. 자동화 후 부하 테스트에서 수백 개 프로세스를 동시에 실행하자 상당수가 에러 로그 없이 멈춤.</p></div>
+          <div><h4>Cause</h4><p>에러 로그가 없어 DB 세션 현황부터 확인했고, 최대 세션 수 기본값 50에 막혀 대기열이 쌓이는 것을 확인. 세션 한도를 올린 뒤에도 남은 대기는 커널 세마포어 집합 한도 128이 원인.</p></div>
+          <div><h4>Decision</h4><p>세션 한도는 감으로 크게 잡지 않고 실측으로 결정. 2GB 비정형 데이터를 추출, 변환, 적재하는 실제 업무 조건에서 동시 실행 수를 단계적으로 늘리며 처리 시간과 세션 수를 기록했고, 더 늘려도 시간이 줄지 않는 지점 직전인 150을 선택. 세마포어는 늘어날 배치까지 감안해 1024로 상향.</p></div>
+          <div><h4>Result</h4><p>계정과 DB 버전을 자동 판별해 암호화 모듈을 생성하는 배치로 전환. 동시 처리량 3배, 배치 처리 시간 30% 단축. 금감원 보안 점검 통과. 증상이 남으면 인접 계층까지 확인한다는 원칙을 얻음.</p></div>
+        </div>
+        <ul class="chips"><li>C</li><li>Tibero</li><li>Linux Kernel</li><li>Batch</li></ul>
+      </article>
+      <article class="card work-card spot" id="p-cron">
+        <div class="wc-top">
+          <div class="wc-meta">
+            <span class="tag tag-perf">Performance</span>
+            <span class="wc-org">데이터스트림즈 — TeraStream</span>
+          </div>
+          <div class="wc-metric"><b>+60%</b><span>스케줄 실행 성능</span></div>
+        </div>
+        <h3>예약 실행 엔진 CRON 파싱 구조 개선</h3>
+        <p class="wc-lead">매 실행마다 문자열을 파싱하던 스케줄러를 사전 파싱 + 공유 메모리 구조로 바꿔 스케줄 실행 성능을 평균 60% 끌어올리고, 다중 실행 환경의 스케줄 정확성을 확보했습니다.</p>
+        <div class="par">
+          <div><h4>Problem</h4><p>예약 실행 때마다 불필요한 메모리 연산이 반복되고, 병렬 처리 중 로그 불일치가 발생.</p></div>
+          <div><h4>Cause</h4><p>CRON 타입 예약 데이터를 실행 시점마다 문자열로 다시 파싱하는 구조. 로그 불일치는 다중 실행 환경에서 공유 메모리 초기화 로직이 어긋난 것이 원인.</p></div>
+          <div><h4>Decision</h4><p>예약 데이터를 사전 파싱해 숫자 형식으로 공유 메모리에 저장하는 구조를 선택. 공유 메모리 초기화 로직도 함께 수정.</p></div>
+          <div><h4>Result</h4><p>스케줄 실행 기준 성능 평균 60% 향상. 다중 실행 환경에서도 스케줄이 정확히 동작하고 로그 불일치 해소.</p></div>
+        </div>
+        <ul class="chips"><li>C</li><li>Shared Memory</li><li>Linux</li><li>Unix</li></ul>
+      </article>
+      <article class="card work-card spot" id="p-timestamp">
+        <div class="wc-top">
+          <div class="wc-meta">
+            <span class="tag tag-dbg">Debugging</span>
+            <span class="wc-org">데이터스트림즈 — TeraStream</span>
+          </div>
+          <div class="wc-metric"><b>AIX 32bit</b><span>이식성 결함 해결</span></div>
+        </div>
+        <h3>Tibero TIMESTAMP 구조체 크기 불일치</h3>
+        <p class="wc-lead">Linux에서는 멀쩡하던 TIMESTAMP 정합성이 AIX에서만 깨지는 문제를 ODBC 타입 크기와 32bit 빌드의 long 크기 차이로 좁혀 호환 레이어로 해결했습니다.</p>
+        <div class="par">
+          <div><h4>Problem</h4><p>TIMESTAMP 데이터 정합성이 깨짐. Linux에서는 정상이고 AIX에서만 재현.</p></div>
+          <div><h4>Cause</h4><p>구조체를 직접 분석해 Tibero ODBC 기본 타입과 CLI 타입의 크기 불일치를 확인. AIX에서 애플리케이션이 32비트 모드로 빌드되어 long이 4바이트로 처리되는 것을 특정.</p></div>
+          <div><h4>Decision</h4><p>플랫폼별 타입 크기 차이를 한곳에서 흡수하는 타입 호환 레이어를 구현.</p></div>
+          <div><h4>Result</h4><p>Linux와 AIX 모두에서 TIMESTAMP 정합성 확보.</p></div>
+        </div>
+        <ul class="chips"><li>C</li><li>ODBC</li><li>Tibero</li><li>AIX</li></ul>
+      </article>
+    </div>
+  </div>
+</div>
+
+<div class="pm" id="pm-autonomous" role="dialog" aria-modal="true" aria-label="자율주행 관제 플랫폼 상세" hidden>
+  <div class="pm-panel">
+    <button class="pm-close" type="button" aria-label="닫기"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="pm-body">
+      <article class="card work-card spot" id="p-autonomous">
+        <div class="wc-top">
+          <div class="wc-meta">
+            <span class="tag tag-net">Network</span>
+            <span class="tag tag-ops">Ops</span>
+            <span class="wc-org">에스앤디 — 경기도 자율주행 플랫폼</span>
+          </div>
+          <div class="wc-metric"><b>83</b><span>솔루션 운영</span></div>
+        </div>
+        <h3>자율주행 관제 플랫폼 실시간 전송 모듈과 모니터링</h3>
+        <p class="wc-lead">83개 솔루션을 월별 점검하며 장애를 처리하고, 이벤트 데이터를 미들웨어로 실시간 전송하는 TCP 모듈과 로그 자동 수집과 SMS 알림 시스템을 직접 만들었습니다.</p>
+        <div class="par">
+          <div><h4>Problem</h4><p>다수 업체가 납품한 83개 솔루션이 한 플랫폼에 얽혀 있어 장애 원인 범위를 좁히기 어렵고, 이벤트 데이터의 실시간 전달 경로가 필요.</p></div>
+          <div><h4>Cause</h4><p>장애 감지가 사람 눈에 의존했고, 솔루션마다 로그가 흩어져 있어 어느 업체 범위인지 판단하는 데 시간이 걸림.</p></div>
+          <div><h4>Decision</h4><p>소켓 프로그래밍 기반 바이너리 프로토콜을 설계해 이벤트를 미들웨어 서버에 TCP로 실시간 전송. 서버 로그 자동 수집과 SMS 알림 모니터링을 구축.</p></div>
+          <div><h4>Result</h4><p>월별 정기점검 체계 확립. 장애 감지가 사람 눈에서 알림으로 이동. 장애 시 로그 분석으로 범위를 좁힌 뒤 담당 업체와 협의.</p></div>
+        </div>
+        <ul class="chips"><li>C</li><li>TCP Socket</li><li>Binary Protocol</li><li>Linux</li><li>MariaDB</li><li>PostgreSQL</li><li>JSP</li></ul>
+        <div class="gal-head"><h4>Diagrams</h4><span></span></div>
+        <ul class="gallery">
+          <li>
+            <button type="button" class="shot" data-full="assets/img/project/autonomous-platform-overview.png" data-caption="자율주행 관제 플랫폼 개념도 — 관제 플랫폼을 중심으로 GIS와 빅데이터 시스템, 관제 운영자, 연구기업, 자율주행차와 셔틀이 주고받는 정보 흐름">
+              <img src="assets/img/project/autonomous-platform-overview-thumb.jpg" alt="자율주행 관제 플랫폼 개념도" loading="lazy" decoding="async">
+              <span class="shot-cap">관제 플랫폼 개념도</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="shot" data-full="assets/img/project/autonomous-system-architecture.png" data-caption="시스템 구성도 — 내외부 포털 WEB, 관제 APP, OpenAPI, 데이터 수집분석, Device 연계 서버의 이중화 구성과 DB와 스토리지 연결">
+              <img src="assets/img/project/autonomous-system-architecture-thumb.jpg" alt="자율주행 플랫폼 시스템 구성도" loading="lazy" decoding="async">
+              <span class="shot-cap">시스템 구성도</span>
+            </button>
+          </li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</div>
+
+<div class="pm" id="pm-rag" role="dialog" aria-modal="true" aria-label="StarRoad 프로젝트 상세" hidden>
+  <div class="pm-panel">
+    <button class="pm-close" type="button" aria-label="닫기"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="pm-body">
+      <article class="card work-card spot" id="p-rag">
+        <div class="wc-top">
+          <div class="wc-meta">
+            <span class="tag tag-ops">AI</span>
+            <span class="tag tag-net">RAG</span>
+            <span class="wc-org">KB국민은행 프로젝트 대회 1위 — StarRoad</span>
+          </div>
+          <div class="wc-metric"><b>0.82 → 0.91</b><span>검색 근거 유사도</span></div>
+        </div>
+        <h3>실수령액 계산과 RAG 챗봇으로 만든 예적금 추천 서비스</h3>
+        <p class="wc-lead">우대 조건과 월 수입, 저축 목표를 함께 계산해 만기 수령액을 산출하는 알고리즘을 구현하고, 상담 챗봇은 잘 답하는 챗봇이 아니라 <em>모르면 모른다고 말하는 챗봇</em>을 목표로 RAG 구조로 다시 만들었습니다. 팀 프로젝트에서는 <em>예적금 추천과 실수령액 계산</em>을 맡았고, 챗봇은 대회 이후 <em>직접 설계하고 구현</em>했습니다.</p>
+        <div class="par">
+          <div><h4>Problem</h4><p>상품마다 우대 조건이 달라 실제 수령 이율이 사람마다 달라지는 것이 청년 적금 중도 해지율의 원인. 이후 붙인 상담 챗봇은 등록되지 않은 정책의 지원 금액과 신청 기간을 그럴듯하게 지어냄. 금리는 숫자 하나가 틀리면 사용자가 손해를 보는 영역.</p></div>
+          <div><h4>Cause</h4><p>근거 데이터가 없어도 LLM이 그대로 답을 생성하는 구조. 관련 질문(0.872~0.911)과 무관한 질문(0.778~0.797)의 유사도를 테스트로 실측해 근거 유무를 가르는 경계를 확인.</p></div>
+          <div><h4>Decision</h4><p>정책과 상품 데이터를 미리 적재하고 유사한 근거를 찾아 답하는 RAG 구조를 Spring AI로 적용. 유사도가 기준(0.83)에 못 미치면 LLM을 호출하지 않고 답변을 거부. 막기만 하자 답하지 못하는 질문이 늘어, 기준을 낮추지 않고 정책과 상품 한 건을 어떤 필드로 묶어 임베딩할지 색인 단위를 다시 설계.</p></div>
+          <div><h4>Result</h4><p>찾아온 근거의 유사도 0.82 → 0.91. 근거 없는 답변 차단. 답변의 인용 번호를 DB 레코드와 대조하고 금리와 기간은 DB 원본값을 출처 카드에 그대로 노출. 금융에서 AI는 잘 답하는 것보다 틀린 답을 하지 않는 것이 먼저라는 기준을 세움.</p></div>
+        </div>
+        <ul class="chips"><li>Java</li><li>Spring Boot</li><li>JPA</li><li>Oracle</li><li>Spring AI</li><li>RAG</li></ul>
+        <a class="wc-repo" href="https://github.com/AnChanUng/StarRoad" target="_blank" rel="noopener">github.com/AnChanUng/StarRoad ↗</a>
+        <div class="gal-head"><h4>Screens</h4><span></span></div>
+        <ul class="gallery">
+          <li>
+            <button type="button" class="shot" data-full="assets/img/project/starroad-main.jpg" data-caption="StarRoad 메인 화면 — 금융상품과 청년정책, 커뮤니티로 구성된 서비스 첫 화면">
+              <img src="assets/img/project/starroad-main.jpg" alt="StarRoad 메인 화면" loading="lazy" decoding="async">
+              <span class="shot-cap">메인 화면</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="shot" data-full="assets/img/project/starroad-policy.jpg" data-caption="청년 금융 정책 목록 — 지역과 태그, 키워드로 정책을 찾는 화면">
+              <img src="assets/img/project/starroad-policy.jpg" alt="StarRoad 청년 금융 정책 화면" loading="lazy" decoding="async">
+              <span class="shot-cap">청년 금융 정책</span>
+            </button>
+          </li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</div>
+
+<div class="pm" id="pm-wekids" role="dialog" aria-modal="true" aria-label="WeKids 프로젝트 상세" hidden>
+  <div class="pm-panel">
+    <button class="pm-close" type="button" aria-label="닫기"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="pm-body">
+      <article class="card work-card spot" id="p-wekids">
+        <div class="wc-top">
+          <div class="wc-meta">
+            <span class="tag tag-perf">Backend</span>
+            <span class="tag tag-ops">Fintech</span>
+            <span class="wc-org">우리FISA 3기 — WeKids — 2024.11 – 2024.12 — 5인 팀</span>
+          </div>
+          <div class="wc-metric"><b>3 API</b><span>설계부터 테스트까지</span></div>
+        </div>
+        <h3>BaaS 기반 어린이 경제 습관 플랫폼 WeKids</h3>
+        <p class="wc-lead">팀이 직접 만든 BaaS(Banking as a Service) 위에서 계좌와 카드를 개설하는 임베디드 금융 서비스입니다. 5인 팀에서 <em>카드 디자인, 자녀 정보 조회, 카드 발급 API</em>를 맡아 테스트 코드와 함께 개발했습니다.</p>
+        <div class="par">
+          <div><h4>Problem</h4><p>카드 발급이 서비스 DB만으로 끝나지 않음. 자녀와 부모, 계좌, 카드 디자인이 한 응답에 묶여야 함.</p></div>
+          <div><h4>Cause</h4><p>계좌와 카드의 원본은 외부 BaaS 서버에 있어, BaaS에서 먼저 만든 뒤 그 결과를 서비스로 가져와야 하는 흐름.</p></div>
+          <div><h4>Decision</h4><p>간편비밀번호를 받아 BaaS에 계좌와 카드 생성을 요청하고 결과를 WeKids에 반영하는 발급 API를 RestTemplate으로 구현. 자녀로 부모를 찾는 조회는 JPQL로 작성. 엔티티는 setter를 없애고 정적 팩토리 메서드로 생성하도록 리팩터링, 실패 케이스는 에러코드로 분리.</p></div>
+          <div><h4>Result</h4><p>API 3종을 조회 성공과 실패 케이스 테스트 코드와 함께 완성. 이슈 단위 브랜치와 커밋 규칙으로 협업.</p></div>
+        </div>
+        <ul class="chips"><li>Java 17</li><li>Spring Boot</li><li>JPA</li><li>QueryDSL</li><li>MySQL</li><li>JUnit</li></ul>
+        <a class="wc-repo" href="https://github.com/woorifisa-projects-3rd/WeKids-BE" target="_blank" rel="noopener">github.com/woorifisa-projects-3rd/WeKids-BE ↗</a>
+        <div class="gal-head"><h4>Screens</h4><span></span></div>
+        <ul class="gallery">
+          <li>
+            <button type="button" class="shot" data-full="assets/img/project/wekids-main.jpg" data-caption="WeKids 서비스 소개 — 온가족이 함께하는 자녀 경제 금융 능력 만들기">
+              <img src="assets/img/project/wekids-main.jpg" alt="WeKids 서비스 소개" loading="lazy" decoding="async">
+              <span class="shot-cap">서비스 소개</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="shot" data-full="assets/img/project/wekids-features.jpg" data-caption="주요 기능 — 거래 내역 공유, 미션, 카드 커스텀, 금융 아티클">
+              <img src="assets/img/project/wekids-features.jpg" alt="WeKids 주요 기능" loading="lazy" decoding="async">
+              <span class="shot-cap">주요 기능</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="shot" data-full="assets/img/project/wekids-card-custom.jpg" data-caption="카드 디자인 선택 화면 — 캐릭터와 색상을 골라 카드를 꾸미는 흐름">
+              <img src="assets/img/project/wekids-card-custom.jpg" alt="WeKids 카드 디자인 선택 화면" loading="lazy" decoding="async">
+              <span class="shot-cap">카드 디자인 선택</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="shot" data-full="assets/img/project/wekids-infra.jpg" data-caption="운영 인프라 — AWS 위 블루 그린 배포 구성">
+              <img src="assets/img/project/wekids-infra.jpg" alt="WeKids 운영 인프라 구성도" loading="lazy" decoding="async">
+              <span class="shot-cap">운영 인프라</span>
+            </button>
+          </li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</div>
+
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="이미지 크게 보기" hidden>
   <button class="lb-close" id="lbClose" type="button" aria-label="닫기">
     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
@@ -421,6 +442,6 @@
   </figure>
 </div>
 
-<script src="assets/js/main.js?v=20260919a"></script>
+<script src="assets/js/main.js?v=20260918e"></script>
 </body>
 </html>

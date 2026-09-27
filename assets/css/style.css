@@ -125,6 +125,7 @@ h1,h2,h3,h4{margin:0;line-height:1.2;letter-spacing:-.035em;font-weight:700}
 .nav-links a:hover{color:var(--txt)}
 .nav-links a.active{color:var(--accent);background:var(--accent-soft)}
 .nav-actions{display:flex;align-items:center;gap:6px}
+@media (min-width:721px){.nav-actions{display:none}.nav-inner{padding:0 8px 0 16px}}
 .theme-toggle,.nav-burger{
   width:40px;height:40px;display:grid;place-items:center;cursor:pointer;
   border-radius:999px;border:1px solid transparent;background:transparent;color:var(--txt-2);

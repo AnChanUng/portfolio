@@ -2,7 +2,6 @@
 (function () {
   'use strict';
 
-  var root = document.documentElement;
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- reveal on scroll ----------
@@ -35,19 +34,6 @@
         el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
         el.style.setProperty('--my', (e.clientY - r.top) + 'px');
       });
-    });
-  }
-
-  /* ---------- theme ----------
-     초기값은 <head>의 인라인 스크립트가 이미 확정했다. */
-  if (!root.getAttribute('data-theme')) root.setAttribute('data-theme', 'light');
-
-  var toggle = document.getElementById('themeToggle');
-  if (toggle) {
-    toggle.addEventListener('click', function () {
-      var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      try { localStorage.setItem('theme', next); } catch (e) {}
     });
   }
 

@@ -311,6 +311,8 @@ body.loaded .line > span{transform:none}
 .work-card .chips{margin-top:2px}
 .wc-repo{display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-family:var(--mono);font-size:12.5px;color:var(--txt-2);text-decoration:none;border-bottom:1px solid var(--line-strong);padding-bottom:2px;transition:color .2s,border-color .2s}
 .wc-repo:hover{color:var(--accent);border-color:var(--accent)}
+.wc-links{display:flex;flex-wrap:wrap;gap:10px 20px;margin-top:18px}
+.wc-links .wc-repo{margin-top:0;max-width:100%;overflow-wrap:anywhere}
 
 /* ---------- featured project (TeraStream, horizontal) ---------- */
 .card.work-feature{

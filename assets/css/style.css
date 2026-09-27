@@ -435,7 +435,7 @@ body.loaded .line > span{transform:none}
   .proj-grid{grid-template-columns:1fr;gap:16px}
   .pm{padding:12px}
   .pm-body{padding:60px 12px 12px}
-  .work-feature{grid-template-columns:1fr}
+  .card.work-feature{grid-template-columns:1fr}
   .wf-body{padding:24px 20px}
   .wf-shot{border-left:0;border-top:1px solid var(--line)}
   .wf-shot img{padding:14px}

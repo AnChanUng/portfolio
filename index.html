@@ -63,7 +63,6 @@
   <section id="about" class="hero">
     <div class="wrap">
       <div class="hero-head">
-        <p class="eyebrow">Backend Engineer</p>
         <h1 class="hero-title">
           <span class="line"><span>안찬웅</span></span>
         </h1>
@@ -157,7 +156,7 @@
       <div class="skill-grid">
         <article class="card skill-card spot reveal" data-delay="0">
           <h3><span class="k">Languages</span></h3>
-          <ul class="chips lg"><li class="hi">Java</li><li>C</li><li>C++</li><li>Python</li></ul>
+          <ul class="chips lg"><li class="hi">Java</li><li>C++</li><li>Python</li></ul>
         </article>
         <article class="card skill-card spot reveal" data-delay="1">
           <h3><span class="k">Backend</span></h3>
@@ -173,7 +172,7 @@
         </article>
         <article class="card skill-card spot reveal" data-delay="4">
           <h3><span class="k">AI</span></h3>
-          <ul class="chips lg"><li>Claude Code</li><li>RAG</li></ul>
+          <ul class="chips lg"><li>Claude Code</li><li>LLM</li><li>RAG</li></ul>
         </article>
       </div>
     </div>
@@ -230,7 +229,7 @@
           <div><h4>Problem</h4><p>DB 접속 비밀번호가 평문으로 노출돼 금감원 점검에서 지적. 계정마다 암호화 파일을 수동 생성하던 구조. 자동화 후 부하 테스트에서 수백 개 프로세스를 동시에 실행하자 상당수가 에러 로그 없이 멈춤.</p></div>
           <div><h4>Cause</h4><p>에러 로그가 없어 DB 세션 현황부터 확인했고, 최대 세션 수 기본값 50에 막혀 대기열이 쌓이는 것을 확인. 세션 한도를 올린 뒤에도 남은 대기는 커널 세마포어 집합 한도 128이 원인.</p></div>
           <div><h4>Decision</h4><p>세션 한도는 감으로 크게 잡지 않고 실측으로 결정. 2GB 비정형 데이터를 추출, 변환, 적재하는 실제 업무 조건에서 동시 실행 수를 단계적으로 늘리며 처리 시간과 세션 수를 기록했고, 더 늘려도 시간이 줄지 않는 지점 직전인 150을 선택. 세마포어는 늘어날 배치까지 감안해 1024로 상향.</p></div>
-          <div><h4>Result</h4><p>계정과 DB 버전을 자동 판별해 암호화 모듈을 생성하는 배치로 전환. 동시 처리량 3배, 배치 처리 시간 30% 단축. 금감원 보안 점검 통과. 증상이 남으면 인접 계층까지 확인한다는 원칙을 얻음.</p></div>
+          <div><h4>Result</h4><p>계정과 DB 버전을 자동 판별해 암호화 모듈을 생성하는 배치로 전환. 배치 처리 시간 30% 단축. 금감원 보안 점검 통과. 증상이 남으면 인접 계층까지 확인한다는 원칙을 얻음.</p></div>
         </div>
         <ul class="chips"><li>C</li><li>Tibero</li><li>Linux Kernel</li><li>Batch</li></ul>
       </article>

@@ -16,7 +16,7 @@
 <link rel="canonical" href="https://anchanung.github.io/portfolio/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧑‍💻</text></svg>">
 <link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="assets/css/style.css?v=20261005m">
+<link rel="stylesheet" href="assets/css/style.css?v=20261005o">
 </head>
 <body>
 <a class="skip" href="#content">본문으로 건너뛰기</a>
@@ -25,7 +25,6 @@
     <a class="top-brand" href="#content">안찬웅</a>
     <nav class="toc" aria-label="섹션 이동">
       <a href="#about">About</a>
-      <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
       <a href="#education">Education</a>
@@ -71,9 +70,9 @@
       </ul>
     </section>
 
-    <section id="experience" class="sec" aria-label="Experience">
+    <section id="projects" class="sec" aria-label="Projects">
       <div class="sec-bar">
-        <h2 class="sec-title">Experience</h2>
+        <h2 class="sec-title">Projects</h2>
         <button type="button" class="expand-all" id="expandAll" aria-pressed="false">모두 펼치기</button>
       </div>
 
@@ -101,10 +100,8 @@
           <h3>(주)데이터스트림즈</h3>
           <p class="entry-role">Server Developer | 인턴 → 정규직</p>
           <h4 class="entry-sub">ETL 솔루션 TeraStream 유지보수 및 신규 기능 개발</h4>
-          <button type="button" class="shot flow" data-full="assets/img/project/terastream-etl-flow.png" data-caption="DBMS와 XML/CSV 파일, Hadoop 등 소스 시스템의 데이터를 뽑아 정제하고 변환해 타깃 시스템으로 적재하는 TeraStream ETL 처리 흐름">
-            <img src="assets/img/project/terastream-etl-flow.png" alt="TeraStream ETL 처리 흐름도" width="1600" height="826" loading="lazy" decoding="async">
-            <span class="shot-cap">소스 시스템의 데이터를 뽑아 정제하고 변환해 타깃 시스템으로 적재하는 TeraStream의 처리 흐름</span>
-          </button>
+          <div class="split">
+          <div class="split-main">
           <ul class="bul">
             <li>금융, 공공 고객사 <b>100곳 이상</b>에 납품된 엔진의 레거시 코드를 개선하고 고객사 버그 수백 건 해결</li>
           </ul>
@@ -176,14 +173,16 @@
               </ul>
             </details>
           </div>
+          </div>
+          <button type="button" class="shot flow" data-full="assets/img/project/terastream-etl-flow.png" data-caption="DBMS와 XML/CSV 파일, Hadoop 등 소스 시스템의 데이터를 뽑아 정제하고 변환해 타깃 시스템으로 적재하는 TeraStream ETL 처리 흐름">
+            <img src="assets/img/project/terastream-etl-flow.png" alt="TeraStream ETL 처리 흐름도" width="1600" height="826" loading="lazy" decoding="async">
+            <span class="shot-cap">TeraStream ETL 처리 흐름</span>
+          </button>
+          </div>
 
           <ul class="chips"><li>Linux</li><li>Unix</li><li>C</li><li>C++</li><li>Oracle</li><li>MySQL</li><li>PostgreSQL</li><li>Tibero</li></ul>
         </div>
       </article>
-    </section>
-
-    <section id="projects" class="sec" aria-label="Projects">
-      <h2 class="sec-title">Projects</h2>
 
       <article class="entry">
         <div class="entry-date">2023.07 ~ 2023.09<br>2026.07 ~ 2026.08</div>
@@ -304,6 +303,6 @@
   </figure>
 </div>
 
-<script src="assets/js/main.js?v=20261005m"></script>
+<script src="assets/js/main.js?v=20261005o"></script>
 </body>
 </html>

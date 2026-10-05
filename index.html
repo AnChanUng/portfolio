@@ -16,11 +16,23 @@
 <link rel="canonical" href="https://anchanung.github.io/portfolio/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧑‍💻</text></svg>">
 <link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="assets/css/style.css?v=20261005a">
+<link rel="stylesheet" href="assets/css/style.css?v=20261005b">
 </head>
 <body>
 <a class="skip" href="#content">본문으로 건너뛰기</a>
-<div class="glow" id="glow" aria-hidden="true"></div>
+<div class="top" id="top">
+  <div class="top-inner">
+    <a class="top-brand" href="#content">안찬웅</a>
+    <nav class="toc" aria-label="섹션 이동">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+    </nav>
+    <a class="top-resume" href="assets/resume.pdf" target="_blank" rel="noopener">이력서 PDF<span class="arr" aria-hidden="true">↗</span></a>
+  </div>
+</div>
 
 <div class="layout">
 
@@ -32,13 +44,6 @@
       <p class="role">Server Developer</p>
       <p class="tagline">비즈니스 관점에서의 문제를 기술로 풀어나가는 서버 개발자입니다.</p>
 
-      <nav class="toc" aria-label="섹션 이동">
-        <a href="#about"><span class="toc-line"></span><span class="toc-t">About</span></a>
-        <a href="#experience"><span class="toc-line"></span><span class="toc-t">Experience</span></a>
-        <a href="#projects"><span class="toc-line"></span><span class="toc-t">Projects</span></a>
-        <a href="#skills"><span class="toc-line"></span><span class="toc-t">Skills</span></a>
-        <a href="#education"><span class="toc-line"></span><span class="toc-t">Education</span></a>
-      </nav>
     </div>
 
     <div class="side-links">
@@ -56,6 +61,13 @@
       </a>
     </div>
   </header>
+
+  <ul class="stats" aria-label="주요 성과">
+    <li><b>−30%</b><span>배치 처리 시간</span></li>
+    <li><b>2분 → 50초</b><span>예약 실행 시간</span></li>
+    <li><b>통과</b><span>금감원 보안 점검</span></li>
+    <li><b>0.82 → 0.91</b><span>RAG 검색 근거 유사도</span></li>
+  </ul>
 
   <!-- ─────────────── CONTENT ─────────────── -->
   <main id="content">
@@ -312,6 +324,6 @@
   </figure>
 </div>
 
-<script src="assets/js/main.js?v=20261005a"></script>
+<script src="assets/js/main.js?v=20261005b"></script>
 </body>
 </html>

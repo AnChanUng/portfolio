@@ -2,22 +2,13 @@
 (function () {
   'use strict';
 
-  /* ---------- cursor glow ---------- */
-  var glow = document.getElementById('glow');
-  if (glow && window.matchMedia('(hover: hover)').matches) {
-    var glowTick = false;
-    window.addEventListener('pointermove', function (e) {
-      if (glowTick) return;
-      glowTick = true;
-      window.requestAnimationFrame(function () {
-        glow.style.setProperty('--gx', e.clientX + 'px');
-        glow.style.setProperty('--gy', e.clientY + 'px');
-        glowTick = false;
-      });
-    }, { passive: true });
-  }
+  /* ---------- top bar: border once scrolled ---------- */
+  var top = document.getElementById('top');
+  function syncTop() { top.classList.toggle('scrolled', window.scrollY > 8); }
+  window.addEventListener('scroll', syncTop, { passive: true });
+  syncTop();
 
-  /* ---------- active section in side nav ---------- */
+  /* ---------- active section in top nav ---------- */
   var sections = Array.prototype.slice.call(document.querySelectorAll('main section[id]'));
   var navAnchors = Array.prototype.slice.call(document.querySelectorAll('.toc a'));
 

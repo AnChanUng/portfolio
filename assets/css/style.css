@@ -184,6 +184,10 @@ main{min-width:0;padding-bottom:56px}
 .shot:hover,.shot:focus-visible{border-color:var(--accent);transform:translateY(-3px);box-shadow:var(--shadow)}
 .shot img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top center}
 .shot-contain img{object-fit:contain;padding:6px}
+.shot.flow{display:block;width:100%;margin:4px 0 18px;border-radius:16px;cursor:zoom-in}
+.shot.flow:hover{transform:none}
+.shot.flow img{aspect-ratio:auto;height:auto;max-height:340px;object-fit:contain;padding:18px 22px}
+.shot.flow .shot-cap{padding:10px 16px;white-space:normal;font-size:13px;text-align:center;background:var(--surface-2)}
 .shot-play{position:relative}
 .shot-play::before{content:"";position:absolute;z-index:1;left:50%;top:calc((100% - 31px) / 2);width:42px;height:42px;margin:-21px 0 0 -21px;border-radius:50%;background:rgba(25,31,40,.72) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M9 6.5v11l9-5.5z'/%3E%3C/svg%3E") center/22px no-repeat;transition:background-color .2s,transform .25s var(--ease)}
 .shot-play:hover::before{background-color:var(--accent);transform:scale(1.08)}

@@ -16,7 +16,7 @@
 <link rel="canonical" href="https://anchanung.github.io/portfolio/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧑‍💻</text></svg>">
 <link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="assets/css/style.css?v=20261005l">
+<link rel="stylesheet" href="assets/css/style.css?v=20261005m">
 </head>
 <body>
 <a class="skip" href="#content">본문으로 건너뛰기</a>
@@ -101,6 +101,10 @@
           <h3>(주)데이터스트림즈</h3>
           <p class="entry-role">Server Developer | 인턴 → 정규직</p>
           <h4 class="entry-sub">ETL 솔루션 TeraStream 유지보수 및 신규 기능 개발</h4>
+          <button type="button" class="shot flow" data-full="assets/img/project/terastream-etl-flow.png" data-caption="DBMS와 XML/CSV 파일, Hadoop 등 소스 시스템의 데이터를 뽑아 정제하고 변환해 타깃 시스템으로 적재하는 TeraStream ETL 처리 흐름">
+            <img src="assets/img/project/terastream-etl-flow.png" alt="TeraStream ETL 처리 흐름도" width="1600" height="826" loading="lazy" decoding="async">
+            <span class="shot-cap">소스 시스템의 데이터를 뽑아 정제하고 변환해 타깃 시스템으로 적재하는 TeraStream의 처리 흐름</span>
+          </button>
           <ul class="bul">
             <li>금융, 공공 고객사 <b>100곳 이상</b>에 납품된 엔진의 레거시 코드를 개선하고 고객사 버그 수백 건 해결</li>
           </ul>
@@ -147,18 +151,6 @@
               </ul>
             </details>
 
-            <details class="task">
-              <summary data-tag="debug">
-                <span class="task-t">PostgreSQL ODBC 접속 오류 원인 규명</span>
-                <span class="task-s">재현이 안 되던 간헐적 접속 오류를 <b>4시간 만에 근본 해결</b></span>
-              </summary>
-              <ul class="bul">
-                <li>웹 클라이언트에서 특정 계정으로 접속할 때만 간헐적으로 연결 실패</li>
-                <li>동일 환경을 재현해 Windows ODBC 데이터 원본 관리자가 계정 정보를 자동 저장하면서 잘못된 DSN 값이 적용되는 구조 규명</li>
-                <li>32/64bit 및 User/System DSN 중복으로 같은 이름의 DSN이 서로 다른 계정 정보를 갖는 문제 확인</li>
-                <li>클라이언트 단 에러 처리 로직을 추가해 해결</li>
-              </ul>
-            </details>
 
             <details class="task">
               <summary data-tag="debug">
@@ -183,13 +175,6 @@
                 <li>문자열로 조합하던 SQL문을 모두 파라미터 바인딩 방식으로 바꿔 입력값이 SQL 구문으로 해석되지 않도록 수정</li>
               </ul>
             </details>
-          </div>
-
-          <div class="thumbs">
-            <button type="button" class="shot shot-contain" data-full="assets/img/project/terastream-etl-flow.png" data-caption="DBMS와 XML/CSV 파일, Hadoop 등 소스 시스템의 데이터를 뽑아 정제하고 변환해 타깃 시스템으로 적재하는 TeraStream ETL 처리 흐름">
-              <img src="assets/img/project/terastream-etl-flow-thumb.jpg" alt="TeraStream ETL 처리 흐름도" loading="lazy" decoding="async">
-              <span class="shot-cap">TeraStream ETL 처리 흐름</span>
-            </button>
           </div>
 
           <ul class="chips"><li>Linux</li><li>Unix</li><li>C</li><li>C++</li><li>Oracle</li><li>MySQL</li><li>PostgreSQL</li><li>Tibero</li></ul>
@@ -319,6 +304,6 @@
   </figure>
 </div>
 
-<script src="assets/js/main.js?v=20261005l"></script>
+<script src="assets/js/main.js?v=20261005m"></script>
 </body>
 </html>

@@ -156,7 +156,8 @@ main{min-width:0;padding-bottom:56px}
 .tasks{margin-top:20px;display:flex;flex-direction:column;gap:8px}
 .task{border-radius:16px;background:var(--surface-2);transition:background .2s,box-shadow .2s}
 .task:hover{background:var(--accent-soft)}
-.task[open]{background:var(--surface);box-shadow:inset 0 0 0 1.5px var(--accent)}
+.task[open]{background:var(--surface-2)}
+.task[open]:hover{background:var(--surface-2)}
 .task summary{position:relative;display:flex;flex-direction:column;gap:2px;padding:15px 52px 15px 20px;cursor:pointer;list-style:none}
 .task summary::-webkit-details-marker{display:none}
 .task summary::after{

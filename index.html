@@ -76,62 +76,7 @@
         <button type="button" class="expand-all" id="expandAll" aria-pressed="true">모두 접기</button>
       </div>
 
-      <article class="entry" id="cs-study">
-        <div class="entry-date is-now">2026.04 ~ 운영 중</div>
-        <div class="entry-body">
-          <h3><a href="https://cs-study-platform.vercel.app/" target="_blank" rel="noopener">CS Study Platform<span class="arr" aria-hidden="true">↗</span></a></h3>
-          <p class="entry-role">전산학 전공필기 학습 플랫폼 | 개인 프로젝트 · 1인 개발·운영</p>
-          <ul class="bul">
-            <li><b>삼성 청년 SW·AI 아카데미(SSAFY) 교육생들이 사용하는 전공필기 학습 사이트</b>를 단독 개발하고 운영</li>
-            <li>기획부터 React 화면, Spring Boot API, DB 설계, 배포까지 담당하고 문제 풀이 → 오답 복습 → 기술면접 준비로 이어지는 학습 흐름 구현</li>
-          </ul>
-          <!-- Verified usage metrics are inserted here after production retrieval. -->
-          <div class="tasks">
-            <details class="task" open>
-              <summary data-tag="feature">
-                <span class="task-t">비로그인 학습 기록의 계정 동기화</span>
-                <span class="task-s">브라우저에 저장한 풀이·오답·북마크를 로그인 후에도 이어서 사용</span>
-              </summary>
-              <ul class="bul">
-                <li>비로그인 사용자의 학습 기록은 로컬에 저장하고, 로그인 시 서버 기록과 병합하는 동기화 흐름 구현</li>
-                <li>문항별 기록은 최근 수정 시각을 기준으로 병합하고, 응시 이력은 중복을 제거한 합집합으로 관리</li>
-              </ul>
-            </details>
-            <details class="task" open>
-              <summary data-tag="feature">
-                <span class="task-t">학습을 이어가는 실시간 기능과 복습 흐름</span>
-                <span class="task-s">SSE 채팅·승급 알림과 문제 풀이·오답노트·기술면접 연습을 연결</span>
-              </summary>
-              <ul class="bul">
-                <li>기업별 문제집과 오답 재풀이, 매일 갱신되는 CS 확인 문제를 제공하고 SSE 기반 채팅·승급 알림 구현</li>
-                <li>기술면접 질문 <b>152개</b>를 주제별로 구성해 질문 검색, 예시 답변·꼬리질문 확인, 학습 완료 표시 지원</li>
-              </ul>
-            </details>
-            <details class="task" open>
-              <summary data-tag="feature">
-                <span class="task-t">배포와 이용 현황 모니터링</span>
-                <span class="task-s">Vercel·Render 배포 및 PostgreSQL 기반 학습·이용 기록 관리</span>
-              </summary>
-              <ul class="bul">
-                <li>React 프론트엔드와 Spring Boot API를 분리 배포하고, 계정·학습 기록·이용 이벤트를 PostgreSQL에 저장</li>
-                <li>한국 시간 기준 일별 방문자, 풀이 완료 건수, 문제 오류 제보를 확인하는 운영 화면 구현</li>
-              </ul>
-            </details>
-          </div>
-          <div class="thumbs">
-            <button type="button" class="shot" data-full="assets/img/project/cs-study-home.png" data-caption="CS Study Platform 메인 화면 · 실제 프론트엔드를 예시 API 응답으로 실행한 화면">
-              <img src="assets/img/project/cs-study-home.png" alt="전공필기·NCS·인적성·필기이론과 오늘의 CS를 제공하는 메인 화면" loading="lazy" decoding="async">
-              <span class="shot-cap">학습 서비스 메인</span>
-            </button>
-            <button type="button" class="shot" data-full="assets/img/project/cs-study-interview.png" data-caption="기술면접 학습 화면 · 저장소에 수록된 시연 화면">
-              <img src="assets/img/project/cs-study-interview.png" alt="기술면접 질문 검색과 주제별 예시 답변·꼬리질문 학습 화면" loading="lazy" decoding="async">
-              <span class="shot-cap">기술면접 질문·답변 학습</span>
-            </button>
-          </div>
-          <div class="entry-links"><a href="https://cs-study-platform.vercel.app/" target="_blank" rel="noopener">서비스 바로가기 ↗</a></div>
-          <ul class="chips"><li>Java 17</li><li>Spring Boot</li><li>JPA</li><li>PostgreSQL</li><li>React</li><li>SSE</li><li>Vercel</li><li>Render</li></ul>
-        </div>
-      </article>
+
 
       <article class="entry">
         <div class="entry-date">2026.01 ~ 2026.06</div>
@@ -291,6 +236,51 @@
           </div>
 
           <ul class="chips"><li>Spring Boot</li><li>Spring AI</li><li>JPA</li><li>Oracle</li></ul>
+        </div>
+      </article>
+      <article class="entry" id="cs-study">
+        <div class="entry-date is-now">2026.04 ~ 운영 중</div>
+        <div class="entry-body">
+          <h3><a href="https://cs-study-platform.vercel.app/" target="_blank" rel="noopener">CS Study Platform<span class="arr" aria-hidden="true">↗</span></a></h3>
+          <p class="entry-role">전산학 전공필기 학습 사이트 | 1인 개발·운영</p>
+          <ul class="bul">
+            <li>삼성 청년 SW·AI 아카데미(SSAFY) 교육생들이 사용하는 전공필기 사이트의 기획·개발·배포·운영을 단독 수행</li>
+          </ul>
+          <div class="tasks">
+            <details class="task" open>
+              <summary data-tag="feature">
+                <span class="task-t">실사용 기반 학습 서비스 운영</span>
+                <span class="task-s">최근 30일 조회 <b>2,613회</b> · 방문자 <b>154명</b></span>
+              </summary>
+              <ul class="bul">
+                <li>기업별 문제 풀이·오답 복습·전공노트를 제공하며 누적 조회 <b>2,616회</b>, 풀이 완료 <b>79건</b> 기록</li>
+                <li>최근 30일 최대 일간 방문자 <b>41명</b> · 가입 계정 <b>7개</b></li>
+                <li>2026.09.20~2026.10.19 KST 기준 · 조회는 반복 열람 포함, 방문자는 익명 브라우저 ID 중복 제거</li>
+              </ul>
+            </details>
+            <details class="task" open>
+              <summary data-tag="feature">
+                <span class="task-t">학습 기록 동기화와 실시간 기능 구현</span>
+                <span class="task-s">비로그인 풀이 기록을 로그인 후 계정에 병합하고 SSE로 채팅·승급 알림 제공</span>
+              </summary>
+              <ul class="bul">
+                <li>문항별 기록은 최근 수정 시각을 기준으로 병합하고, 응시 이력은 중복을 제거해 기기 간 기록 충돌 처리</li>
+                <li>React·Spring Boot를 Vercel·Render에 분리 배포하고, 계정·학습 기록을 PostgreSQL로 관리</li>
+              </ul>
+            </details>
+          </div>
+          <div class="thumbs">
+            <button type="button" class="shot" data-full="assets/img/project/cs-study-home.png" data-caption="CS Study Platform 메인 화면 · 실제 프론트엔드를 예시 API 응답으로 실행한 화면">
+              <img src="assets/img/project/cs-study-home.png" alt="전공필기·NCS·인적성·필기이론과 오늘의 CS를 제공하는 메인 화면" loading="lazy" decoding="async">
+              <span class="shot-cap">학습 서비스 메인</span>
+            </button>
+            <button type="button" class="shot" data-full="assets/img/project/cs-study-interview.png" data-caption="기술면접 학습 화면 · 저장소에 수록된 시연 화면">
+              <img src="assets/img/project/cs-study-interview.png" alt="기술면접 질문 검색과 주제별 예시 답변·꼬리질문 학습 화면" loading="lazy" decoding="async">
+              <span class="shot-cap">기술면접 질문·답변 학습</span>
+            </button>
+          </div>
+          <div class="entry-links"><a href="https://cs-study-platform.vercel.app/" target="_blank" rel="noopener">서비스 바로가기 ↗</a></div>
+          <ul class="chips"><li>Java 17</li><li>Spring Boot</li><li>JPA</li><li>PostgreSQL</li><li>React</li><li>SSE</li><li>Vercel</li><li>Render</li></ul>
         </div>
       </article>
     </section>

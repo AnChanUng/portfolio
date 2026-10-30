@@ -116,7 +116,7 @@ main{min-width:0;padding-bottom:56px}
 #about{padding-top:40px}
 .about-lead{font-size:clamp(21px,2.6vw,27px);line-height:1.5;font-weight:800;letter-spacing:-.04em;color:var(--txt);margin-bottom:22px}
 .about-lead b{color:var(--accent)}
-.about-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.about-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .about-list li{padding:22px 22px 24px;border-radius:18px;background:var(--surface);font-size:15.5px;line-height:1.65;box-shadow:var(--shadow-s)}
 
 /* ---------- entry: dotted timeline + card ---------- */

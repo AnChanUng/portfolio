@@ -364,3 +364,10 @@ a.blog-pill:hover,.task-link:hover .blog-pill{background:var(--accent);color:#ff
   .proj-split{grid-template-columns:1fr}
   .proj-side{position:static;order:-1;max-width:520px}
 }
+
+/* hero intro (Figma 소개 문구) */
+.lead .hl{color:var(--accent)}
+.lead-sub{margin-top:6px;font-size:16px;color:var(--txt-2)}
+.hero .intro{margin-top:18px}
+.intro-link{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;transition:color .2s}
+.intro-link:hover{color:var(--accent)}

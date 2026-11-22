@@ -84,6 +84,75 @@
     reveals.forEach(function (el) { el.classList.add('in'); });
   });
 
+  /* ---------- feature showcase: GIF처럼 빠르게 자동 재생 ---------- */
+  (function () {
+    var sc = document.getElementById('showcase');
+    if (!sc) return;
+    var slides = Array.prototype.slice.call(sc.querySelectorAll('.sc-stage figure'));
+    var listBtns = Array.prototype.slice.call(sc.querySelectorAll('.sc-list button'));
+    var bar = document.getElementById('scBar');
+    var pathEl = document.getElementById('scPath');
+    var countEl = document.getElementById('scCount');
+    var titleEl = document.getElementById('scTitle');
+    var descEl = document.getElementById('scDesc');
+    var toggle = document.getElementById('scToggle');
+    var DURATION = 1700;            /* 한 화면당 노출 시간(ms) */
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var idx = 0, elapsed = 0, last = 0, raf = 0;
+    var userPaused = reduce, hover = false, visible = false;
+
+    function pad(n) { return (n < 10 ? '0' : '') + n; }
+    function show(i) {
+      idx = (i + slides.length) % slides.length;
+      slides.forEach(function (f, k) { f.classList.toggle('is-active', k === idx); });
+      var f = slides[idx];
+      pathEl.textContent = f.getAttribute('data-path');
+      countEl.textContent = pad(idx + 1) + ' / ' + pad(slides.length);
+      titleEl.textContent = f.getAttribute('data-title');
+      descEl.textContent = f.getAttribute('data-desc');
+      /* 채점 화면(같은 경로의 연속 화면)은 문제 풀이 버튼을 그대로 강조한다 */
+      var activeBtn = null;
+      listBtns.forEach(function (b) { if (+b.getAttribute('data-i') <= idx) activeBtn = b; });
+      listBtns.forEach(function (b) { b.classList.toggle('is-active', b === activeBtn); });
+      elapsed = 0;
+      bar.style.width = '0%';
+      /* 다음 화면 미리 불러오기 */
+      var next = slides[(idx + 1) % slides.length].querySelector('img');
+      if (next && next.loading === 'lazy') next.loading = 'eager';
+    }
+    function running() { return !userPaused && !hover && visible; }
+    function tick(t) {
+      if (!last) last = t;
+      var dt = t - last; last = t;
+      if (running()) {
+        elapsed += dt;
+        bar.style.width = Math.min(100, elapsed / DURATION * 100) + '%';
+        if (elapsed >= DURATION) show(idx + 1);
+      }
+      raf = requestAnimationFrame(tick);
+    }
+    function syncToggle() {
+      sc.classList.toggle('is-paused', userPaused);
+      toggle.setAttribute('aria-label', userPaused ? '재생' : '일시정지');
+    }
+
+    toggle.addEventListener('click', function () { userPaused = !userPaused; syncToggle(); });
+    document.getElementById('scStage').addEventListener('click', function () { show(idx + 1); });
+    listBtns.forEach(function (b) {
+      b.addEventListener('click', function () { show(+b.getAttribute('data-i')); });
+    });
+    sc.querySelector('.sc-window').addEventListener('mouseenter', function () { hover = true; });
+    sc.querySelector('.sc-window').addEventListener('mouseleave', function () { hover = false; });
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }, { threshold: 0.35 }).observe(sc);
+    } else { visible = true; }
+    document.addEventListener('visibilitychange', function () { last = 0; });
+
+    show(0);
+    syncToggle();
+    raf = requestAnimationFrame(tick);
+  })();
+
   /* ---------- lightbox ---------- */
   var lb = document.getElementById('lightbox');
   var lbImage = document.getElementById('lbImage');

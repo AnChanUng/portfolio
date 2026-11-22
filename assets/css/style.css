@@ -1,6 +1,6 @@
 /* ============================================================
    안찬웅 Portfolio — style.css  (2026.11 redesign v6)
-   minimal neutral · floating pill nav · bento stats · dark mode
+   minimal neutral · floating pill nav · dark mode
    ============================================================ */
 
 /* ---------- tokens ---------- */
@@ -146,18 +146,6 @@ a:hover .arr{transform:translate(2px,-2px)}
 .hero-photo{position:relative}
 .hero-photo::before{content:"";position:absolute;inset:-14px;z-index:-1;border-radius:36px;background:linear-gradient(140deg,var(--accent),var(--accent-2));opacity:.18;filter:blur(24px)}
 .hero-photo img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center top;border-radius:28px;border:1px solid var(--line);background:var(--surface)}
-
-/* ---------- bento stats ---------- */
-.stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
-.stats li{
-  display:flex;flex-direction:column;gap:4px;padding:20px 20px 18px;border-radius:18px;
-  border:1px solid var(--line);background:var(--surface);transition:border-color .2s,transform .25s var(--ease);
-}
-.stats li:hover{border-color:var(--line-2);transform:translateY(-2px)}
-.stats b{font-size:clamp(22px,2.4vw,28px);font-weight:800;letter-spacing:-.05em;line-height:1.15;white-space:nowrap;color:var(--txt)}
-.stats small{margin-left:1px;font-size:.62em;font-weight:700;color:var(--txt-2)}
-.stats span{font-size:13.5px;font-weight:600;line-height:1.45;color:var(--txt-2)}
-.stats em{margin-top:auto;padding-top:10px;font-style:normal;font-size:12px;font-weight:600;color:var(--txt-3)}
 
 /* ---------- sections ---------- */
 .sec{padding-top:96px}
@@ -319,7 +307,6 @@ a.ops:hover{border-color:var(--accent);transform:translateY(-2px)}
 
 /* ---------- responsive ---------- */
 @media (max-width:960px){
-  .stats{grid-template-columns:repeat(3,minmax(0,1fr))}
   .split{grid-template-columns:1fr}
   .shot.flow{position:static;max-width:440px}
   .infra-flow{grid-template-columns:1fr;gap:0}
@@ -334,8 +321,6 @@ a.ops:hover{border-color:var(--accent);transform:translateY(-2px)}
   .hero{grid-template-columns:1fr;gap:28px;padding:110px 0 40px}
   .hero-photo{order:-1;width:120px}
   .hero-photo img{border-radius:22px}
-  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .stats li:last-child{grid-column:span 2}
   .sec{padding-top:72px}
   .card{padding:22px 20px}
   .card-head{flex-direction:column;gap:10px}
@@ -362,7 +347,7 @@ a.ops:hover{border-color:var(--accent);transform:translateY(-2px)}
   body::before,.nav-wrap,.expand-all,.skip,.lightbox,.thumbs,.footer,.theme-btn{display:none!important}
   .hero{padding:0 0 20px}
   .js .reveal{opacity:1;transform:none}
-  .card,.stats li{box-shadow:none}
+  .card{box-shadow:none}
   .sec{padding-top:28px}
   .task{break-inside:avoid}
   .task summary::after{display:none}

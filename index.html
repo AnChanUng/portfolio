@@ -17,7 +17,7 @@
 <link rel="canonical" href="https://anchanung.github.io/portfolio/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧑‍💻</text></svg>">
 <link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="assets/css/style.css?v=20261123-v10">
+<link rel="stylesheet" href="assets/css/style.css?v=20261123-v11">
 <script>
   /* 저장된 테마를 먼저 적용해 깜빡임을 막는다 */
   (function () {
@@ -60,7 +60,7 @@
       <ul class="intro">
         <li><b>국내 데이터 통합 시장점유율 1위 상용 솔루션</b>의 서버를 개발했습니다.</li>
         <li><b>개인 홈서버를 직접 구축</b>하고, <b>누적 1만 PV</b>를 기록한 <b>개발자 취업 준비 플랫폼 <a class="intro-link" href="https://mycookie.dev/" target="_blank" rel="noopener">'나의쿠키'</a></b> 웹서비스를 운영하고 있습니다.</li>
-        <li><b>AI 기반 PR 위험도 분석부터 CI/CD 검증, 장애 감지·알림까지 자동화하는 개발·운영 워크플로우</b>를 구축했습니다.</li>
+        <li><b>AI 기반 PR 위험도 분석부터 CI/CD 검증, 장애 감지, 알림까지 자동화하는 워크플로우</b>를 구축했습니다.</li>
       </ul>
       <div class="hero-links">
         <a class="btn btn-primary" href="https://cookie.tistory.com/" target="_blank" rel="noopener">
@@ -94,26 +94,29 @@
         </div>
         <span class="date">2025.02 — 2025.11</span>
       </div>
-      <p class="summary">메인 개발자로 <b>300건</b>의 제품 기술 이슈에 대응하며, 대규모 데이터 처리 솔루션 ETL 기능 개발 및 유지보수</p>
+      <p class="summary"><b>300건 이상의 제품 기술 이슈</b>에 대응하며, <b>대규모 데이터 처리 솔루션 ETL 기능 개발 및 유지보수</b></p>
 
       <div class="split">
         <div class="tasks">
           <details class="task" open>
             <summary>
               <span class="task-t">DB 접속정보 자동 암호화 및 배치 처리 성능 개선</span>
-              <span class="task-s">예약 배치 작업 전체 소요시간 <b>30% 단축</b></span>
+              <span class="task-s">금융감독원 보안 점검 <b>통과</b>, 예약 배치 작업 전체 소요시간 <b>30% 단축</b></span>
             </summary>
             <ul class="bul">
-              <li>Linux 서버 로그에 DB 연결정보가 일시적으로 노출되는 문제로 금융권 보안 점검 대응 필요</li>
-              <li>다수의 배치 프로세스 동시 실행 시 Tibero 세션 부족으로 일부 작업이 대기하는 문제 발생
+              <li>Linux 서버 로그에 DB 연결정보가 일시적으로 노출되는 문제로 금융권 보안 점검 대응 필요
                 <ul>
-                  <li>2GB 비정형 데이터 부하 테스트를 통해 DB 세션 및 Linux 커널 자원 제한 분석</li>
-                  <li>DB 세션 (50→150), Linux 세마포어 집합 한도 (128→1024) 조정</li>
+                  <li>접속정보를 실행 인자 대신 DB 계정별 암호화 파일로 분리하고, 엔진 실행 시점에 복호화하도록 구조 변경</li>
+                  <li>Tibero 6,7 클라이언트 설정과 Linux·Unix 쉘 환경 차이에 대응하는 암호화 파일 자동 생성 기능 개발</li>
+                  <li>생성 파일 권한을 실행 계정으로 제한하고, 계정별 수동 생성·관리 과정 자동화</li>
+                  <li>전 고객사 적용, 금융감독원 보안 점검 통과</li>
                 </ul>
               </li>
-              <li>Tibero 6·7, Linux·Unix 및 DB 계정별 환경에 대응하는 암호화 파일 자동 생성 기능 개발
+              <li>다수의 배치 프로세스 동시 실행 시 Tibero 세션 부족으로 일부 작업이 대기하는 문제 발생
                 <ul>
-                  <li>기존에 계정별로 수동 생성하던 암호화 파일의 생성·관리 과정 자동화</li>
+                  <li>2GB 비정형 데이터 부하 테스트로 재현, 세션 모니터링으로 최대 세션 수 도달 및 세마포어 한도 초과 확인</li>
+                  <li>DB 최대 세션(50 → 150), Linux 세마포어 집합 한도(128 → 1024) 조정 후 동일 부하 재검증</li>
+                  <li>예약 배치 작업 전체 소요시간 30% 단축</li>
                 </ul>
               </li>
             </ul>
@@ -121,25 +124,35 @@
 
           <details class="task" open>
             <summary>
-              <span class="task-t">고객사 DB 환경 재현 시스템 및 LLM 기반 로그 분석 도구 개발</span>
+              <span class="task-t">고객사 DB 환경 재현 시스템 개발</span>
               <span class="task-s">DB 테스트 환경 구축 시간 <b>10분 → 5초</b> 단축</span>
             </summary>
             <ul class="bul">
-              <li>고객사별 DBMS 버전·설정 차이로 발생하는 ETL 장애의 재현 및 원인 분석 환경 구축</li>
-              <li>Oracle·Tibero·PostgreSQL 등 23종 DB 테스트 환경을 Docker 이미지와 초기 데이터로 표준화</li>
-              <li>고객사 ETL 실행 로그의 오류 분석을 지원하는 LLM 기반 로그 분석 프로그램 개발</li>
+              <li>고객사별 DBMS 버전·설정 차이로 ETL 장애 재현에 매번 DB 설치·설정 작업 필요
+                <ul>
+                  <li>Oracle·Tibero·PostgreSQL 등 23종 DB 버전별 Docker 이미지 구성</li>
+                  <li>테스트용 스키마·초기 데이터를 이미지에 포함해 컨테이너 실행 즉시 테스트 가능한 환경으로 표준화</li>
+                  <li>고객사 장애 발생 시 동일 버전 환경을 바로 띄워 재현·원인 분석에 활용</li>
+                  <li>DB 테스트 환경 구축 시간 10분 → 5초 단축</li>
+                </ul>
+              </li>
             </ul>
           </details>
 
           <details class="task" open>
             <summary>
-              <span class="task-t">ETL 스케줄러의 반복 연산 및 공유 메모리 최적화</span>
-              <span class="task-s">스케줄러 처리 성능 <b>약 60% 향상</b></span>
+              <span class="task-t">상용 ETL 엔진의 AWS S3 데이터 적재 기능 개발</span>
+              <span class="task-s">상용 데이터 통합 솔루션의 <b>클라우드 데이터 적재 대상 확장</b></span>
             </summary>
             <ul class="bul">
-              <li>스케줄러 내부 반복적인 문자열 변환 및 상태 조회로 발생하는 처리 오버헤드 분석</li>
-              <li>문자열 기반 스케줄 정보를 숫자 형태로 캐싱해 반복 변환 비용 절감</li>
-              <li>프로세스 간 공유 메모리를 활용해 스케줄 정보 조회 구조 개선</li>
+              <li>클라우드 전환 고객사의 요구로, DB 중심의 적재 대상에 클라우드 객체 스토리지 AWS S3 추가
+                <ul>
+                  <li>적재 대상을 분리해 기존 DB 적재 로직 수정 없이 S3 적재 기능 연동</li>
+                  <li>추출·변환 데이터를 파일로 생성 후 S3 버킷에 업로드하는 적재 기능 개발</li>
+                  <li>대용량 파일 멀티파트 업로드 및 업로드 실패 시 재시도 처리</li>
+                  <li>상용 데이터 통합 솔루션의 클라우드 데이터 적재 대상 확장</li>
+                </ul>
+              </li>
             </ul>
           </details>
         </div>
@@ -150,7 +163,7 @@
         </button>
       </div>
 
-      <ul class="tags"><li>C</li><li>C++</li><li>Java</li><li>Linux</li><li>Unix</li><li>Oracle</li><li>MySQL</li><li>PostgreSQL</li><li>Tibero</li><li>Docker</li></ul>
+      <ul class="tags"><li>C</li><li>C++</li><li>Java</li><li>Linux</li><li>Unix</li><li>Oracle</li><li>MySQL</li><li>PostgreSQL</li><li>Tibero</li><li>Docker</li><li>AWS S3</li></ul>
     </article>
   </section>
 
@@ -167,7 +180,7 @@
           <h3><a href="https://mycookie.dev/" target="_blank" rel="noopener">나의쿠키<span class="arr" aria-hidden="true">↗</span></a></h3>
           <p class="meta">삼성청년SW·AI 아카데미 16기 · 개발자 학습 플랫폼 개발 및 운영</p>
         </div>
-        <span class="date">2026.07 — 2026.12</span>
+        <span class="date is-now">2026.09 — 진행 중</span>
       </div>
 
       <div class="link-row">
@@ -193,6 +206,7 @@
                 <li>학습 문서 109개를 538개 청크로 분할, 113문항 평가셋 구성</li>
                 <li>벡터 검색 Top-10 → Cross-Encoder 재정렬 → 최종 Top-5 선택</li>
                 <li>재정렬 점수 기준 미달 시 LLM 호출을 생략하도록 설계</li>
+                <li>평가셋 Hit@1 86.4% → 96.6%, MRR@5 0.911 → 0.977</li>
               </ul>
             </li>
           </ul>
@@ -211,7 +225,11 @@
                 <li>사용자별 잠금을 커넥션 획득 이전으로 이동하고 트랜잭션 범위 축소</li>
               </ul>
             </li>
-            <li>평균 커넥션 대기 요청 <b>160개 → 16개</b>, 일반 조회 처리량 <b>약 4.3배</b> 향상</li>
+            <li>k6 부하 테스트 결과 동기화 p95 <b>1,066ms → 323ms</b>, 일반 조회 p95 <b>976ms → 99ms</b>
+              <ul>
+                <li>평균 커넥션 대기 요청 160개 → 16개, 일반 조회 처리량 약 4.3배 향상</li>
+              </ul>
+            </li>
           </ul>
         </details>
 
@@ -225,6 +243,7 @@
             <li>300명 동시 접속·초당 10건 메시지 부하 테스트 결과
               <ul>
                 <li>정상 SSE 연결 200명 → 300명, 메시지 유실률 6.3% → 0%</li>
+                <li>메시지 전달 지연 p95 1,420ms → 180ms (87% 감소)</li>
                 <li>메시지당 평균 네트워크 전송량 약 94% 감소</li>
               </ul>
             </li>
@@ -234,20 +253,20 @@
         <details class="task" open>
           <summary>
             <a class="task-t task-link" href="https://cookie.tistory.com/258" target="_blank" rel="noopener">클라우드에서 온프레미스 홈서버 이전 및 백업 체계 구축<span class="blog-pill">Blog<span class="arr" aria-hidden="true">↗</span></span></a>
-            <span class="task-s">8GB 홈서버로 이전, 3-2-1 원칙에 따라 <b>데이터 사본 3개</b> 유지</span>
+            <span class="task-s">8GB 온프레미스 홈서버로 이전, <b>데이터 사본 3개</b> 유지</span>
           </summary>
           <ul class="bul">
             <li>Vercel, Render, Neon의 무료 자원 제약을 해결하기 위해 8GB 온프레미스 홈서버로 서비스 이전
               <ul>
-                <li>Docker Compose 기반 Nginx·Spring Boot·PostgreSQL·Redis·Kafka 컨테이너화 및 메모리 사용량 제한</li>
-                <li>운영·스테이징 DB와 계정 분리, Redis Key Prefix 및 Kafka Topic·Consumer Group 격리</li>
+                <li>Docker Compose 기반 Nginx, Spring Boot, PostgreSQL, Redis, Kafka 컨테이너화 및 메모리 사용량 제한</li>
+                <li>운영·스테이징 DB와 계정 분리, Redis Key Prefix 및 Kafka Topic, Consumer Group 격리</li>
                 <li>Cloudflare Tunnel을 통해 외부 포트 개방 없이 HTTPS 서비스 제공</li>
               </ul>
             </li>
-            <li>3-2-1 백업 원칙에 따라 로컬·클라우드 이중 백업 및 데이터 복구 체계 구축
+            <li>로컬, 클라우드 이중 백업 및 데이터 복구 체계 구축
               <ul>
                 <li>운영 DB 원본·홈서버 로컬 백업·Google Drive 원격 백업으로 데이터 사본 3개 유지</li>
-                <li>systemd timer와 pg_dump로 매일 04시 자동 백업, 로컬 14일, 클라우드 30일 보관</li>
+                <li>systemd timer와 pg_dump로 매일 04시 자동 백업</li>
               </ul>
             </li>
           </ul>
@@ -259,18 +278,17 @@
             <span class="task-s">PR 위험도 <b>3단계 자동 판정</b>으로 미검증 변경의 병합 차단</span>
           </summary>
           <ul class="bul">
-            <li>수동 테스트·배포 과정에서 검증 누락과 운영 환경으로의 미검증 코드 반영 위험을 줄이기 위해 개발 워크플로 구축
+            <li>수동 테스트와 배포 과정에서 검증 누락과 운영 환경으로의 미검증 코드 반영 위험을 줄이기 위해 workflow 구축
               <ul>
-                <li>GitHub Actions로 Spring Boot 통합 테스트, 프론트엔드 빌드·린트 및 데이터 정합성 검사 자동화</li>
+                <li>GitHub Actions로 Spring Boot 통합 테스트, 프론트엔드 빌드, 린트 및 데이터 정합성 검사 자동화</li>
                 <li>변경 파일을 보안·DB 스키마·배포 설정 등으로 분류해 PR 위험도 3단계 자동 판정</li>
-                <li>GitHub Rulesets로 위험도별 승인 조건과 필수 CI 검사를 적용해 미검증 변경의 병합 차단</li>
+                <li>GitHub Rulesets로 PR 병합과 필수 CI 검사를 강제하고, 위험도별 승인 조건은 위험도 검사로 자동 판정해 미검증 변경의 병합 차단</li>
                 <li>dev → 스테이징, master → 운영 브랜치 분리 및 systemd 타이머 기반 자동 배포 구성</li>
               </ul>
             </li>
             <li>운영 장애 감지 및 알림 체계 구축
               <ul>
                 <li>치명 오류 즉시 감지, 5분간 ERROR 10건 이상 및 3회 연속 헬스체크 실패 시 Mattermost 알림</li>
-                <li>Redis 기반 30분 중복 알림 방지, Gemini 오류 요약과 원본 로그를 함께 전달하도록 설계</li>
               </ul>
             </li>
           </ul>
@@ -341,7 +359,7 @@
         </button>
       </div>
 
-      <ul class="tags"><li>Spring Boot</li><li>JPA</li><li>PostgreSQL</li><li>Redis</li><li>Kafka</li><li>React</li><li>Docker Compose</li><li>Cloudflare Tunnel</li><li>Grafana</li><li>Loki</li></ul>
+      <ul class="tags"><li>Spring Boot</li><li>JPA</li><li>React</li><li>PostgreSQL</li><li>Redis</li><li>Kafka</li><li>Docker</li><li>Cloudflare</li><li>Grafana</li><li>Loki</li></ul>
     </article>
   </section>
 
@@ -355,7 +373,7 @@
       <div><dt>Languages</dt><dd><ul class="chips"><li class="hi">Java</li><li class="hi">C/C++</li></ul></dd></div>
       <div><dt>Backend</dt><dd><ul class="chips"><li class="hi">Spring Boot</li><li>JPA</li><li>Kafka</li><li>React</li></ul></dd></div>
       <div><dt>Database</dt><dd><ul class="chips"><li class="hi">Oracle</li><li class="hi">Tibero</li><li class="hi">PostgreSQL</li><li>MySQL</li><li>Redis</li></ul></dd></div>
-      <div><dt>Infra · Ops</dt><dd><ul class="chips"><li class="hi">Linux</li><li class="hi">Unix</li><li class="hi">Docker</li><li>Docker Compose</li><li>Nginx</li><li>Cloudflare Tunnel</li><li>GitHub Actions</li><li>Grafana</li><li>Loki</li><li>AWS</li></ul></dd></div>
+      <div><dt>Infra · Ops</dt><dd><ul class="chips"><li class="hi">Linux</li><li class="hi">Unix</li><li class="hi">Docker</li><li>Docker Compose</li><li>Nginx</li><li>Cloudflare Tunnel</li><li>GitHub Actions</li><li>Grafana</li><li>Loki</li><li>AWS S3</li></ul></dd></div>
       <div><dt>AI</dt><dd><ul class="chips"><li>LLM</li><li>RAG</li><li>Cross-Encoder</li><li>Gemini</li></ul></dd></div>
     </dl>
   </section>
@@ -419,6 +437,6 @@
   </figure>
 </div>
 
-<script src="assets/js/main.js?v=20261123-v10"></script>
+<script src="assets/js/main.js?v=20261123-v11"></script>
 </body>
 </html>

@@ -22,7 +22,7 @@
   --sans:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",system-ui,sans-serif;
   --mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
   --ease:cubic-bezier(.2,.8,.2,1);
-  --w:1080px;
+  --w:1680px;
   color-scheme:light;
 }
 :root[data-theme="dark"]{
@@ -91,7 +91,7 @@ b{color:var(--txt);font-weight:650}
 .arr{display:inline-block;margin-left:4px;font-size:.85em;transition:transform .2s var(--ease)}
 a:hover .arr{transform:translate(2px,-2px)}
 
-.wrap{width:min(var(--w),calc(100% - 48px));margin-inline:auto;padding-bottom:40px}
+.wrap{width:min(var(--w),calc(100% - 96px));margin-inline:auto;padding-bottom:40px}
 
 /* ---------- floating pill nav ---------- */
 .nav-wrap{position:fixed;top:16px;left:0;right:0;z-index:50;display:flex;justify-content:center;pointer-events:none}

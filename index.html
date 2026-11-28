@@ -17,7 +17,7 @@
 <link rel="canonical" href="https://anchanung.github.io/portfolio/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧑‍💻</text></svg>">
 <link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="assets/css/style.css?v=20261128-v15">
+<link rel="stylesheet" href="assets/css/style.css?v=20261128-v18">
 <script>
   /* 저장된 테마를 먼저 적용해 깜빡임을 막는다 */
   (function () {
@@ -37,6 +37,7 @@
     <a class="nav-brand" href="#content">안찬웅</a>
     <div class="toc">
       <a href="#about">About</a>
+      <a href="#work">Work</a>
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
@@ -82,43 +83,137 @@
         </div>
 
         <div class="about-block">
+          <h3 class="about-label">WORK</h3>
+          <dl class="about-rows">
+            <div><dt>2025.02 - 2025.11</dt><dd>(주)데이터스트림즈<span>Server Developer · 인턴 → 정규직</span></dd></div>
+          </dl>
+        </div>
+
+        <div class="about-block">
           <h3 class="about-label">EDUCATION</h3>
           <dl class="about-rows">
-            <div><dt>2016.03 - 2024.02</dt><dd>단국대학교 소프트웨어학과 학사</dd></div>
+            <div><dt>2016.03 - 2024.02</dt><dd>단국대학교 소프트웨어학과<span>학사 졸업</span></dd></div>
           </dl>
         </div>
 
         <div class="about-block">
           <h3 class="about-label">EXPERIENCES</h3>
           <dl class="about-rows">
-            <div><dt>2026.07 -</dt><dd>삼성청년SW·AI 아카데미(SSAFY) 16기 Java Track</dd></div>
-            <div><dt>2025.02 - 2025.11</dt><dd>(주)데이터스트림즈 Server Developer</dd></div>
-            <div><dt>2024.07 - 2024.12</dt><dd>우리 FISA 3기 Cloud / BackEnd</dd></div>
+            <div><dt>2026.07 -</dt><dd>SSAFY 16기<span>Java Track</span></dd></div>
+            <div><dt>2024.07 - 2024.12</dt><dd>우리 FISA 3기<span>Cloud / BackEnd</span></dd></div>
+            <div><dt>2024.01 - 2024.02</dt><dd>KB국민은행 디지털 서포터즈<span>영업점 고객 디지털 이용 안내</span></dd></div>
+            <div><dt>2022.09 - 2024.02</dt><dd>System Software Lab<span>학부 연구생 · 랩장</span></dd></div>
           </dl>
-        </div>
-
-        <div class="about-block">
-          <h3 class="about-label">FOCUS</h3>
-          <ul class="about-chips"><li>Server Development</li><li>Backend Engineering</li><li>Infra · Ops</li><li>AI Service</li></ul>
         </div>
 
         <div class="about-block">
           <h3 class="about-label">CERTIFICATE</h3>
           <ul class="about-chips"><li>AWS SAA</li><li>ADsP</li><li>정보처리기사</li><li>SQLD</li></ul>
         </div>
+
+        <div class="about-block about-wide">
+          <h3 class="about-label">FOCUS</h3>
+          <ul class="about-chips"><li>Server Development</li><li>Backend Engineering</li><li>Infra · Ops</li><li>AI Service</li></ul>
+        </div>
       </div>
     </div>
+  </section>
+
+  <!-- ─────────────── WORK ─────────────── -->
+  <section id="work" class="sec" aria-labelledby="h-work">
+    <div class="sec-head2 reveal">
+      <p class="sec-kicker">02 / WORK EXPERIENCE</p>
+      <h2 id="h-work">Work</h2>
+      <div class="sec-sub-row">
+        <p class="sec-sub">회사에서 맡은 서버 개발 업무입니다.</p>
+        <button type="button" class="expand-all" id="expandAll" aria-pressed="true">모두 접기</button>
+      </div>
+    </div>
+
+    <ol class="xp">
+      <li class="xp-item reveal">
+        <p class="xp-date">2025.02 -<br>2025.11</p>
+        <div class="xp-body">
+          <h3>(주)데이터스트림즈</h3>
+          <p class="xp-org">Server Developer · 인턴 → 정규직</p>
+          <p class="summary"><b>300건 이상의 제품 기술 이슈</b>에 대응하며, <b>대규모 데이터 처리 솔루션 ETL 기능 개발 및 유지보수</b></p>
+          <div class="tasks">
+            <details class="task" open>
+              <summary>
+                <span class="task-t">DB 접속정보 자동 암호화 및 배치 처리 성능 개선</span>
+                <span class="task-s">금융감독원 보안 점검 <b>통과</b>, 예약 배치 작업 전체 소요시간 <b>30% 단축</b></span>
+              </summary>
+              <ul class="bul">
+                <li>Linux 서버 로그에 DB 연결정보가 일시적으로 노출되는 문제로 금융권 보안 점검 대응 필요
+                  <ul>
+                    <li>접속정보를 실행 인자 대신 DB 계정별 암호화 파일로 분리하고, 엔진 실행 시점에 복호화하도록 구조 변경</li>
+                    <li>Tibero 6,7 클라이언트 설정과 Linux·Unix 쉘 환경 차이에 대응하는 암호화 파일 자동 생성 기능 개발</li>
+                    <li>생성 파일 권한을 실행 계정으로 제한하고, 계정별 수동 생성·관리 과정 자동화</li>
+                    <li>전 고객사 적용, 금융감독원 보안 점검 통과</li>
+                  </ul>
+                </li>
+                <li>다수의 배치 프로세스 동시 실행 시 Tibero 세션 부족으로 일부 작업이 대기하는 문제 발생
+                  <ul>
+                    <li>2GB 비정형 데이터 부하 테스트로 재현, 세션 모니터링으로 최대 세션 수 도달 및 세마포어 한도 초과 확인</li>
+                    <li>DB 최대 세션(50 → 150), Linux 세마포어 집합 한도(128 → 1024) 조정 후 동일 부하 재검증</li>
+                    <li>예약 배치 작업 전체 소요시간 30% 단축</li>
+                  </ul>
+                </li>
+              </ul>
+            </details>
+
+            <details class="task" open>
+              <summary>
+                <span class="task-t">고객사 DB 환경 재현 시스템 개발</span>
+                <span class="task-s">DB 테스트 환경 구축 시간 <b>10분 → 5초</b> 단축</span>
+              </summary>
+              <ul class="bul">
+                <li>고객사별 DBMS 버전·설정 차이로 ETL 장애 재현에 매번 DB 설치·설정 작업 필요
+                  <ul>
+                    <li>Oracle·Tibero·PostgreSQL 등 23종 DB 버전별 Docker 이미지 구성</li>
+                    <li>테스트용 스키마·초기 데이터를 이미지에 포함해 컨테이너 실행 즉시 테스트 가능한 환경으로 표준화</li>
+                    <li>고객사 장애 발생 시 동일 버전 환경을 바로 띄워 재현·원인 분석에 활용</li>
+                    <li>DB 테스트 환경 구축 시간 10분 → 5초 단축</li>
+                  </ul>
+                </li>
+              </ul>
+            </details>
+
+            <details class="task" open>
+              <summary>
+                <span class="task-t">상용 ETL 엔진의 AWS S3 데이터 적재 기능 개발</span>
+                <span class="task-s">상용 데이터 통합 솔루션의 <b>클라우드 데이터 적재 대상 확장</b></span>
+              </summary>
+              <ul class="bul">
+                <li>클라우드 전환 고객사의 요구로, DB 중심의 적재 대상에 클라우드 객체 스토리지 AWS S3 추가
+                  <ul>
+                    <li>적재 대상을 분리해 기존 DB 적재 로직 수정 없이 S3 적재 기능 연동</li>
+                    <li>추출·변환 데이터를 파일로 생성 후 S3 버킷에 업로드하는 적재 기능 개발</li>
+                    <li>대용량 파일 멀티파트 업로드 및 업로드 실패 시 재시도 처리</li>
+                    <li>상용 데이터 통합 솔루션의 클라우드 데이터 적재 대상 확장</li>
+                  </ul>
+                </li>
+              </ul>
+            </details>
+          </div>
+          <ul class="tags"><li>C</li><li>C++</li><li>Java</li><li>Linux</li><li>Unix</li><li>Oracle</li><li>MySQL</li><li>PostgreSQL</li><li>Tibero</li><li>Docker</li><li>AWS S3</li></ul>
+        </div>
+        <div class="xp-media">
+          <button type="button" class="shot flow" data-full="assets/img/project/terastream-etl-flow.png" data-caption="DBMS와 XML/CSV 파일, Hadoop 등 소스 시스템의 데이터를 뽑아 정제하고 변환해 타깃 시스템으로 적재하는 TeraStream ETL 처리 흐름">
+            <img src="assets/img/project/terastream-etl-flow.png" alt="TeraStream ETL 처리 흐름도" width="1600" height="826" loading="lazy" decoding="async">
+            <span class="shot-cap">TeraStream ETL 처리 흐름</span>
+          </button>
+        </div>
+      </li>
+    </ol>
   </section>
 
   <!-- ─────────────── PROJECTS ─────────────── -->
   <section id="projects" class="sec" aria-labelledby="h-proj">
     <div class="sec-head2 reveal">
-      <p class="sec-kicker">02 / SELECTED PROJECTS</p>
+      <p class="sec-kicker">03 / SELECTED PROJECTS</p>
       <h2 id="h-proj">Projects</h2>
-      <div class="sec-sub-row">
-        <p class="sec-sub">직접 만들고 운영하는 서비스를 소개합니다.</p>
-        <button type="button" class="expand-all" id="expandAll" aria-pressed="true">모두 접기</button>
-      </div>
+      <p class="sec-sub">직접 만들고 운영하는 서비스를 소개합니다.</p>
     </div>
 
     <article class="pcard reveal">
@@ -319,8 +414,9 @@
   <!-- ─────────────── EXPERIENCE ─────────────── -->
   <section id="experience" class="sec" aria-labelledby="h-exp">
     <div class="sec-head2 reveal">
-      <p class="sec-kicker">03 / EXPERIENCES</p>
+      <p class="sec-kicker">04 / EXPERIENCES</p>
       <h2 id="h-exp">Experience</h2>
+      <p class="sec-sub">교육 과정과 대외 활동입니다.</p>
     </div>
 
     <ol class="xp">
@@ -339,81 +435,6 @@
       </li>
 
       <li class="xp-item reveal">
-        <p class="xp-date">2025.02 -<br>2025.11</p>
-        <div class="xp-body">
-          <h3>(주)데이터스트림즈</h3>
-          <p class="xp-org">Server Developer · 인턴 → 정규직</p>
-          <p class="summary"><b>300건 이상의 제품 기술 이슈</b>에 대응하며, <b>대규모 데이터 처리 솔루션 ETL 기능 개발 및 유지보수</b></p>
-          <div class="tasks">
-            <details class="task" open>
-              <summary>
-                <span class="task-t">DB 접속정보 자동 암호화 및 배치 처리 성능 개선</span>
-                <span class="task-s">금융감독원 보안 점검 <b>통과</b>, 예약 배치 작업 전체 소요시간 <b>30% 단축</b></span>
-              </summary>
-              <ul class="bul">
-                <li>Linux 서버 로그에 DB 연결정보가 일시적으로 노출되는 문제로 금융권 보안 점검 대응 필요
-                  <ul>
-                    <li>접속정보를 실행 인자 대신 DB 계정별 암호화 파일로 분리하고, 엔진 실행 시점에 복호화하도록 구조 변경</li>
-                    <li>Tibero 6,7 클라이언트 설정과 Linux·Unix 쉘 환경 차이에 대응하는 암호화 파일 자동 생성 기능 개발</li>
-                    <li>생성 파일 권한을 실행 계정으로 제한하고, 계정별 수동 생성·관리 과정 자동화</li>
-                    <li>전 고객사 적용, 금융감독원 보안 점검 통과</li>
-                  </ul>
-                </li>
-                <li>다수의 배치 프로세스 동시 실행 시 Tibero 세션 부족으로 일부 작업이 대기하는 문제 발생
-                  <ul>
-                    <li>2GB 비정형 데이터 부하 테스트로 재현, 세션 모니터링으로 최대 세션 수 도달 및 세마포어 한도 초과 확인</li>
-                    <li>DB 최대 세션(50 → 150), Linux 세마포어 집합 한도(128 → 1024) 조정 후 동일 부하 재검증</li>
-                    <li>예약 배치 작업 전체 소요시간 30% 단축</li>
-                  </ul>
-                </li>
-              </ul>
-            </details>
-
-            <details class="task" open>
-              <summary>
-                <span class="task-t">고객사 DB 환경 재현 시스템 개발</span>
-                <span class="task-s">DB 테스트 환경 구축 시간 <b>10분 → 5초</b> 단축</span>
-              </summary>
-              <ul class="bul">
-                <li>고객사별 DBMS 버전·설정 차이로 ETL 장애 재현에 매번 DB 설치·설정 작업 필요
-                  <ul>
-                    <li>Oracle·Tibero·PostgreSQL 등 23종 DB 버전별 Docker 이미지 구성</li>
-                    <li>테스트용 스키마·초기 데이터를 이미지에 포함해 컨테이너 실행 즉시 테스트 가능한 환경으로 표준화</li>
-                    <li>고객사 장애 발생 시 동일 버전 환경을 바로 띄워 재현·원인 분석에 활용</li>
-                    <li>DB 테스트 환경 구축 시간 10분 → 5초 단축</li>
-                  </ul>
-                </li>
-              </ul>
-            </details>
-
-            <details class="task" open>
-              <summary>
-                <span class="task-t">상용 ETL 엔진의 AWS S3 데이터 적재 기능 개발</span>
-                <span class="task-s">상용 데이터 통합 솔루션의 <b>클라우드 데이터 적재 대상 확장</b></span>
-              </summary>
-              <ul class="bul">
-                <li>클라우드 전환 고객사의 요구로, DB 중심의 적재 대상에 클라우드 객체 스토리지 AWS S3 추가
-                  <ul>
-                    <li>적재 대상을 분리해 기존 DB 적재 로직 수정 없이 S3 적재 기능 연동</li>
-                    <li>추출·변환 데이터를 파일로 생성 후 S3 버킷에 업로드하는 적재 기능 개발</li>
-                    <li>대용량 파일 멀티파트 업로드 및 업로드 실패 시 재시도 처리</li>
-                    <li>상용 데이터 통합 솔루션의 클라우드 데이터 적재 대상 확장</li>
-                  </ul>
-                </li>
-              </ul>
-            </details>
-          </div>
-          <ul class="tags"><li>C</li><li>C++</li><li>Java</li><li>Linux</li><li>Unix</li><li>Oracle</li><li>MySQL</li><li>PostgreSQL</li><li>Tibero</li><li>Docker</li><li>AWS S3</li></ul>
-        </div>
-        <div class="xp-media">
-          <button type="button" class="shot flow" data-full="assets/img/project/terastream-etl-flow.png" data-caption="DBMS와 XML/CSV 파일, Hadoop 등 소스 시스템의 데이터를 뽑아 정제하고 변환해 타깃 시스템으로 적재하는 TeraStream ETL 처리 흐름">
-            <img src="assets/img/project/terastream-etl-flow.png" alt="TeraStream ETL 처리 흐름도" width="1600" height="826" loading="lazy" decoding="async">
-            <span class="shot-cap">TeraStream ETL 처리 흐름</span>
-          </button>
-        </div>
-      </li>
-
-      <li class="xp-item reveal">
         <p class="xp-date">2024.07 -<br>2024.12</p>
         <div class="xp-body">
           <h3>우리 FISA 3기</h3>
@@ -425,13 +446,39 @@
         </div>
         <div class="xp-logo" aria-hidden="true"><span>우리 FISA</span></div>
       </li>
+
+      <li class="xp-item reveal">
+        <p class="xp-date">2024.01 -<br>2024.02</p>
+        <div class="xp-body">
+          <h3>KB국민은행 디지털 서포터즈</h3>
+          <p class="xp-org">영업점 고객 디지털 이용 안내</p>
+          <ul class="bul">
+            <li>모바일뱅킹이 어려워 간단한 업무로 영업점을 반복 방문하는 고객에게 KB스타뱅킹 사용 안내</li>
+            <li>AI 챗봇과 검색 기능 사용법을 설명해 고객이 앱에서 필요한 기능을 직접 찾도록 지원</li>
+          </ul>
+        </div>
+        <div class="xp-logo" aria-hidden="true"><span>KB국민은행</span></div>
+      </li>
+
+      <li class="xp-item reveal">
+        <p class="xp-date">2022.09 -<br>2024.02</p>
+        <div class="xp-body">
+          <h3>System Software Lab</h3>
+          <p class="xp-org">학부 연구생 · 랩장</p>
+          <ul class="bul">
+            <li>리눅스 커널 연구</li>
+            <li>연구실 <b>랩장</b>으로 활동</li>
+          </ul>
+        </div>
+        <div class="xp-logo" aria-hidden="true"><span>System Software Lab</span></div>
+      </li>
     </ol>
   </section>
 
   <!-- ─────────────── SKILLS ─────────────── -->
   <section id="skills" class="sec" aria-labelledby="h-skills">
     <div class="sec-head2 reveal">
-      <p class="sec-kicker">04 / TECH STACK</p>
+      <p class="sec-kicker">05 / TECH STACK</p>
       <h2 id="h-skills">Skills</h2>
     </div>
     <dl class="skill-rows reveal">
@@ -446,7 +493,7 @@
   <!-- ─────────────── CONTACT ─────────────── -->
   <section id="contact" class="sec band band-dark contact" aria-labelledby="h-contact">
     <div class="sec-head2 is-center reveal">
-      <p class="sec-kicker">05 / CONTACT</p>
+      <p class="sec-kicker">06 / CONTACT</p>
       <h2 id="h-contact">Contact</h2>
       <p class="sec-sub">궁금한 점이 있다면 편하게 찾아와 주세요.</p>
     </div>
@@ -478,6 +525,6 @@
   </figure>
 </div>
 
-<script src="assets/js/main.js?v=20261128-v15"></script>
+<script src="assets/js/main.js?v=20261128-v18"></script>
 </body>
 </html>

@@ -22,7 +22,7 @@
   --sans:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",system-ui,sans-serif;
   --mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
   --ease:cubic-bezier(.2,.8,.2,1);
-  --w:1680px;
+  --w:1200px;
   color-scheme:light;
 }
 :root[data-theme="dark"]{
@@ -520,4 +520,49 @@ a.blog-pill:hover,.task-link:hover .blog-pill{background:var(--txt);color:var(--
   .band-dark{--txt:#09090b;--txt-2:#3f3f46;--txt-3:#71717a;--line:#e4e4e7;--surface:#fff;--surface-2:#fafafa}
   .contact,.xp-logo{display:none}
   .xp-item,.pcard-top{break-inside:avoid}
+}
+
+/* ---------- v16: 폭 1200px에 맞춘 다듬기 ---------- */
+.wrap{width:min(var(--w),calc(100% - 64px))}
+.sec{padding-top:120px}
+.sec-head2{margin-bottom:36px}
+.sec-head2 h2{font-size:clamp(36px,4.6vw,56px)}
+.sec-head2 > .sec-sub{margin-top:12px}
+
+/* About: 날짜 칸을 좁히고 소속 아래에 직함을 작게 */
+.about-grid{grid-template-columns:220px minmax(0,1fr);gap:56px}
+#about .about-body{gap:32px 44px}
+#about .about-rows{gap:12px}
+.about-rows > div{grid-template-columns:132px minmax(0,1fr);gap:14px}
+.about-rows dd span{display:block;margin-top:1px;font-size:13.5px;font-weight:500;color:var(--txt-2)}
+.about-chips li{background:transparent;border-color:var(--line-2)}
+
+/* 경력 줄: 이미지 칸을 조금 줄이고 로고 칸은 차분하게 */
+.xp-item{grid-template-columns:132px minmax(0,1fr) 240px;gap:36px;padding:40px 0}
+.xp-date{font-size:15px;font-weight:700;color:var(--txt-2)}
+.xp-logo{aspect-ratio:3/2;border-radius:12px;background:var(--surface-2);box-shadow:none}
+.xp-logo span{font-size:19px;font-weight:800;color:var(--txt-2)}
+
+/* 프로젝트 카드: 미리보기 아래 기능 버튼 목록은 감추고 설명만 */
+.pcard-top{gap:36px;padding:28px}
+.pcard .sc-list{display:none}
+.pcard .sc-caption{margin-top:12px}
+.pcard-detail{padding:4px 28px 28px}
+
+/* 기술 표 */
+.skill-rows > div{grid-template-columns:180px minmax(0,1fr);padding:18px 24px}
+.skill-rows dt{font-size:16px}
+.chips li.hi{background:var(--txt);color:var(--bg)}
+
+@media (max-width:1100px){
+  .xp-item{grid-template-columns:112px minmax(0,1fr)}
+}
+@media (max-width:960px){
+  .about-grid{grid-template-columns:1fr;gap:36px}
+}
+@media (max-width:720px){
+  .wrap{width:calc(100% - 32px)}
+  .sec{padding-top:88px}
+  .about-rows > div{grid-template-columns:1fr}
+  .xp-item{grid-template-columns:1fr}
 }

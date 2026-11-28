@@ -324,3 +324,41 @@ a.blog-pill:hover,.task-link:hover .blog-pill{background:var(--txt);border-color
   .pcard-top{grid-template-columns:1fr}
   .pcard-media{order:-1}
 }
+
+/* ---------- v25: About me (테마 색을 따르는 소개 구역) ---------- */
+.about{padding:136px 0 8px}
+.about-head .sec-kicker{font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--txt-3)}
+.about-head h1{margin-top:14px;font-size:clamp(40px,5.6vw,62px);font-weight:800;letter-spacing:-.05em;line-height:1.08}
+.about-lead{margin-top:18px;font-size:clamp(17px,1.8vw,20px);font-weight:650;letter-spacing:-.025em;color:var(--txt)}
+.about-head{margin-bottom:40px}
+.about-grid{display:grid;grid-template-columns:200px minmax(0,1fr);gap:52px;align-items:start;padding-top:32px;border-top:1px solid var(--txt)}
+.about-profile img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:center top;border-radius:var(--radius);border:1px solid var(--line);background:var(--surface-2)}
+.about-info{margin-top:16px;display:flex;flex-direction:column;gap:3px;font-size:14px;color:var(--txt-2)}
+.about-info .about-name{font-size:15.5px;font-weight:750;color:var(--txt)}
+.about-info a{color:var(--txt)}
+.about-info a:hover{text-decoration:underline;text-underline-offset:3px}
+.about-body{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 44px}
+.about-wide{grid-column:1/-1}
+.about-label{margin-bottom:10px;font-size:12.5px;font-weight:800;letter-spacing:.08em;color:var(--txt-3)}
+.about-char{font-size:15.5px;line-height:1.7;color:var(--txt-2)}
+.about-intro{margin-top:12px}
+.about-rows{display:flex;flex-direction:column;gap:12px}
+.about-rows > div{display:grid;grid-template-columns:132px minmax(0,1fr);gap:14px;font-size:14.5px;line-height:1.5}
+.about-rows dt{font-family:var(--mono);font-size:12.5px;color:var(--txt-3);padding-top:2px}
+.about-rows dd{font-weight:650;color:var(--txt)}
+.about-rows dd span{display:block;margin-top:1px;font-size:13px;font-weight:500;color:var(--txt-2)}
+.about-chips{display:flex;flex-wrap:wrap;gap:6px}
+.about-chips li{padding:4px 12px;border-radius:999px;border:1px solid var(--line-2);font-size:13px;font-weight:600;color:var(--txt)}
+.about + .sec{padding-top:80px}
+
+@media (max-width:1000px){
+  .about-grid{grid-template-columns:1fr;gap:28px}
+  .about-profile{display:flex;align-items:flex-end;gap:20px}
+  .about-profile img{width:132px;flex-shrink:0}
+}
+@media (max-width:720px){
+  .about{padding-top:104px}
+  .about-body{grid-template-columns:1fr;gap:26px}
+  .about-rows > div{grid-template-columns:1fr;gap:2px}
+}
+@media print{.about{padding-top:0}}

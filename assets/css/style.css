@@ -328,7 +328,7 @@ a.blog-pill:hover,.task-link:hover .blog-pill{background:var(--txt);border-color
 /* ---------- v25: About me (테마 색을 따르는 소개 구역) ---------- */
 .about{padding:136px 0 8px}
 .about-head .sec-kicker{font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--txt-3)}
-.about-head h1{margin-top:0;font-size:clamp(40px,5.6vw,62px);font-weight:800;letter-spacing:-.05em;line-height:1.08}
+.about-head h1{margin-top:0;font-size:clamp(28px,4vw,46px);font-weight:800;letter-spacing:-.045em;line-height:1.25}
 .about-lead{margin-top:18px;font-size:clamp(17px,1.8vw,20px);font-weight:650;letter-spacing:-.025em;color:var(--txt)}
 .about-head{margin-bottom:40px}
 .about-grid{display:grid;grid-template-columns:200px minmax(0,1fr);gap:52px;align-items:start;padding-top:32px;border-top:1px solid var(--txt)}

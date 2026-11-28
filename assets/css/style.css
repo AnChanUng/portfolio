@@ -99,7 +99,7 @@ a:hover .arr{transform:translate(2px,-2px)}
 .profile-photo{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:center top;border-radius:var(--radius);border:1px solid var(--line);background:var(--surface-2)}
 
 /* 요약 표 */
-.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--txt);border-bottom:1px solid var(--line)}
+.facts{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid var(--txt);border-bottom:1px solid var(--line)}
 .facts > div{padding:18px 20px 20px 0}
 .facts > div + div{padding-left:20px;border-left:1px solid var(--line)}
 .facts dt{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--txt-3)}
@@ -271,7 +271,7 @@ a.blog-pill:hover,.task-link:hover .blog-pill{background:var(--txt);border-color
   .row-body{border-top:0;padding-top:16px}
   .pcard-top{grid-template-columns:1fr}
   .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .facts > div:nth-child(3){padding-left:0;border-left:0}
+  .facts > div:nth-child(odd){padding-left:0;border-left:0}
   .facts > div:nth-child(n+3){border-top:1px solid var(--line)}
 }
 @media (max-width:720px){

@@ -371,3 +371,130 @@ a.blog-pill:hover,.task-link:hover .blog-pill{background:var(--accent);color:#ff
 .hero .intro{margin-top:18px}
 .intro-link{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;transition:color .2s}
 .intro-link:hover{color:var(--accent)}
+
+/* ============================================================
+   v13 — About me 아래 구역 개편
+   어두운 About me · 프로젝트 카드 · 경력 타임라인 · 기술 표 · 연락처
+   ============================================================ */
+
+/* 사진은 About me로 옮겨 히어로는 글만 둔다 */
+.hero{grid-template-columns:minmax(0,1fr);padding-bottom:96px}
+
+/* 섹션 머리: 작은 번호 + 큰 제목 */
+.sec-head2{margin-bottom:40px}
+.sec-kicker{font-size:13px;font-weight:750;letter-spacing:.06em;color:var(--txt-2)}
+.sec-head2 h2{margin-top:10px;font-size:clamp(40px,5.4vw,64px);font-weight:850;letter-spacing:-.05em;line-height:1.05}
+.sec-sub-row{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:14px}
+.sec-sub{font-size:16px;color:var(--txt-2)}
+.sec-head2.is-center{text-align:center}
+.sec-head2.is-center .sec-sub{margin-top:14px}
+.sec-sub-row .expand-all{margin-left:0}
+
+/* 화면 끝까지 닿는 어두운 띠 (테마와 상관없이 어둡게) */
+.band{position:relative;isolation:isolate;padding-bottom:96px}
+.band::before{content:"";position:absolute;inset:0 calc(50% - 50vw);z-index:-1;background:var(--band-bg)}
+.band-dark{
+  --band-bg:#000;--txt:#fafafa;--txt-2:#a1a1aa;--txt-3:#71717a;--line:#26262b;--line-2:#3a3a42;
+  --surface:#111114;--surface-2:#1c1c21;color:var(--txt-2);
+}
+.band + .sec{padding-top:112px}
+
+/* ---------- About me ---------- */
+.about-grid{display:grid;grid-template-columns:240px minmax(0,1fr);gap:64px;align-items:start}
+.about-profile img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center top;border-radius:6px;background:#fff}
+.about-info{margin-top:22px;display:flex;flex-direction:column;gap:6px;font-size:14.5px;color:var(--txt)}
+.about-info .about-name{font-size:16px;font-weight:750;letter-spacing:-.03em}
+.about-info a{transition:color .2s}
+.about-info a:hover{color:var(--accent)}
+.about-body{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:44px 56px}
+.about-wide{grid-column:1/-1}
+.about-label{margin-bottom:14px;font-size:17px;font-weight:800;letter-spacing:-.01em;color:var(--txt)}
+.about-char{font-size:16px;line-height:1.85;color:var(--txt)}
+.about-rows{display:flex;flex-direction:column;gap:12px}
+.about-rows > div{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;font-size:15px}
+.about-rows dt{color:var(--txt-2);font-variant-numeric:tabular-nums}
+.about-rows dd{color:var(--txt);font-weight:600}
+.about-chips{display:flex;flex-wrap:wrap;gap:8px}
+.about-chips li{padding:6px 14px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line);font-size:13px;font-weight:600;color:var(--txt)}
+
+/* ---------- 프로젝트 카드 ---------- */
+.pcard{border-radius:var(--radius);border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow);overflow:hidden}
+.pcard-top{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:40px;padding:32px;align-items:start}
+.pcard-cat{display:flex;align-items:center;flex-wrap:wrap;gap:10px;font-size:13.5px;color:var(--txt-3)}
+.pcard-info h3{margin-top:8px;font-size:clamp(30px,3.4vw,42px);font-weight:850;letter-spacing:-.05em}
+.pcard-info h3 a{transition:color .2s}
+.pcard-info h3 a:hover{color:var(--accent)}
+.pcard-desc{margin-top:14px;font-size:16px;line-height:1.75;color:var(--txt-2)}
+.pcard-role{margin-top:18px;font-size:15px;color:var(--txt-2)}
+.pcard-role b{margin-right:8px}
+.pcard-points{margin-top:14px;display:flex;flex-direction:column;gap:6px}
+.pcard-points li{position:relative;padding-left:16px;font-size:15px}
+.pcard-points li::before{content:"";position:absolute;left:2px;top:.72em;width:5px;height:5px;border-radius:50%;background:var(--txt-3)}
+.pcard-points b{color:var(--accent)}
+.pcard .tags{margin-top:20px}
+.pcard .link-row{margin-top:22px}
+.pill-dark{background:var(--txt);color:var(--bg)}
+.pill-dark:hover{opacity:.85}
+.pcard-detail{padding:8px 32px 32px;border-top:1px solid var(--line);background:color-mix(in srgb,var(--surface-2) 45%,var(--surface))}
+.pcard-detail-h{margin-top:24px;font-size:17px;font-weight:800;letter-spacing:-.03em}
+.pcard-detail .tasks{margin-top:12px}
+
+/* ---------- 경력 타임라인 ---------- */
+.xp{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.xp-item{display:grid;grid-template-columns:150px minmax(0,1fr) 280px;gap:40px;padding:44px 0;border-bottom:1px solid var(--line);align-items:start}
+.xp-date{font-size:17px;font-weight:800;letter-spacing:-.02em;color:var(--txt);font-variant-numeric:tabular-nums;line-height:1.4}
+.xp-body h3{font-size:clamp(22px,2.3vw,28px);font-weight:850;letter-spacing:-.045em}
+.xp-org{margin-top:6px;font-size:14.5px;font-weight:600;color:var(--txt-2)}
+.xp-body > .bul{margin-top:18px}
+.xp-body .summary{margin-top:16px}
+.xp-body .tasks{margin-top:20px}
+.xp-logo{display:grid;place-items:center;aspect-ratio:16/10;border-radius:14px;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow)}
+.xp-logo span{font-size:26px;font-weight:900;letter-spacing:-.04em;background:linear-gradient(100deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.xp-media .shot.flow{margin-top:0}
+
+/* ---------- 기술 표 ---------- */
+.skill-rows{display:flex;flex-direction:column;gap:10px}
+.skill-rows > div{display:grid;grid-template-columns:200px minmax(0,1fr);align-items:center;gap:20px;padding:20px 26px;border-radius:14px;border:1px solid var(--line);background:var(--surface)}
+.skill-rows dt{font-size:18px;font-weight:800;letter-spacing:-.03em;color:var(--txt)}
+
+/* ---------- 연락처 ---------- */
+.contact{margin-top:112px;padding-top:96px}
+.contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,300px));justify-content:center;gap:16px}
+.contact-tile{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;min-height:200px;padding:28px;
+  border-radius:16px;border:1px solid var(--line-2);background:var(--surface);color:var(--txt);
+  font-size:14.5px;font-weight:700;transition:transform .25s var(--ease),border-color .2s;
+}
+.contact-tile:hover{transform:translateY(-4px);border-color:var(--txt-3)}
+.contact-tile.is-light{background:#f4f4f5;color:#09090b;border-color:#f4f4f5}
+.band + .footer,.contact + .footer{margin-top:0;border-top:0}
+.footer a:hover .arr{transform:translateY(-2px)}
+
+@media (max-width:1100px){
+  .xp-item{grid-template-columns:120px minmax(0,1fr)}
+  .xp-logo,.xp-media{grid-column:2;max-width:420px}
+  .xp-logo{display:none}
+}
+@media (max-width:960px){
+  .about-grid{grid-template-columns:1fr;gap:36px}
+  .about-profile{display:flex;align-items:flex-end;gap:22px}
+  .about-profile img{width:150px;flex-shrink:0}
+  .pcard-top{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  .about-body{grid-template-columns:1fr;gap:32px}
+  .about-rows > div{grid-template-columns:1fr;gap:2px}
+  .pcard-top{padding:20px}
+  .pcard-detail{padding:4px 20px 22px}
+  .xp-item{grid-template-columns:1fr;gap:12px;padding:32px 0}
+  .xp-logo,.xp-media{grid-column:auto}
+  .skill-rows > div{grid-template-columns:1fr;gap:12px;padding:18px 20px}
+  .contact-grid{grid-template-columns:1fr}
+  .sec-sub-row{flex-direction:column;align-items:flex-start}
+}
+@media print{
+  .band::before{display:none}
+  .band-dark{--txt:#09090b;--txt-2:#3f3f46;--txt-3:#71717a;--line:#e4e4e7;--surface:#fff;--surface-2:#fafafa}
+  .contact,.xp-logo{display:none}
+  .xp-item,.pcard-top{break-inside:avoid}
+}

@@ -26,7 +26,7 @@
   syncThemeLabel();
 
   /* ---------- active section in nav ---------- */
-  var sections = Array.prototype.slice.call(document.querySelectorAll('main section[id]'));
+  var sections = Array.prototype.slice.call(document.querySelectorAll('main > [id]'));
   var navAnchors = Array.prototype.slice.call(document.querySelectorAll('.toc a'));
 
   function syncActive() {

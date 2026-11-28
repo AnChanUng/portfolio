@@ -470,6 +470,30 @@ a.blog-pill:hover,.task-link:hover .blog-pill{background:var(--accent);color:#ff
 .band + .footer,.contact + .footer{margin-top:0;border-top:0}
 .footer a:hover .arr{transform:translateY(-2px)}
 
+/* ---------- v14: 맨 위 소개 + About me 합침 ----------
+   형식은 About me, 간격은 예전 맨 위 소개(히어로) 기준 */
+.band#about{padding-top:150px;padding-bottom:88px}
+.about-head{margin-bottom:44px}
+.about-head .sec-kicker{display:inline-flex;align-items:center;gap:8px}
+.about-head h1{margin-top:22px;font-size:clamp(40px,6.2vw,68px);font-weight:800;letter-spacing:-.055em;line-height:1.08}
+.about-lead{margin-top:22px;font-size:clamp(18px,2vw,21px);font-weight:600;letter-spacing:-.03em;color:var(--txt)}
+.about-lead .hl{color:var(--accent)}
+.band-dark{--accent:#6b9bff;--accent-2:#a78bfa}
+#about .about-body{gap:30px 48px}
+#about .about-label{margin-bottom:10px;font-size:15px}
+#about .about-char{font-size:16px;line-height:1.7;color:var(--txt-2)}
+#about .about-intro{margin-top:14px;gap:5px}
+#about .about-intro li{font-size:15.5px;line-height:1.65}
+#about .about-rows{gap:6px}
+#about .about-rows > div{font-size:15px;line-height:1.65}
+#about .about-chips{gap:6px}
+#about .about-info{margin-top:18px;gap:4px}
+
+@media (max-width:720px){
+  .band#about{padding-top:110px;padding-bottom:64px}
+  .about-head{margin-bottom:32px}
+}
+
 @media (max-width:1100px){
   .xp-item{grid-template-columns:120px minmax(0,1fr)}
   .xp-logo,.xp-media{grid-column:2;max-width:420px}

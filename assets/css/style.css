@@ -13,10 +13,10 @@
   --txt:#09090b;
   --txt-2:#52525b;
   --txt-3:#a1a1aa;
-  --accent:#2563eb;
-  --accent-2:#7c3aed;
+  --accent:#09090b;
+  --accent-2:#09090b;
   --accent-soft:color-mix(in srgb,var(--accent) 9%,transparent);
-  --glow:rgba(37,99,235,.14);
+  --glow:transparent;
   --shadow:0 1px 2px rgba(9,9,11,.04),0 12px 32px -16px rgba(9,9,11,.14);
   --radius:20px;
   --sans:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",system-ui,sans-serif;
@@ -34,9 +34,9 @@
   --txt:#fafafa;
   --txt-2:#a1a1aa;
   --txt-3:#71717a;
-  --accent:#6b9bff;
-  --accent-2:#a78bfa;
-  --glow:rgba(107,155,255,.16);
+  --accent:#fafafa;
+  --accent-2:#fafafa;
+  --glow:transparent;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 16px 40px -20px rgba(0,0,0,.6);
   color-scheme:dark;
 }
@@ -50,9 +50,9 @@
     --txt:#fafafa;
     --txt-2:#a1a1aa;
     --txt-3:#71717a;
-    --accent:#6b9bff;
-    --accent-2:#a78bfa;
-    --glow:rgba(107,155,255,.16);
+    --accent:#fafafa;
+    --accent-2:#fafafa;
+    --glow:transparent;
     --shadow:0 1px 2px rgba(0,0,0,.3),0 16px 40px -20px rgba(0,0,0,.6);
     color-scheme:dark;
   }
@@ -71,7 +71,6 @@ body::before{
   content:"";position:absolute;inset:0 0 auto 0;height:760px;z-index:-1;pointer-events:none;
   background:
     radial-gradient(40% 50% at 78% 18%,var(--glow),transparent 70%),
-    radial-gradient(35% 45% at 18% 8%,color-mix(in srgb,var(--accent-2) 10%,transparent),transparent 70%),
     radial-gradient(circle at 1px 1px,color-mix(in srgb,var(--txt) 9%,transparent) 1px,transparent 0) 0 0/22px 22px;
   -webkit-mask-image:linear-gradient(to bottom,#000 30%,transparent);
           mask-image:linear-gradient(to bottom,#000 30%,transparent);
@@ -82,7 +81,7 @@ ul{margin:0;padding:0;list-style:none}
 h1,h2,h3,h4,p,dl,dd,figure{margin:0}
 h1,h2,h3,h4{color:var(--txt);line-height:1.25;letter-spacing:-.035em;font-weight:700}
 b{color:var(--txt);font-weight:650}
-::selection{background:var(--accent);color:#fff}
+::selection{background:var(--txt);color:var(--bg)}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:8px}
 
 .skip{position:fixed;top:-100px;left:16px;z-index:100;padding:10px 14px;border-radius:10px;background:var(--txt);color:var(--bg);font-weight:600;font-size:14px;transition:top .2s}
@@ -126,7 +125,7 @@ a:hover .arr{transform:translate(2px,-2px)}
   display:inline-flex;align-items:center;gap:8px;margin-bottom:22px;padding:5px 13px 5px 11px;border-radius:999px;
   border:1px solid var(--line);background:var(--surface);font-size:13px;font-weight:650;color:var(--txt-2);
 }
-.dot{width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 3px color-mix(in srgb,#22c55e 22%,transparent)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--txt-2)}
 .hero h1{font-size:clamp(40px,6.2vw,68px);font-weight:800;letter-spacing:-.055em;line-height:1.08}
 .grad{background:linear-gradient(100deg,var(--accent) 10%,var(--accent-2) 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .lead{margin-top:22px;font-size:clamp(18px,2vw,21px);font-weight:600;letter-spacing:-.03em;color:var(--txt)}
@@ -208,7 +207,7 @@ a:hover .arr{transform:translate(2px,-2px)}
   font-size:11.5px;font-weight:700;letter-spacing:0;color:var(--accent);text-decoration:none;transition:background .2s,color .2s;
 }
 .blog-pill .arr{margin-left:3px}
-a.blog-pill:hover,.task-link:hover .blog-pill{background:var(--accent);color:#fff}
+a.blog-pill:hover,.task-link:hover .blog-pill{background:var(--txt);color:var(--bg)}
 
 /* tags */
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:24px}
@@ -327,7 +326,7 @@ a.blog-pill:hover,.task-link:hover .blog-pill{background:var(--accent);color:#ff
 .sc-bar{display:flex;align-items:center;gap:12px;padding:9px 12px;border-bottom:1px solid var(--line);background:var(--surface-2)}
 .sc-dots{display:flex;gap:6px}
 .sc-dots i{width:10px;height:10px;border-radius:50%;background:var(--line-2)}
-.sc-dots i:nth-child(1){background:#ff5f57}.sc-dots i:nth-child(2){background:#febc2e}.sc-dots i:nth-child(3){background:#28c840}
+.sc-dots i{background:var(--line-2)}
 .sc-url{flex:1;min-width:0;padding:4px 12px;border-radius:8px;background:var(--surface);border:1px solid var(--line);font-family:var(--mono);font-size:12px;color:var(--txt-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .sc-host{color:var(--txt-2)}
 .sc-toggle{display:grid;place-items:center;width:28px;height:28px;border:0;border-radius:8px;background:transparent;color:var(--txt-2);cursor:pointer;transition:background .2s,color .2s}
@@ -449,7 +448,7 @@ a.blog-pill:hover,.task-link:hover .blog-pill{background:var(--accent);color:#ff
 .xp-body .summary{margin-top:16px}
 .xp-body .tasks{margin-top:20px}
 .xp-logo{display:grid;place-items:center;aspect-ratio:16/10;border-radius:14px;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow)}
-.xp-logo span{font-size:26px;font-weight:900;letter-spacing:-.04em;background:linear-gradient(100deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.xp-logo span{font-size:26px;font-weight:900;letter-spacing:-.04em;color:var(--txt)}
 .xp-media .shot.flow{margin-top:0}
 
 /* ---------- 기술 표 ---------- */
@@ -478,7 +477,7 @@ a.blog-pill:hover,.task-link:hover .blog-pill{background:var(--accent);color:#ff
 .about-head h1{margin-top:22px;font-size:clamp(40px,6.2vw,68px);font-weight:800;letter-spacing:-.055em;line-height:1.08}
 .about-lead{margin-top:22px;font-size:clamp(18px,2vw,21px);font-weight:600;letter-spacing:-.03em;color:var(--txt)}
 .about-lead .hl{color:var(--accent)}
-.band-dark{--accent:#6b9bff;--accent-2:#a78bfa}
+.band-dark{--accent:#fafafa;--accent-2:#fafafa;--accent-soft:rgba(255,255,255,.08)}
 #about .about-body{gap:30px 48px}
 #about .about-label{margin-bottom:10px;font-size:15px}
 #about .about-char{font-size:16px;line-height:1.7;color:var(--txt-2)}
